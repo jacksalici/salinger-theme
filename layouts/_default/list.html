@@ -1,0 +1,26 @@
+   
+{{range .Sections}}
+
+   <h3>
+       {{.Title}}
+       {{$sectionTitle :=  .Title}}
+    
+   </h3>
+
+    <table>
+        <tb> 
+            {{ range  where .Site.RegularPages "Section" $sectionTitle}}
+
+        <tr>
+            <td><a href="{{.Permalink}}">{{.Title}}</a><br></td>
+            <td>{{.Date.Format "Jan 2006"}}</td>
+            <td>{{ .Section}}</td>
+            <td>{{$sectionTitle}}</td>
+        </tr> 
+            {{ end }}
+        </tb>
+    </table>
+            
+        
+  {{end}}
+
