@@ -1,26 +1,32 @@
    
 {{range .Sections}}
+    
+    {{$numberOfSection := len .Sections}}
+
 
    <h3>
-       {{.Title}}
-       {{$sectionTitle :=  .Section}}
+   
+        <a href="{{.Permalink}}">    
+    {{.Title}}
+
+        </a>
+    
+
     
    </h3>
 
     <table>
         <tb> 
-            {{ range  where .Site.RegularPages "Section" $sectionTitle}}
+            {{ range  .RegularPages}}
+                {{.Render "li"}}
+            {{ end }}
 
-        <tr>
-            <td><a href="{{.Permalink}}">{{.Title}}</a><br></td>
-            <td>{{.Date.Format "Jan 2006"}}</td>
-            <td>{{ .Section}}</td>
-            <td>{{$sectionTitle}}</td>
-        </tr> 
+            {{range .Sections}}
+                {{ range  .RegularPages}}
+                    {{.Render "li"}}
+                {{ end }}
             {{ end }}
         </tb>
     </table>
-            
-        
+                  
   {{end}}
-

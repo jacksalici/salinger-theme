@@ -1,6 +1,9 @@
-<li>
-    <a href="{{ .Permalink }}">
-        {{ .Title }}</a>
-        <small><time>{{ .Date.Format "Jan 2006" }}</time></small>
-    
-</li>
+
+<tr>
+<td><a href="{{.Permalink}}">{{.Title}}</a><br></td>
+<td>{{.Date.Format "Jan 2006"}}</td>
+{{with .CurrentSection}}
+<td>{{ .Title }}</td>
+{{end}}
+<td></td>
+</tr>

@@ -4,8 +4,11 @@
     <body>
         {{- partial "header.html" . -}}
         {{- if (eq .Kind "Section" ) -}}
-{{- .Render "list" -}}
-{{- end -}}
+        <h2>
+            Hola!
+        </h2>
+        {{- .Render "list" -}}
+        {{- end -}}
         <main id="content">
         {{- block "main" . }}{{- end }}
         </main>

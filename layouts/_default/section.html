@@ -1,25 +1,15 @@
-{{range .Sections}}
-
-   <h3>
-       {{.Title}}
-       {{$sectionTitle :=  .Section}}
+{{ define "main" }}
+  <main>
+    <h2>
+        {{.Title}}
+     
+    </h2>
+      {{ .Content }}
     
-   </h3>
+      {{.Render "list"}}
 
-    <table>
-        <tb> 
-            {{ range  where .Site.RegularPages "Section" $sectionTitle}}
+       
 
-        <tr>
-            <td><a href="{{.Permalink}}">{{.Title}}</a><br></td>
-            <td>{{.Date.Format .Page.Params.DataFormat}}</td>
-            <td>{{ .Section}}</td>
-            <td>{{$sectionTitle}}</td>
-        </tr> 
-            {{ end }}
-        </tb>
-    </table>
-            
-        
-  {{end}}
-
+      
+  </main>
+{{ end }}
