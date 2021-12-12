@@ -1,12 +1,23 @@
-{{ define "main" }} 
-  {{with .Params.hideTitle}}
-    <div class="py-12"></div>
-  {{else}} 
-    {{ partial "hero.html" (dict "Title" .Title "Subtitle" .Params.Description "Context" .) }}
-  {{end}} 
+{{ define "main" }}
+<article>
+    <header id="post-header">
+        <h1>{{ .Title }}</h1>
+            <div>
+            {{- if isset .Params "date" -}}
+                {{ if eq .Lastmod .Date }}
+                <time>{{ .Date.Format .Site.Params.DateFormat }}</time>
+                {{ else }}
+                Updated <time>{{ .Date.Format .Site.Params.DateFormat }}</time>
+                {{ end }}
+            {{- end -}}
+            </div>
+            <div>
+                {{with .CurrentSection}}
+{{ .Title }}
+{{end}}
+                </div>
 
-  {{if .Params.toc}} {{partial "toc" .}} {{end}}
-
-  <article class="prose text-justify feed">{{- .Content -}}</article>
-
+    </header>
+    {{- .Content -}}
+</article>
 {{ end }}
