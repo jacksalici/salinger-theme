@@ -3,6 +3,9 @@
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
+        {{- if (eq .Kind "Section" ) -}}
+{{- .Render "list" -}}
+{{- end -}}
         <main id="content">
         {{- block "main" . }}{{- end }}
         </main>
