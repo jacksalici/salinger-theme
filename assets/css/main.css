@@ -5,7 +5,7 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 60%;
     font-family: Montserrat, sans-serif;
 }
 
@@ -14,7 +14,7 @@ body {
     font-size: 1.6rem;
     color: #313a3d;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 0;
     padding: 0 16px;
     line-height: 1.6;
 }
