@@ -1,5 +1,5 @@
 <footer>
     {{ with .Site.Params.copyright }}
-    &copy; {{ now.Year }} {{.}}
+    &copy; {{ now.Year }} {{. | safeHTML}}
     {{end}}
 </footer>
