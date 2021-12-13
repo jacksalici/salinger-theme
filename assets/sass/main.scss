@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap');
+
+$sans-serif: Montserrat, sans-serif;
+$serif: Merriweather, serif;
+$link-color: #06695c;
+
+*{
+    transition: all 0.5s ease-out;
+}
+
+h1,h2,h3,h4{
+    font-family: $sans-serif
+}
+
+a{
+    text-decoration-style: wavy;
+    color: black;
+}::after{
+    color: inherit;
+}
+a:hover{
+    color:$link-color;
+}
+
+body{
+    width: 500px;
+    margin-left: 50px;
+    font-family: $serif
+}
+
+header{
+    margin-top: 5px;
+
+    a{
+        text-decoration: none;
+    }
+    :hover
+    {
+        color: inherit;
+    }
+
+    .site-name{
+        margin: 0;
+        text-transform:uppercase;
+    }
+}
+
+
+footer{
+       
+}
