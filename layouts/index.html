@@ -1,4 +1,8 @@
 {{ define "main" }}
-{{ .Content }}
+
+<h1>
+    {{- .Site.Params.Header -}}
+</h1>
+{{- .Content -}}
 {{- .Render "list" -}}
 {{ end }}
