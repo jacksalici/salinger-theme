@@ -1,8 +1,18 @@
 
-<tr>
-    <td><a href="{{.Permalink}}">{{.Title}}</a></td>
-    <td>{{.Date.Format "Jan 2006"}}</td>
-    {{with .CurrentSection}}
-    <td>{{ .Title }}</td>
-    {{end}}
-</tr>
+<li>
+    <a href="{{.Permalink}}">
+        <span class="name">
+            {{.Title}}
+        </span>
+
+        <span class="date">
+        {{.Date.Format "Jan 2006"}}
+        </span>
+        
+        {{with .CurrentSection}}
+            <span class="section">
+                {{ .Title }}
+            </span>
+        {{end}}
+    </a>
+</li>
