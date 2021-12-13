@@ -1,18 +1,22 @@
 
 <li>
+    <div class="post">
     <a href="{{.Permalink}}">
         <span class="name">
-            {{.Title}}
+            {{.Title}}<br>
         </span>
 
         <span class="date">
-        {{.Date.Format "Jan 2006"}}
+        Published on {{.Date.Format .Site.Params.DateFormat}}
         </span>
         
         {{with .CurrentSection}}
             <span class="section">
-                {{ .Title }}
+                in {{ .Title }}
             </span>
+        {{else}}
+            <span class="date">.</span>
         {{end}}
     </a>
+    </div>
 </li>
