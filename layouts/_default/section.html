@@ -2,11 +2,13 @@
     <main>
         <h2>{{.Title}}</h2>
         
-        {{ .Content }}
-        
+        <div class="content">{{- .Content -}}</div>
+
+        <div id="posts">
         {{ range  .RegularPages}}
             {{.Render "li"}}
-        {{ end }}   
+        {{ end }}
+        </div>   
 
         {{.Render "list"}}
     </main>

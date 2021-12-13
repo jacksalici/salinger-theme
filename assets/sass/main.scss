@@ -1,12 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Merriweather:ital@0;1&family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap');
 
-$sans-serif: Montserrat, sans-serif;
-$serif: Merriweather, serif;
-$link-color: #06695c;
+$sans-serif: 'Montserrat', sans-serif;
+$serif: 'Merriweather', serif;
+$quote-font: 'Indie Flower', cursive;
+$monospace-font: 'Fira Mono', monospace;
+
+$theme: light;
+$link-color: #0188e2;
+$backgound-color: #eeeeee;
+$blocks-backgound-color: #dbdbdb;
+
+$site-width: 500px;
+$margin: 50px;
+$radius: 5px;
+
+html{
+    background-color: $backgound-color;
+}
 
 *{
     transition: all 0.5s ease-out;
 }
+
 
 h1,h2,h3,h4{
     font-family: $sans-serif
@@ -23,9 +38,15 @@ a:hover{
 }
 
 body{
-    width: 500px;
-    margin-left: 50px;
+    width: $site-width;
+    margin-left: $margin;
+    margin-top: 0;
     font-family: $serif
+}
+
+.content{
+    font-size: 105%;
+    margin-bottom: 100px;
 }
 
 header{
@@ -45,7 +66,71 @@ header{
     }
 }
 
+blockquote{
+    font-family: $quote-font;
+    font-size: 115%;
+    background-color: $blocks-backgound-color;
+    padding: 10px;
+    width: fit-content;
+}
+
+table{
+    border:1px solid black;
+    border-radius: $radius;
+}
+
+
+code{
+    font-family: $monospace-font;
+}
 
 footer{
-       
+    margin-top: 200px;
+    font-size: 60%;
+}
+
+
+#posts{
+    display:table;
+    width: 100%;
+    
+    li{
+        list-style-type: none;
+        margin-bottom: 10pt;
+        padding-top: 10pt;
+        margin-left: 50pt;
+        display:table-row;
+
+        border: 1px;
+        border-radius: 5px;
+
+    
+    .date, .section, .name{
+        display:table-cell;
+    }
+    
+    .name{
+        font-weight: bold;
+    }
+    
+    .section, .date {
+        font-style: italic;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    }:hover{
+        color: inherit;
+    }
+    
+    li:hover{
+        background-color: lightblue;
+        color: initial;
+    }
+}
+
+.big-title{
+    padding-top: 100px;
 }

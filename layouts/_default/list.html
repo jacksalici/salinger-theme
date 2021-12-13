@@ -4,10 +4,8 @@
         <a href="{{.Permalink}}">{{.Title}}</a>   
    </h3>
 
-    <table>
-        <tb> 
-           {{partial "recursive.html" .}}
-        </tb>
-    </table>
+    <div id="posts">   
+           {{partial "recursive.html" .}}       
+    </div>
                   
   {{end}}
