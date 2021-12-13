@@ -1,7 +1,13 @@
 {{ define "main" }}
     <main>
         <h2>{{.Title}}</h2>
+        
         {{ .Content }}
+        
+        {{ range  .RegularPages}}
+            {{.Render "li"}}
+        {{ end }}   
+
         {{.Render "list"}}
     </main>
 {{ end }}
