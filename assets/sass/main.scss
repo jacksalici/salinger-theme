@@ -91,22 +91,23 @@ footer{
 
 
 #posts{
-    display:table;
-    width: 100%;
-    
     li{
         list-style-type: none;
+
+    }
+
+    .post{
         margin-bottom: 10pt;
         padding-top: 10pt;
         margin-left: 50pt;
-        display:table-row;
-
+        margin: 10px;
         border: 1px;
         border-radius: 5px;
-
+        padding: 10px;
+        width: fit-content;
     
     .date, .section, .name{
-        display:table-cell;
+        //display:table-cell;
     }
     
     .name{
@@ -115,6 +116,8 @@ footer{
     
     .section, .date {
         font-style: italic;
+        font-size: 80%;
+
     }
 
     a{
@@ -126,11 +129,16 @@ footer{
     }
     
     li:hover{
-        background-color: lightblue;
+        background-color: lightgray;
         color: initial;
     }
 }
 
 .big-title{
     padding-top: 100px;
+}
+
+img{
+    width: 100%;
+    border-radius: $radius;
 }
