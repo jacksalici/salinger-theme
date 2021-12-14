@@ -35,7 +35,7 @@ Why this name? During the design of the light mode homepage, I was inspired by [
 ## Quick Start ⚠️
 
 ### Preview the _exampleSite_ 
-
+x
 ```shell
 git clone https://github.com/jacksalici/salinger-theme.git salinger
 cd salinger/exampleSite
