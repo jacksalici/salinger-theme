@@ -1,5 +1,23 @@
 {{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
 <header>
-    <h2 class="site-name"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+  <ul >
+    <li class="logo">
+        <a href="{{ .Site.BaseURL }}">
+          <img
+            
+            src="{{.Site.BaseURL}}/logo.svg"
+            alt="{{.Site.Title}}"
+          />
+        </a>
+    </li>
+
+    <div class="nav-bar">
+    {{range .Site.Menus.main.ByWeight -}}
+    <li class="menu-item">
+      <a href="{{.URL}}">{{- .Name -}}</a>
+    </li>
+    {{- end}}
+  </ul>
+</div>
 </header>
 {{end}}
