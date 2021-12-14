@@ -1,11 +1,11 @@
 # Salinger ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
 
-__Salinger__ is a __new-born clean-mimalistic mobile-first blazing-fast fancy__ and __lightweight__ but __powerful theme__ for [Hugo framework](https://gohugo.io).
+___Salinger___ is a __new-born clean-mimalistic mobile-first blazing-fast fancy__ and __lightweight__ but __powerful theme__ for [Hugo framework](https://gohugo.io).
 Born as the theme for [my personal website (where you can see a demo)](http://jacksalici.com), I'd like to develop a lot of other stuffs, starting with the following feature. 
-Why this name? During the development of the minimalism I was inspired by [the cover of Einaudi edition of _The Catcher in The Rye_](https://duckduckgo.com/?q=il+giovane+holden+by+j.d.+salinger+einaudi+1961&t=h_&ia=images&iax=images&iaf=color%3AWhite), by J.D. Salinger, 
+Why this name? During the development of the minimalism of this theme I was inspired by [the cover of Einaudi edition of _The Catcher in The Rye_](https://duckduckgo.com/?q=il+giovane+holden+by+j.d.+salinger+einaudi+1961&t=h_&ia=images&iax=images&iaf=color%3AWhite), by J.D. Salinger, 
 
-## Features included or to be included:
-###### Checked box have already been developed.
+## Features already included or to be included:
+
 - [ ] Dark mode
 - [x] Navigation items
 - [ ] Google Analytics
@@ -31,7 +31,7 @@ hugo server --themesDir ../..
 
 ## Quick Start
 
-1. Add the repository into your Hugo Project repository as a submodule: `git submodule add https://github.com/jacksalici/salinger-theme.git themes/anatole`.
+1. Add the repository into your Hugo Project repository as a submodule: `git submodule add https://github.com/jacksalici/salinger-theme.git themes/salinger`.
 2. Configure your `config.toml`. I suggest you to copy the demo `config.toml`.
 3. Having installed Hugo on your local machine, you can build your site with `hugo server` and admire the result at `http://localhost:1313/`.
 
@@ -48,6 +48,4 @@ I will soon create the wiki.
 
 ## License
 
-Salinger is licensed under the [MIT license](https://github.com/lxndrblz/anatole/blob/master/LICENSE).
-
-
+Salinger is licensed under the [MIT license](https://github.com/jacksalici/salinger-theme/blob/master/LICENSE).
