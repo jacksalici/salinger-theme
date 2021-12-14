@@ -1,19 +1,28 @@
 {{ define "main" }}
 <article>
-    <header id="post-header">
-        <h1>{{ .Title }}</h1>
-            <div>
-            {{- if isset .Params "date" -}}
-                {{ if eq .Lastmod .Date }}
-                <time>{{ .Date.Format .Site.Params.DateFormat }}</time>
-                {{ else }}
-                Updated <time>{{ .Date.Format .Site.Params.DateFormat }}</time>
-                {{ end }}
-            {{- end -}}
-            </div>
+    <div class="post-header">
+        <h1 class="name">{{ .Title }}</h1>
             
+        <div class="meta">
+            <span class="date">
+                Published on {{.Date.Format .Site.Params.DateFormat}}
+                </span>
+                
+                {{with .CurrentSection}}
+                    <span class="section">
+                        in <a href="{{.Permalink}}">
+                            {{ .Title }}
+                            </a>
+                    </span>
+                {{else}}
+                    <span class="date">.</span>
+                {{end}}
+        </div>    
 
-    </header>
-    {{- .Content -}}
+    </div>
+    <div class="post-text">
+        {{- .Content -}}
+    </div>
+    
 </article>
 {{ end }}
