@@ -1,10 +1,9 @@
 {{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
 <header>
-  <ul >
+  <ul>
     <li class="logo">
         <a href="{{ .Site.BaseURL }}">
           <img
-            
             src="{{.Site.BaseURL}}/logo.svg"
             alt="{{.Site.Title}}"
           />
