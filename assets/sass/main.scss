@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Merriweather:ital@0;1&family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Merriweather:ital@0;1&family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap");
 
-$sans-serif: 'Montserrat', sans-serif;
-$serif: 'Merriweather', serif;
-$quote-font: 'Indie Flower', cursive;
-$monospace-font: 'Fira Mono', monospace;
+$sans-serif: "Montserrat", sans-serif;
+$serif: "Merriweather", serif;
+$quote-font: "Indie Flower", cursive;
+$monospace-font: "Fira Mono", monospace;
 
 $theme: light;
 $link-color: #0188e2;
@@ -12,133 +12,128 @@ $blocks-backgound-color: #dbdbdb;
 
 $site-width: 500px;
 $margin: 50px;
-$radius: 5px;
+$radius: 10px;
 
-html{
-    background-color: $backgound-color;
+html {
+  background-color: $backgound-color;
 }
 
-*{
-    transition: all 0.5s ease-out;
+* {
+  transition: all 0.5s ease-out;
 }
 
-
-h1,h2,h3,h4{
-    font-family: $sans-serif
+h1,
+h2,
+h3,
+h4 {
+  font-family: $sans-serif;
 }
 
-a{
-    text-decoration-style: wavy;
-    color: black;
-}::after{
+a {
+  text-decoration-style: wavy;
+  color: black;
+}
+::after {
+  color: inherit;
+}
+a:hover {
+  color: $link-color;
+}
+
+body {
+  width: $site-width;
+  margin-left: $margin;
+  margin-top: 0;
+  font-family: $serif;
+}
+
+.content {
+  font-size: 105%;
+  margin-bottom: 100px;
+}
+
+header {
+  margin-top: 5px;
+
+  a {
+    text-decoration: none;
+  }
+  :hover {
     color: inherit;
-}
-a:hover{
-    color:$link-color;
-}
+  }
 
-body{
-    width: $site-width;
-    margin-left: $margin;
-    margin-top: 0;
-    font-family: $serif
+  .site-name {
+    margin: 0;
+    text-transform: uppercase;
+  }
 }
 
-.content{
-    font-size: 105%;
-    margin-bottom: 100px;
+blockquote {
+  font-family: $quote-font;
+  font-size: 115%;
+  background-color: $blocks-backgound-color;
+  padding: 10px;
+  width: fit-content;
 }
 
-header{
-    margin-top: 5px;
-
-    a{
-        text-decoration: none;
-    }
-    :hover
-    {
-        color: inherit;
-    }
-
-    .site-name{
-        margin: 0;
-        text-transform:uppercase;
-    }
+table {
+  border: 1px solid black;
+  border-radius: $radius;
 }
 
-blockquote{
-    font-family: $quote-font;
-    font-size: 115%;
-    background-color: $blocks-backgound-color;
-    padding: 10px;
+code {
+  font-family: $monospace-font;
+}
+
+footer {
+  margin-top: 200px;
+  font-size: 60%;
+}
+
+#posts {
+  li {
+    list-style-type: none;
+  }
+
+  .post {
+    margin-left: 50pt;
+    border-radius: $radius;
+    padding: 20px;
     width: fit-content;
+ 
+
+    .date,
+    .section,
+    .name {
+      //display:table-cell;
+    }
+
+    .name {
+      font-weight: bold;
+    }
+
+    .section,
+    .date {
+      font-style: italic;
+      font-size: 80%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+  
+  .post:hover {
+    background-color: lightgray;
+    color: initial;
+  }
 }
 
-table{
-    border:1px solid black;
-    border-radius: $radius;
+.big-title {
+  padding-top: 100px;
 }
 
-
-code{
-    font-family: $monospace-font;
-}
-
-footer{
-    margin-top: 200px;
-    font-size: 60%;
-}
-
-
-#posts{
-    li{
-        list-style-type: none;
-
-    }
-
-    .post{
-        margin-bottom: 10pt;
-        padding-top: 10pt;
-        margin-left: 50pt;
-        margin: 10px;
-        border: 1px;
-        border-radius: 5px;
-        padding: 10px;
-        width: fit-content;
-    
-    .date, .section, .name{
-        //display:table-cell;
-    }
-    
-    .name{
-        font-weight: bold;
-    }
-    
-    .section, .date {
-        font-style: italic;
-        font-size: 80%;
-
-    }
-
-    a{
-        text-decoration: none;
-    }
-
-    }:hover{
-        color: inherit;
-    }
-    
-    li:hover{
-        background-color: lightgray;
-        color: initial;
-    }
-}
-
-.big-title{
-    padding-top: 100px;
-}
-
-img{
-    width: 100%;
-    border-radius: $radius;
+img {
+  width: 100%;
+  border-radius: $radius;
 }
