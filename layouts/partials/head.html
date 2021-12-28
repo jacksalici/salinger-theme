@@ -11,6 +11,6 @@
     {{ $sass := resources.Get "sass/main.scss" }}
     {{ $css := $sass | resources.ToCSS | minify }}
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
-
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <title>{{ .Title }}</title>
 </head>

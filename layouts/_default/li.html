@@ -3,7 +3,11 @@
     <div class="post">
     <a href="{{.Permalink}}">
         <span class="name">
-            {{.Title}}<br>
+            {{with .Params.Summary}}
+                {{.}}<br>
+            {{else}}
+                {{.Title}}<br>
+            {{end}}
         </span>
 
         <span class="date">

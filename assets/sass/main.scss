@@ -76,6 +76,10 @@ blockquote {
 table {
   border: 1px solid black;
   border-radius: $radius;
+  border-spacing: 10px;
+}
+tr, td{
+text-align: left;
 }
 
 code {
@@ -86,6 +90,19 @@ footer {
   margin-top: 200px;
   font-size: 60%;
 }
+
+.section-title{
+  font-size: 150%;
+  text-decoration: none;
+  color: $blocks-backgound-color
+  
+  
+
+}
+.section-title:hover{
+color:$blocks-backgound-color;
+}
+
 
 #posts {
   li {
