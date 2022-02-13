@@ -2,6 +2,7 @@
 <html lang="en">
     {{- partial "head.html" . -}}
     <body>
+        
         {{- partial "header.html" . -}}
         {{- if (eq .Kind "Section" ) -}}
         {{- .Render "list" -}}

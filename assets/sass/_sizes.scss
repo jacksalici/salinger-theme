@@ -1,0 +1,23 @@
+
+@import "_variables";
+@import "_responsive";
+html{
+    font-size: 14px;
+}
+
+p{
+    line-height: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $sans-serif;
+  margin-bottom: 5pt;
+  
+}
+
+h1{
+    font-size: 2em;
+}
