@@ -1,39 +1,46 @@
-
 @import "_sizes";
 
-
-
 html {
-    font-size: 95%;
-    background: linear-gradient(rgba(255, 255, 255, .8), rgba(255,255,255, .8)), url("noise.jpeg");
-
-    background-color: $backgound-color;
-    background-size: cover;
-    background-attachment: fixed;
-
-
+  background-color: $backgound-color;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-
-
-a{
-  color:inherit
+::-moz-selection {
+  background: $selected;
 }
 
-a:hover{
- text-decoration: underline;
+::selection {
+  background: $selected;
 }
 
 body {
   max-width: $site-width;
-  margin-top: 0;
   font-family: $serif;
   padding: $padding;
+  min-height: 100vh;
 
   @include responsive($big-display) {
     margin-left: $big-margin;
   }
+  
+}
 
+a {
+  color: inherit;
+
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='30' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='100%'>👆</text></svg>")
+      16 0,
+    auto;
+
+  -webkit-transition: color 500ms ease-out;
+  -moz-transition: color 500ms ease-out;
+  -o-transition: color 500ms ease-out;
+  transition: color 500ms ease-out;
+}
+
+a:hover {
+  color: $link-color;
 }
 
 .content {
@@ -64,8 +71,9 @@ table {
   border-radius: $radius;
   border-spacing: 10px;
 }
-tr, td{
-text-align: left;
+tr,
+td {
+  text-align: left;
 }
 
 code {
@@ -78,18 +86,18 @@ code {
 footer {
   margin-top: 200px;
   font-size: 60%;
+  position: absolute;
 }
 
-.section-title{
+.section-title {
   font-size: 150%;
   text-decoration: none;
-  color: $blocks-backgound-color
-  
+  color: $blocks-backgound-color;
 }
-.section-title:hover{
-color:$blocks-backgound-color;
+.section-title:hover {
+  text-decoration: none;
+  color: $blocks-backgound-color;
 }
-
 
 #posts {
   li {
@@ -101,7 +109,7 @@ color:$blocks-backgound-color;
     border-radius: $radius;
     padding: 20px;
     width: fit-content;
-
+    text-decoration: none;
 
     .name {
       font-weight: 400;
@@ -120,10 +128,9 @@ color:$blocks-backgound-color;
   }
 
   .post:hover {
-    background-color: $blocks-backgound-color;
-    color: initial;
-    text-decoration: underline;
-    text-decoration-style: wavy;
+    .name {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -137,15 +144,19 @@ img {
   border-radius: $radius;
 }
 
+/*
+Header bar
+*/
+
 header {
   margin-top: 0px;
   margin-bottom: 120px;
-  
+
   ul {
     padding-left: 0px;
     list-style-type: none;
     display: flex;
-    
+
     .nav-bar {
       display: flex;
       width: 100%;
@@ -180,17 +191,21 @@ header {
         border-radius: $radius;
         font-family: $sans-serif;
 
+        -webkit-transition: background-color 5000ms ease-out;
+        -moz-transition: background-color 5000ms ease-out;
+        -o-transition: background-color 5000ms ease-out;
+        transition: background-color 5000ms ease-out;
+
         a {
           text-decoration: none;
         }
       }
       .menu-item:hover {
         background-color: $blocks-backgound-color;
-;
       }
     }
 
-    .logo {    
+    .logo {
       width: 12%;
       min-width: 50px;
       max-width: 100px;
@@ -201,80 +216,5 @@ header {
         border-radius: 0px;
       }
     }
-  }
-}
-
-.box {
-  display: inline-block;
-  float: left;
-  width: 160px;
-  position: relative;
-  height: 160px;
-  border: 1px solid $blocks-backgound-color;
-  z-index: 0;
-  transition: all .3s ease;
-  opacity: 1;
-  margin-right:  -1px;
-  
-  &:hover {
-   z-index: 10;
-
-   
-  }
-  
-  &:before, &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    background: $backgound-color;
-    top:  50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation-iteration-count: 1;
-    transform-origin: 50% 50%;
-    opacity: 1;
-    
-  }
-  &:before {
-    width: calc(100% + 2px);
-    height: 100%;
-    z-index: 1;
-    transition: height 1s ease, opacity .8s ease;
-   
-  }
-  
-  &:after {
-    height: calc(100% + 2px);
-    width: 100%;
-    z-index: 1;
-    transition: width 1s ease, opacity .8s ease;
-
-  }
-  
-  &:hover, &:focus{
-    &:before {
-      transition: height .2s ease , opacity .3s ease;
-      height: 85%;
-      opacity: .7;
-      
-    }
-    
-    &:after {
-       transition: width .2s ease,  opacity .3s ease;
-       width: 85%;
-       opacity: .8;
-    }
-  }
-  
-  &__image {
-    fill: $blocks-backgound-color;
-    width: 60%;
-    will-change: width;
-    position: absolute;
-    top:  50%;
-    left: 50%;
-    transform: translate(-50%, -50%)  scale(1);
-    transition: all .5s ease;
-    z-index: 2;
   }
 }

@@ -8,16 +8,23 @@ $monospace-font: "Fira Mono", monospace;
 
 //colors
 $theme: light;
-$link-color: #0188e2;
+$link-color: #01b5e2;
 $backgound-color: #eeeeee;
 $blocks-backgound-color: #dadada;
+$highlights:  linear-gradient(
+    90deg,
+    rgba(2, 97, 168, 1) 0%,
+    rgba(126, 126, 126, 1) 100%
+  );
+
+$selected:  rgba(255, 255, 112, 0.996);
 
 
 //dimensions
 $site-width: 500px;
 $big-margin: 50px;
 $padding: 5px;
-$radius: 10px;
+$radius: 5px;
 
 //breakpoints
 $big-display: 768px //64em
