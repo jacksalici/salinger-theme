@@ -1,5 +1,5 @@
 <footer>
     {{ with .Site.Params.copyright }}
-    &copy; {{ now.Year }} {{. | safeHTML}}
+    <h6>&copy; {{ now.Year }} {{. | safeHTML}} Powered by <a href="https://github.com/jacksalici/salinger-theme">Salinger</a> Hugo theme.</h6>
     {{end}}
 </footer>

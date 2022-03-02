@@ -3,7 +3,7 @@
     <div class="post-header">
         <h1 class="name">{{ .Title }}</h1>
             
-       <div class="meta">
+        <h6 class="meta">
             <span class="date">
                 Published on {{.Date.Format .Site.Params.DateFormat}}
                 </span>
@@ -17,10 +17,17 @@
                 {{else}}
                     <span class="date">.</span>
                 {{end}}
-        </div>
-
+        </h6>
 
     </div>
+
+    {{if .Params.toc}}
+    <aside class="toc">
+        <h4>Table of Content</h4>
+        {{ .TableOfContents }}
+    </aside>
+    {{end}}
+
     <div class="post-text">
         {{- .Content -}}
     </div>
