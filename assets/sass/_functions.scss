@@ -3,3 +3,11 @@
       @content;
     }
   }
+
+@mixin transition($properties) {
+  -webkit-transition: $properties;
+     -moz-transition: $properties;
+      -ms-transition: $properties;
+       -o-transition: $properties;
+          transition: $properties;
+}

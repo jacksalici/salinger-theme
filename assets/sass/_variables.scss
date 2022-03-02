@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Merriweather:ital@0;1&family=Montserrat:ital,wght@0,400;0,800;1,400;1,800&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Merriweather:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap');
 //fonts
 $sans-serif: "Montserrat", sans-serif;
 $serif: "Merriweather", serif;
@@ -17,12 +16,15 @@ $highlights:  linear-gradient(
     rgba(126, 126, 126, 1) 100%
   );
 
-$selected:  rgba(255, 255, 112, 0.996);
+$selected:  rgba(255, 250, 175, 0.996);
 
 
 //dimensions
-$site-width: 500px;
-$big-margin: 50px;
+$max-site-width: 1500px;
+$content-width: 700px;
+$content-smaller-width: 500px;
+
+$big-margin: 10%;
 $padding: 5px;
 $radius: 5px;
 

@@ -2,8 +2,7 @@
 
 html {
   background-color: $backgound-color;
-  background-size: cover;
-  background-attachment: fixed;
+  
 }
 
 ::-moz-selection {
@@ -15,13 +14,20 @@ html {
 }
 
 body {
-  max-width: $site-width;
+  max-width: $max-site-width;
   font-family: $serif;
   padding: $padding;
   min-height: 100vh;
 
   @include responsive($big-display) {
     margin-left: $big-margin;
+    margin-right: $big-margin;
+  }
+
+  @include responsive($max-site-width){
+    padding-left: $big-margin;
+    padding-right: $big-margin;
+    margin: auto;
   }
   
 }
@@ -33,28 +39,37 @@ a {
       16 0,
     auto;
 
-  -webkit-transition: color 500ms ease-out;
-  -moz-transition: color 500ms ease-out;
-  -o-transition: color 500ms ease-out;
-  transition: color 500ms ease-out;
+  @include transition(color 500ms ease-out);
+
 }
 
 a:hover {
   color: $link-color;
 }
 
-.content {
-  margin-bottom: 100px;
+
+
+aside{
+ display: none;
+  @include responsive($big-display){
+    display: block;
+    float: right;
+  }
 }
 
 article {
   .post-text {
     text-align: justify;
     hyphens: auto;
+    max-width: $content-width;
+
+    @include responsive($big-display){
+      width: 70%;
+    }
   }
   .meta {
-    font-size: 0.75em;
     font-style: italic;
+    margin: 0px;
   }
 }
 
@@ -78,14 +93,13 @@ td {
 
 code {
   font-family: $monospace-font;
-  background-color: $blocks-backgound-color;
   padding: 5px;
   border-radius: $radius;
 }
 
 footer {
   margin-top: 200px;
-  font-size: 60%;
+  margin-bottom: 20px;
   position: absolute;
 }
 
@@ -97,6 +111,30 @@ footer {
 .section-title:hover {
   text-decoration: none;
   color: $blocks-backgound-color;
+}
+
+
+
+img {
+  width: 100%;
+  border-radius: $radius;
+}
+
+
+/*
+  Home page objects
+*/
+
+.content {
+  margin-bottom: 100px;
+  max-width: $content-smaller-width;
+}
+
+
+.big-title {
+  font-size: 4.5em;
+  padding-top: 100px;
+  max-width: $content-smaller-width;
 }
 
 #posts {
@@ -132,16 +170,6 @@ footer {
       text-decoration: underline;
     }
   }
-}
-
-.big-title {
-  padding-top: 100px;
-  font-size: 4em;
-}
-
-img {
-  width: 100%;
-  border-radius: $radius;
 }
 
 /*
@@ -191,10 +219,8 @@ header {
         border-radius: $radius;
         font-family: $sans-serif;
 
-        -webkit-transition: background-color 5000ms ease-out;
-        -moz-transition: background-color 5000ms ease-out;
-        -o-transition: background-color 5000ms ease-out;
-        transition: background-color 5000ms ease-out;
+      
+        @include transition(background-color 5000ms ease-out);
 
         a {
           text-decoration: none;
@@ -206,14 +232,17 @@ header {
     }
 
     .logo {
-      width: 12%;
-      min-width: 50px;
+      
       max-width: 100px;
-      border-radius: 0;
+      max-height: 10px;
+
       margin-left: 0;
       padding-left: 0px;
       img {
+        max-width: 100px;
+        max-height: 50px;
         border-radius: 0px;
+        
       }
     }
   }
