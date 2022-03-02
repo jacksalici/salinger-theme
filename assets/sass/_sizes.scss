@@ -2,11 +2,15 @@
 @import "_variables";
 @import "_responsive";
 html{
-    font-size: 14px;
+    font-size: 16px;
 }
 
 p{
-    line-height: 1.5em;
+    line-height: 1.6em;
+}
+
+strong{
+    font-weight: 900;
 }
 
 h1,
