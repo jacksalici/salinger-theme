@@ -174,9 +174,19 @@ pre {
   }
 }
 
+.main-line{
+  border: 0px;
+  border-top: 2px $blocks-backgound-color solid;
+  max-width: $content-smaller-width;
+  align-self: left;
+  margin-left: 0px;
+ 
+}
+
 footer {
   margin-top: 200px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
   position: absolute;
 }
 
