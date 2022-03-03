@@ -1,9 +1,60 @@
-@import "_sizes";
+@import "_variables";
+@import "_functions";
 
-html {
-  background-color: $backgound-color;
-  
+html{
+    font-size: 16px;
+    background-color: $backgound-color;
+
 }
+
+p{
+    line-height: 1.6em;
+}
+
+strong{
+    font-weight: 900;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $sans-serif;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+
+h1{
+    font-size: 3em;
+}
+
+h2{
+    font-size: 2em;
+}
+
+h3{
+    font-size: 1.8em;
+}
+
+h4{
+    font-size: 1.4em;
+}
+
+h5{
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+h6{
+    font-size: 0.7em;
+    font-style: normal;
+    font-weight: inherit;
+    margin: 0px;
+}
+
 
 ::-moz-selection {
   background: $selected;
@@ -24,12 +75,11 @@ body {
     margin-right: $big-margin;
   }
 
-  @include responsive($max-site-width){
+  @include responsive($max-site-width) {
     padding-left: $big-margin;
     padding-right: $big-margin;
     margin: auto;
   }
-  
 }
 
 a {
@@ -40,35 +90,47 @@ a {
     auto;
 
   @include transition(color 500ms ease-out);
-
 }
 
 a:hover {
   color: $link-color;
 }
 
-
-
-aside{
- display: none;
-  @include responsive($big-display){
+aside {
+  display: none;
+  @include responsive($big-display) {
     display: block;
     float: right;
+    color: $blocks-backgound-color;
+  }
+
+  #TableOfContents {
+    ul,
+    li {
+      font-size: 0.9em;
+      margin-top: 10px;
+      list-style-type: none;
+      a {
+        text-decoration: none;
+      }
+    }
   }
 }
 
 article {
+  .post-header {
+    margin-bottom: 50px;
+  }
   .post-text {
     text-align: justify;
     hyphens: auto;
     max-width: $content-width;
 
-    @include responsive($big-display){
+    @include responsive($big-display) {
       width: 70%;
     }
   }
   .meta {
-    font-style: italic;
     margin: 0px;
   }
 }
@@ -97,6 +159,21 @@ code {
   border-radius: $radius;
 }
 
+pre {
+  code {
+    background-color: $blocks-backgound-color;
+    line-height: 130%;
+  }
+}
+
+.highlight {
+  pre {
+    code {
+      background-color: unset;
+    }
+  }
+}
+
 footer {
   margin-top: 200px;
   margin-bottom: 20px;
@@ -113,13 +190,10 @@ footer {
   color: $blocks-backgound-color;
 }
 
-
-
 img {
   width: 100%;
   border-radius: $radius;
 }
-
 
 /*
   Home page objects
@@ -129,7 +203,6 @@ img {
   margin-bottom: 100px;
   max-width: $content-smaller-width;
 }
-
 
 .big-title {
   font-size: 4.5em;
@@ -156,8 +229,7 @@ img {
 
     .section,
     .date {
-      font-style: italic;
-      font-size: 75%;
+      //font-size: 75%;
     }
 
     a {
@@ -219,7 +291,6 @@ header {
         border-radius: $radius;
         font-family: $sans-serif;
 
-      
         @include transition(background-color 5000ms ease-out);
 
         a {
@@ -232,7 +303,6 @@ header {
     }
 
     .logo {
-      
       max-width: 100px;
       max-height: 10px;
 
@@ -242,7 +312,6 @@ header {
         max-width: 100px;
         max-height: 50px;
         border-radius: 0px;
-        
       }
     }
   }
