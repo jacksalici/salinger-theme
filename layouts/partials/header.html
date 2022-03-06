@@ -4,19 +4,28 @@
     <li class="logo">
         <a href="{{ .Site.BaseURL }}">
           <img
-            src="{{.Site.BaseURL}}/logo.svg"
+            src="{{.Site.BaseURL}}/logo.png"
             alt="{{.Site.Title}}"
           />
         </a>
     </li>
 
-    <div class="nav-bar">
+    <nav class="nav-bar">
     {{range .Site.Menus.main.ByWeight -}}
     <li class="menu-item">
       <a href="{{.URL}}">{{- .Name -}}</a>
     </li>
     {{- end}}
+
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+  </div>
+
+  </nav>
   </ul>
-</div>
+  
+
 </header>
 {{end}}
