@@ -2,13 +2,13 @@
 @import "_functions";
 
 html{
-    font-size: 16px;
+    font-size: 15px;
     background-color: $backgound-color;
 
 }
 
 p{
-    line-height: 1.6em;
+    line-height: 1.3em;
 }
 
 strong{
@@ -28,11 +28,11 @@ h6 {
 
 
 h1{
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 h2{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 h3{
@@ -66,7 +66,7 @@ h6{
 
 body {
   max-width: $max-site-width;
-  font-family: $serif;
+  font-family: $sans-serif;
   padding: $padding;
   min-height: 100vh;
 
@@ -191,7 +191,6 @@ footer {
 }
 
 .section-title {
-  font-size: 150%;
   text-decoration: none;
   color: $blocks-backgound-color;
 }
@@ -212,11 +211,16 @@ img {
 .content {
   margin-bottom: 100px;
   max-width: $content-smaller-width;
+  text-align: justify;
 }
 
 .big-title {
-  font-size: 4.5em;
+  font-size: 3em;
+  @include responsive($big-display){
+    font-size: 4em
+  };
   padding-top: 100px;
+  padding-bottom: 50px;
   max-width: $content-smaller-width;
 }
 
@@ -261,6 +265,8 @@ Header bar
 header {
   margin-top: 0px;
   margin-bottom: 120px;
+
+  
 
   ul {
     padding-left: 0px;
@@ -307,21 +313,16 @@ header {
           text-decoration: none;
         }
       }
-      .menu-item:hover {
-        background-color: $blocks-backgound-color;
-      }
+    
     }
 
     .logo {
-      max-width: 100px;
-      max-height: 10px;
+      max-width: 50px;
 
       margin-left: 0;
       padding-left: 0px;
       img {
-        max-width: 100px;
-        max-height: 50px;
-        border-radius: 0px;
+       border-radius: 0px;
       }
     }
   }
