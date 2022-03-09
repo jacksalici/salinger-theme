@@ -1,31 +1,26 @@
-{{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
-<header>
-  <ul>
-    <li class="logo">
-        <a href="{{ .Site.BaseURL }}">
-          <img
-            src="{{.Site.BaseURL}}/logo.png"
-            alt="{{.Site.Title}}"
-          />
-        </a>
-    </li>
-
-    <nav class="nav-bar">
-    {{range .Site.Menus.main.ByWeight -}}
-    <li class="menu-item">
-      <a href="{{.URL}}">{{- .Name -}}</a>
-    </li>
-    {{- end}}
-
-    <div class="hamburger">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-  </div>
-
-  </nav>
-  </ul>
+<!--{{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}{{- end}}-->
+<header class="header">
   
+  
+    <a class="logo" href="{{ .Site.BaseURL }}">
+      <img src="{{.Site.BaseURL}}/logo.png" alt="{{.Site.Title}}" />
+    </a>
 
+    <nav class="navbar">
+      <ul class="nav-menu">
+       
+      {{range .Site.Menus.main.ByWeight -}}
+      <li class="nav-item">
+        <a href="{{.URL}}" class="nav-link">{{- .Name -}}</a>
+      </li>
+      {{- end}}
+  </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  
 </header>
-{{end}}
+
