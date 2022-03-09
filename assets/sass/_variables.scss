@@ -6,18 +6,30 @@ $quote-font: "Indie Flower", cursive;
 $monospace-font: "Fira Mono", monospace;
 
 //colors
-$theme: light;
-$link-color: #01b5e2;
-$backgound-color: #ffffff;
-$blocks-backgound-color: #dadada;
-$grey: #828282;
-$highlights:  linear-gradient(
-    90deg,
-    rgba(2, 97, 168, 1) 0%,
-    rgba(126, 126, 126, 1) 100%
-  );
+$main-color: 'main-color';
+$link-color: 'link-color';
+$backgound-color: 'background-color';
+$blocks-backgound-color: 'blocks-backgound-color';
+$selected:  'selected';
 
-$selected:  rgba(255, 250, 175, 0.996);
+
+
+$themes:(
+  light:(
+    main-color:black,
+    link-color: #01b5e2,
+    backgound-color: #ffffff,
+    blocks-backgound-color: rgba(225,225,225, 0.8),
+    selected:  rgba(255, 250, 175, 0.996),
+  ),
+  dark:(
+    main-color:white,
+    link-color: #006f8b,
+    backgound-color: #000000,
+    blocks-backgound-color: rgba(25,25,25, 0.8),
+    selected:  rgba(143, 140, 93, 0.996),
+  ),
+);
 
 
 //dimensions
@@ -30,4 +42,7 @@ $padding: 5px;
 $radius: 5px;
 
 //breakpoints
-$big-display: 768px //64em
+$big-display: 768px; //64em
+
+
+
