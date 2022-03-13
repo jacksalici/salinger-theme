@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--{{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}{{- end}}-->
 <header class="header">
   
@@ -37,5 +38,27 @@
       </div>
     </nav>
   
+=======
+{{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
+<header>
+  <ul>
+    <li class="logo">
+        <a href="{{ .Site.BaseURL }}">
+          <img
+            src="{{.Site.BaseURL}}/logo.svg"
+            alt="{{.Site.Title}}"
+          />
+        </a>
+    </li>
+
+    <div class="nav-bar">
+    {{range .Site.Menus.main.ByWeight -}}
+    <li class="menu-item">
+      <a href="{{.URL}}">{{- .Name -}}</a>
+    </li>
+    {{- end}}
+  </ul>
+</div>
+>>>>>>> parent of b4e0494 (font size)
 </header>
 
