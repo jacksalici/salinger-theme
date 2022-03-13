@@ -1,28 +1,29 @@
-$theme: 'dark';
-$dark: true;
-
 @mixin responsive($query) {
-    @media (min-width: $query) {
-      @content;
-    }
+  @media (min-width: $query) {
+    @content;
   }
+}
 
 @mixin transition($properties) {
   -webkit-transition: $properties;
-     -moz-transition: $properties;
-      -ms-transition: $properties;
-       -o-transition: $properties;
-          transition: $properties;
+  -moz-transition: $properties;
+  -ms-transition: $properties;
+  -o-transition: $properties;
+  transition: $properties;
 }
-
 
 @mixin themed() {
   @each $theme, $map in $themes {
     .theme--#{$theme} & {
       $theme-map: () !global;
       @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
       }
       @content;
       $theme-map: null !global;

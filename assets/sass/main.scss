@@ -3,7 +3,10 @@
 
 html {
   font-size: 15px;
-  background-color: f($backgound-color);
+  @include themed() {
+    background-color: f($backgound-color);
+    color: f($main-color);
+  }
 }
 
 p {
@@ -54,11 +57,15 @@ h6 {
 }
 
 ::-moz-selection {
-  background: f($selected);
+  @include themed() {
+    background: f($selected);
+  }
 }
 
 ::selection {
-  background: f($selected);
+  @include themed() {
+    background: f($selected);
+  }
 }
 
 body {
@@ -90,7 +97,9 @@ a {
 }
 
 a:hover {
-  color: f($link-color);
+  @include themed() {
+    color: f($link-color);
+  }
 }
 
 aside {
@@ -98,7 +107,9 @@ aside {
   @include responsive($big-display) {
     display: block;
     float: right;
-    color: f($blocks-backgound-color);
+    @include themed() {
+      color: f($blocks-backgound-color);
+    }
   }
 
   #TableOfContents {
@@ -135,7 +146,9 @@ article {
 blockquote {
   font-family: $quote-font;
   font-size: 115%;
-  background-color: f($blocks-backgound-color);
+  @include themed() {
+    background-color: f($blocks-backgound-color);
+  }
   padding: 10px;
   width: fit-content;
 }
@@ -158,7 +171,9 @@ code {
 
 pre {
   code {
-    background-color: $blocks-backgound-color;
+    @include themed() {
+      background-color: f($blocks-backgound-color);
+    }
     line-height: 130%;
   }
 }
@@ -173,7 +188,9 @@ pre {
 
 .main-line {
   border: 0px;
-  border-top: 2px $blocks-backgound-color solid;
+  @include themed() {
+    border-top: 2px $blocks-backgound-color solid;
+  }
   max-width: $content-smaller-width;
   align-self: left;
   margin-left: 0px;
@@ -188,11 +205,15 @@ footer {
 
 .section-title {
   text-decoration: none;
-  color: f($blocks-backgound-color);
+  @include themed() {
+    color: f($blocks-backgound-color);
+  }
 }
 .section-title:hover {
   text-decoration: none;
-  color: f($blocks-backgound-color);
+  @include themed() {
+    color: f($blocks-backgound-color);
+  }
 }
 
 img {
@@ -265,8 +286,8 @@ header {
   vertical-align: middle;
 }
 
-.logo{
-  img{
+.logo {
+  img {
     width: unset;
     max-height: 40px;
     border-radius: 0px;
@@ -276,7 +297,6 @@ header {
 }
 
 .navbar {
-
   display: flex;
   margin-right: 5px;
   width: 100%;
@@ -287,7 +307,6 @@ header {
 .hamburger {
   display: none;
   margin-left: auto;
-
 }
 
 .bar {
@@ -297,7 +316,9 @@ header {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: f($main-color);
+  @include themed() {
+    background-color: f($main-color);
+  }
 }
 
 .nav-menu {
@@ -307,28 +328,29 @@ header {
   list-style: none;
 }
 
-
-.nav-item{
+.nav-item {
   margin-left: 25px;
 }
-.nav-item:hover{
-  color: $link-color;
+.nav-item:hover {
+  @include themed() {
+    color: f($link-color);
+  }
 }
- 
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    right: -100%; 
-    top: -50px; 
+    right: -100%;
+    top: -50px;
     padding: 20px;
     padding-top: 150px;
     flex-direction: column;
-    background-color: $blocks-backgound-color;
+    @include themed() {
+      background-color: f($blocks-backgound-color);
+    }
     border-radius: $radius;
     text-align: center;
     transition: 0.3s;
-    
   }
 
   .nav-menu.active {

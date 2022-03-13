@@ -16,14 +16,14 @@ $selected:  'selected';
 
 $themes:(
   light:(
-    main-color:black,
+    main-color:rgb(0, 0, 0),
     link-color: #01b5e2,
     backgound-color: #ffffff,
     blocks-backgound-color: rgba(225,225,225, 0.8),
     selected:  rgba(255, 250, 175, 0.996),
   ),
   dark:(
-    main-color:white,
+    main-color:rgb(255, 255, 255),
     link-color: #006f8b,
     backgound-color: #000000,
     blocks-backgound-color: rgba(25,25,25, 0.8),
