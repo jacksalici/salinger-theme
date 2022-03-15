@@ -3,10 +3,7 @@
 
 html {
   font-size: 15px;
-  @include themed() {
-    background-color: f($backgound-color);
-    color: f($main-color);
-  }
+  background-color: $backgound-color;
 }
 
 p {
@@ -57,15 +54,11 @@ h6 {
 }
 
 ::-moz-selection {
-  @include themed() {
-    background: f($selected);
-  }
+  background: $selected;
 }
 
 ::selection {
-  @include themed() {
-    background: f($selected);
-  }
+  background: $selected;
 }
 
 body {
@@ -97,9 +90,7 @@ a {
 }
 
 a:hover {
-  @include themed() {
-    color: f($link-color);
-  }
+  color: $link-color;
 }
 
 aside {
@@ -107,9 +98,7 @@ aside {
   @include responsive($big-display) {
     display: block;
     float: right;
-    @include themed() {
-      color: f($blocks-backgound-color);
-    }
+    color: $blocks-backgound-color;
   }
 
   #TableOfContents {
@@ -146,9 +135,7 @@ article {
 blockquote {
   font-family: $quote-font;
   font-size: 115%;
-  @include themed() {
-    background-color: f($blocks-backgound-color);
-  }
+  background-color: $blocks-backgound-color;
   padding: 10px;
   width: fit-content;
 }
@@ -171,9 +158,7 @@ code {
 
 pre {
   code {
-    @include themed() {
-      background-color: f($blocks-backgound-color);
-    }
+    background-color: $blocks-backgound-color;
     line-height: 130%;
   }
 }
@@ -188,9 +173,7 @@ pre {
 
 .main-line {
   border: 0px;
-  @include themed() {
-    border-top: 2px $blocks-backgound-color solid;
-  }
+  border-top: 2px $blocks-backgound-color solid;
   max-width: $content-smaller-width;
   align-self: left;
   margin-left: 0px;
@@ -205,15 +188,11 @@ footer {
 
 .section-title {
   text-decoration: none;
-  @include themed() {
-    color: f($blocks-backgound-color);
-  }
+  color: $blocks-backgound-color;
 }
 .section-title:hover {
   text-decoration: none;
-  @include themed() {
-    color: f($blocks-backgound-color);
-  }
+  color: $blocks-backgound-color;
 }
 
 img {
@@ -282,103 +261,57 @@ Header bar
 header {
   margin-top: 0px;
   margin-bottom: 120px;
-  display: flex;
-  vertical-align: middle;
-}
 
-.logo {
-  img {
-    width: unset;
-    max-height: 40px;
-    border-radius: 0px;
-    padding-right: 15px;
-  }
-  display: block;
-}
+  .navbar {
+    display: flex;
+    width: 100%;
 
-.navbar {
-  display: flex;
-  margin-right: 5px;
-  width: 100%;
-  align-content: right;
-  align-items: center;
-}
+    .site-name {
+      margin-top: 0px;
+      text-transform: uppercase;
+      display: block;
 
-.hamburger {
-  display: none;
-  margin-left: auto;
-}
-
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  @include themed() {
-    background-color: f($main-color);
-  }
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: right;
-  align-items: right;
-  list-style: none;
-}
-
-.nav-item {
-  margin-left: 25px;
-}
-.nav-item:hover {
-  @include themed() {
-    color: f($link-color);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    right: -100%;
-    top: -50px;
-    padding: 20px;
-    padding-top: 150px;
-    flex-direction: column;
-    @include themed() {
-      background-color: f($blocks-backgound-color);
+      a {
+        text-decoration: none;
+      }
+      .hover {
+        color: initial;
+      }
     }
-    border-radius: $radius;
-    text-align: center;
-    transition: 0.3s;
-  }
 
-  .nav-menu.active {
-    right: 0;
-  }
+    .nav-menu{
+      display: flex;
+      float: right;
+    }
 
-  .nav-item {
-    margin: 10px 0;
-  }
+    .nav-item {
+      float: right;
+      padding: 10px;
+      text-align: center;
+      display: block;
+      align-self: center;
+      border-radius: $radius;
+      font-family: $sans-serif;
+      @include transition(background-color 5000ms ease-out);
 
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    width: fit-content;
-    margin-right: 0px;
-  }
+      a {
+        text-decoration: none;
+      }
+    }
 
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(1) {
-    -webkit-transform: translateY(8px) rotate(45deg);
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    -webkit-transform: translateY(-8px) rotate(-45deg);
-    transform: translateY(-8px) rotate(-45deg);
+    .logo {
+      display: block;
+      margin-left: 0;
+      padding-left: 0px;
+      width: unset;
+      align-self: center;
+      
+        img {
+          max-height: 50px;
+          width: auto;
+          border-radius: 0px;
+        }
+      
+    }
   }
 }
