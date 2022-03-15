@@ -265,7 +265,7 @@ header {
   .navbar {
     display: flex;
     width: 100%;
-
+    justify-content: space-between;
     .site-name {
       margin-top: 0px;
       text-transform: uppercase;
