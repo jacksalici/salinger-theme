@@ -1,18 +1,20 @@
 @import "_variables";
 @import "_functions";
 
-html{
-    font-size: 15px;
-    background-color: $backgound-color;
-
+html {
+  font-size: 15px;
+  @include themed() {
+    background-color: f($backgound-color);
+    color: f($main-color);
+  }
 }
 
-p{
-    line-height: 1.3em;
+p {
+  line-height: 1.3em;
 }
 
-strong{
-    font-weight: 900;
+strong {
+  font-weight: 900;
 }
 
 h1,
@@ -26,42 +28,44 @@ h6 {
   margin-bottom: 0px;
 }
 
-
-h1{
-    font-size: 2.5em;
+h1 {
+  font-size: 2.5em;
 }
 
-h2{
-    font-size: 1.5em;
+h2 {
+  font-size: 1.5em;
 }
 
-h3{
-    font-size: 1.8em;
+h3 {
+  font-size: 1.8em;
 }
 
-h4{
-    font-size: 1.4em;
+h4 {
+  font-size: 1.4em;
 }
 
-h5{
-    font-size: 1.2em;
-    text-transform: uppercase;
+h5 {
+  font-size: 1.2em;
+  text-transform: uppercase;
 }
 
-h6{
-    font-size: 0.7em;
-    font-style: normal;
-    font-weight: inherit;
-    margin: 0px;
+h6 {
+  font-size: 0.7em;
+  font-style: normal;
+  font-weight: inherit;
+  margin: 0px;
 }
-
 
 ::-moz-selection {
-  background: $selected;
+  @include themed() {
+    background: f($selected);
+  }
 }
 
 ::selection {
-  background: $selected;
+  @include themed() {
+    background: f($selected);
+  }
 }
 
 body {
@@ -93,7 +97,9 @@ a {
 }
 
 a:hover {
-  color: $link-color;
+  @include themed() {
+    color: f($link-color);
+  }
 }
 
 aside {
@@ -101,7 +107,9 @@ aside {
   @include responsive($big-display) {
     display: block;
     float: right;
-    color: $blocks-backgound-color;
+    @include themed() {
+      color: f($blocks-backgound-color);
+    }
   }
 
   #TableOfContents {
@@ -138,7 +146,9 @@ article {
 blockquote {
   font-family: $quote-font;
   font-size: 115%;
-  background-color: $blocks-backgound-color;
+  @include themed() {
+    background-color: f($blocks-backgound-color);
+  }
   padding: 10px;
   width: fit-content;
 }
@@ -161,7 +171,9 @@ code {
 
 pre {
   code {
-    background-color: $blocks-backgound-color;
+    @include themed() {
+      background-color: f($blocks-backgound-color);
+    }
     line-height: 130%;
   }
 }
@@ -174,13 +186,14 @@ pre {
   }
 }
 
-.main-line{
+.main-line {
   border: 0px;
-  border-top: 2px $blocks-backgound-color solid;
+  @include themed() {
+    border-top: 2px $blocks-backgound-color solid;
+  }
   max-width: $content-smaller-width;
   align-self: left;
   margin-left: 0px;
- 
 }
 
 footer {
@@ -192,11 +205,15 @@ footer {
 
 .section-title {
   text-decoration: none;
-  color: $blocks-backgound-color;
+  @include themed() {
+    color: f($blocks-backgound-color);
+  }
 }
 .section-title:hover {
   text-decoration: none;
-  color: $blocks-backgound-color;
+  @include themed() {
+    color: f($blocks-backgound-color);
+  }
 }
 
 img {
@@ -216,9 +233,9 @@ img {
 
 .big-title {
   font-size: 3em;
-  @include responsive($big-display){
-    font-size: 4em
-  };
+  @include responsive($big-display) {
+    font-size: 4em;
+  }
   padding-top: 100px;
   padding-bottom: 50px;
   max-width: $content-smaller-width;
@@ -265,65 +282,103 @@ Header bar
 header {
   margin-top: 0px;
   margin-bottom: 120px;
+  display: flex;
+  vertical-align: middle;
+}
 
-  
+.logo {
+  img {
+    width: unset;
+    max-height: 40px;
+    border-radius: 0px;
+    padding-right: 15px;
+  }
+  display: block;
+}
 
-  ul {
-    padding-left: 0px;
-    list-style-type: none;
-    display: flex;
+.navbar {
+  display: flex;
+  margin-right: 5px;
+  width: 100%;
+  align-content: right;
+  align-items: center;
+}
 
-    .nav-bar {
-      display: flex;
-      width: 100%;
-      float: right;
+.hamburger {
+  display: none;
+  margin-left: auto;
+}
 
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      justify-content: flex-end;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  @include themed() {
+    background-color: f($main-color);
+  }
+}
 
-      .site-name {
-        margin-top: 0px;
-        text-transform: uppercase;
-        display: block;
+.nav-menu {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  list-style: none;
+}
 
-        a {
-          text-decoration: none;
-        }
-        .hover {
-          color: initial;
-        }
-      }
+.nav-item {
+  margin-left: 25px;
+}
+.nav-item:hover {
+  @include themed() {
+    color: f($link-color);
+  }
+}
 
-      .menu-item {
-        align-content: left;
-        float: right;
-        min-width: 50px;
-        padding: 10px;
-        text-align: center;
-        display: block;
-        align-self: center;
-        border-radius: $radius;
-        font-family: $sans-serif;
-
-        @include transition(background-color 5000ms ease-out);
-
-        a {
-          text-decoration: none;
-        }
-      }
-    
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    right: -100%;
+    top: -50px;
+    padding: 20px;
+    padding-top: 150px;
+    flex-direction: column;
+    @include themed() {
+      background-color: f($blocks-backgound-color);
     }
+    border-radius: $radius;
+    text-align: center;
+    transition: 0.3s;
+  }
 
-    .logo {
-      max-width: 50px;
+  .nav-menu.active {
+    right: 0;
+  }
 
-      margin-left: 0;
-      padding-left: 0px;
-      img {
-       border-radius: 0px;
-      }
-    }
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    width: fit-content;
+    margin-right: 0px;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
