@@ -12,6 +12,8 @@
     {{ $sass := resources.Get "sass/main.scss" }}
     {{ $css := $sass | resources.ToCSS | minify }}
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>{{ .Title }}</title>
 </head>
