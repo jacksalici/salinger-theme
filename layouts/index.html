@@ -4,8 +4,21 @@
     {{- .Site.Params.Header | safeHTML -}}
 </h1>
 
-<div class="content">{{- .Content -}}</div>
+<div class="content">{{- .Content -}} 
+   
+    {{- if isset .Site.Params "social" }}<p class="social">
+{{ range $index, $elem := .Site.Params.social}}
+  {{with $elem.before -}}{{.}}{{end -}}
+<a class="icon" target="_blank" rel="noopener" href="{{ $elem.url }}" aria-label="{{ $elem.name }}">
+    <i class="{{ $elem.icon }}" aria-hidden="true"></i>
+  </a>
+  {{- with $elem.after}}{{.}}{{end}}
 
+{{ end }}
+</p> 
+{{ end }}
+
+</div>
 
 {{- .Render "list" -}}
 {{ end }}
