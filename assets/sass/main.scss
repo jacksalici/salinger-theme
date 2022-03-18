@@ -2,12 +2,12 @@
 @import "_functions";
 
 html {
-  font-size: 15px;
+  font-size: 16px;
   background-color: $backgound-color;
 }
 
 p {
-  line-height: 1.3em;
+  //line-height: 1.5em;
 }
 
 strong {
@@ -22,7 +22,7 @@ h5,
 h6 {
   font-family: $sans-serif;
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 2.0em;
 }
 
 h3 {
@@ -116,6 +116,7 @@ aside {
 
 article {
   .post-header {
+    margin-top: 100px;
     margin-bottom: 50px;
   }
   .post-text {
@@ -127,9 +128,7 @@ article {
       width: 70%;
     }
   }
-  .meta {
-    margin: 0px;
-  }
+  
 }
 
 blockquote {
@@ -200,14 +199,23 @@ img {
   border-radius: $radius;
 }
 
+.section{
+  padding-top: 100px;
+}
+
 /*
   Home page objects
 */
 
 .content {
   margin-bottom: 100px;
-  max-width: $content-smaller-width;
+  max-width: $content-width;
   text-align: justify;
+
+  p{
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
 }
 
 .big-title {
@@ -225,6 +233,10 @@ img {
     list-style-type: none;
   }
 
+  h6{
+    color: $blocks-backgound-color;
+  }
+
   .post {
     margin-left: 0pt;
     border-radius: $radius;
@@ -235,11 +247,6 @@ img {
     .name {
       font-weight: 400;
       font-family: $sans-serif;
-    }
-
-    .section,
-    .date {
-      //font-size: 75%;
     }
 
     a {
@@ -260,7 +267,6 @@ Header bar
 
 header {
   margin-top: 0px;
-  margin-bottom: 120px;
 
   .navbar {
     display: flex;
@@ -314,4 +320,21 @@ header {
       
     }
   }
+}
+
+
+.emoji {
+  display: inline-block;
+  width: auto;
+  height: 1em;
+  vertical-align: -.15em;
+border-radius: 0px;
+}
+
+.icon {
+  text-decoration: none;
+  font-size: 125%;
+  vertical-align: -5%;
+  border-radius: 0px;
+
 }

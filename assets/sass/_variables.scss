@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Merriweather:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 //fonts
-$sans-serif: "Montserrat", sans-serif;
+$sans-serif: "Libre Baskerville", sans-serif;
 $serif: "Merriweather", serif;
 $quote-font: "Indie Flower", cursive;
 $monospace-font: "Fira Mono", monospace;
@@ -17,17 +19,17 @@ $highlights:  linear-gradient(
     rgba(126, 126, 126, 1) 100%
   );
 
-$selected:  rgba(255, 250, 175, 0.996);
+$selected:  rgba(255, 250, 175, 0.5);
 
 
 //dimensions
 $max-site-width: 1500px;
-$content-width: 700px;
+$content-width: 600px;
 $content-smaller-width: 500px;
 
 $big-margin: 10%;
 $padding: 5px;
-$radius: 5px;
+$radius: 10px;
 
 //breakpoints
 $big-display: 768px; //64em
