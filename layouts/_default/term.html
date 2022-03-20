@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="container">
+  <h3>{{ .Type | singularize }}</h3>
+  <h1>{{ .Title }}</h1>
+  <ul>
+    {{ range .Data.Pages }} {{.Render "li"}} {{ end }}
+  </ul>
+</div>
+{{ end}}
