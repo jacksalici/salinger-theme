@@ -9,14 +9,15 @@
 
       <h6>
         <span class="date">
-          Published on {{.Date.Format .Site.Params.DateFormat}}
+          Published on {{ .Date.Format .Site.Params.DateFormat -}}
         </span>
 
-        {{with .CurrentSection}}
-        <span class="section"> in {{ .Title }} </span>
-        {{else}}
+        {{with .Params.Categories}}
+        {{range .}}
+        <span class="section"> in <strong>{{- . -}}</strong></span>
+        {{- end -}}
+        {{- end -}}
         <span class="date">.</span>
-        {{end}}
       </h6>
     </a>
   </div>
