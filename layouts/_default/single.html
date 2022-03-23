@@ -1,36 +1,26 @@
 {{ define "main" }}
 <article>
-    <div class="post-header">
-        <h1 class="name">{{ .Title }}</h1>
-            
-        <h6 class="meta">
-            <span class="date">
-                Published on {{.Date.Format .Site.Params.DateFormat}}
-                </span>
-                
-                {{with .CurrentSection}}
-                    <span class="section">
-                        in <a href="{{.Permalink}}">
-                            {{ .Title }}
-                            </a>
-                    </span>
-                {{else}}
-                    <span class="date">.</span>
-                {{end}}
-        </h6>
+  <div class="post-header">
+    <h1 class="name">{{ .Title }}</h1>
 
-    </div>
+    <h6 class="meta">
+      <span class="date">
+        Published on {{.Date.Format .Site.Params.DateFormat}}
+      </span>
 
-    {{if .Params.toc}}
-    <aside class="toc">
-        <h4>Table of Content</h4>
-        {{ .TableOfContents }}
-    </aside>
-    {{end}}
+      {{with .Params.Categories}} {{range .}}
+      <span class="section"> in <a href="/categories/{{ . }}"><strong>/{{- . -}}</strong></a></span>
+      {{- end -}} {{- end -}} .
+    </h6>
+  </div>
 
-    <div class="post-text">
-        {{- .Content -}}
-    </div>
-    
+  {{if .Params.toc}}
+  <aside class="toc">
+    <h4>Table of Content</h4>
+    {{ .TableOfContents }}
+  </aside>
+  {{end}}
+
+  <div class="post-text">{{- .Content -}}</div>
 </article>
 {{ end }}

@@ -30,7 +30,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.0em;
+  font-size: 2em;
 }
 
 h3 {
@@ -68,8 +68,8 @@ body {
   min-height: 100vh;
 
   @include responsive($big-display) {
-    margin-left: $big-margin;
-    margin-right: $big-margin;
+    padding-left: $big-margin;
+    padding-right: $big-margin;
   }
 
   @include responsive($max-site-width) {
@@ -114,7 +114,6 @@ aside {
 
 article {
   .post-header {
-    margin-top: 100px;
     margin-bottom: 50px;
   }
   .post-text {
@@ -126,7 +125,10 @@ article {
       width: 70%;
     }
   }
-  
+}
+
+main{
+  margin-top: 100px;
 }
 
 blockquote {
@@ -159,6 +161,7 @@ pre {
     line-height: 130%;
   }
 }
+
 
 .highlight {
   pre {
@@ -197,8 +200,12 @@ img {
   border-radius: $radius;
 }
 
-.section{
-  padding-top: 100px;
+.term-type {
+  color: $blocks-backgound-color;
+  text-transform: capitalize;
+}
+.term-title{
+  text-transform: capitalize;  
 }
 
 /*
@@ -210,7 +217,7 @@ img {
   max-width: $content-width;
   text-align: justify;
 
-  p{
+  p {
     margin-bottom: 0px;
     margin-top: 10px;
   }
@@ -226,36 +233,31 @@ img {
   max-width: $content-smaller-width;
 }
 
-#posts {
-  li {
-    list-style-type: none;
+.li-post {
+  list-style-type: none;
+  margin-left: 0pt;
+  border-radius: $radius;
+  padding: 20px;
+  width: fit-content;
+  text-decoration: none;
+  a {
+    text-decoration: none;
   }
 
-  h6{
+  .li-title {
+    font-weight: 400;
+    font-family: $sans-serif;
+    margin: 2px 0px;
+  }
+
+  .li-meta {
     color: $blocks-backgound-color;
   }
+}
 
-  .post {
-    margin-left: 0pt;
-    border-radius: $radius;
-    padding: 20px;
-    width: fit-content;
-    text-decoration: none;
-
-    .name {
-      font-weight: 400;
-      font-family: $sans-serif;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
-
-  .post:hover {
-    .name {
-      //text-decoration: underline;
-    }
+.li-post:hover {
+  .name {
+    //text-decoration: underline;
   }
 }
 
@@ -283,7 +285,7 @@ header {
       }
     }
 
-    .nav-menu{
+    .nav-menu {
       display: flex;
       float: right;
     }
@@ -309,24 +311,26 @@ header {
       padding-left: 0px;
       width: unset;
       align-self: center;
-      
-        img {
-          max-height: 50px;
-          width: auto;
-          border-radius: 0px;
-        }
-      
+
+      img {
+        max-height: 50px;
+        width: auto;
+        border-radius: 0px;
+      }
     }
   }
 }
 
+/*
+Emoji and Icons
+*/
 
 .emoji {
   display: inline-block;
   width: auto;
   height: 1em;
-  vertical-align: -.15em;
-border-radius: 0px;
+  vertical-align: -0.15em;
+  border-radius: 0px;
 }
 
 .icon {
@@ -334,5 +338,4 @@ border-radius: 0px;
   font-size: 125%;
   vertical-align: -5%;
   border-radius: 0px;
-
 }

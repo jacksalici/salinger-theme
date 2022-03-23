@@ -1,28 +1,23 @@
-<li>
-  <div class="post">
+<li class="li-post">
     <a href="{{.Permalink}}">
-      <span class="name">
+      <p class="li-title">
         {{with .Params.Summary}} {{.}}<br />
         {{else}} {{.Title}}<br />
         {{end}}
-      </span>
+      </p>
 
-      <h6>
-        <span class="date">
+      <h6 class="li-meta">
           Published on {{ .Date.Format .Site.Params.DateFormat -}}
-        </span>
 
         {{with .Params.Categories}}
         {{range .}}
-        <span class="section"> in <strong>{{- . -}}</strong></span>
+          in <strong>{{- . -}}</strong>
         {{- end -}}
         {{- end -}}
-        <span class="date">.</span>
+        .
       </h6>
     </a>
-  </div>
 
 </li>
-<!--<hr class="main-line">-->
   
 
