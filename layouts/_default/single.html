@@ -9,7 +9,7 @@
       </span>
 
       {{with .Params.Categories}} {{range .}}
-      <span class="section"> in <a href="/categories/{{ . }}"><strong>/{{- . -}}</strong></a></span>
+      <span class="section"> and categorized into <a href="/categories/{{ . }}"><strong>{{- . -}}</strong></a></span>
       {{- end -}} {{- end -}} .
     </h6>
   </div>
