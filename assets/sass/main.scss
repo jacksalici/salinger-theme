@@ -200,6 +200,11 @@ img {
   border-radius: $radius;
 }
 
+.not-sized{
+  width: unset;
+  border-radius: 0px;
+}
+
 .term-type {
   color: $blocks-backgound-color;
   text-transform: capitalize;
