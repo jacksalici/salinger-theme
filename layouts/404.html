@@ -1,7 +1,16 @@
 {{ define "main"}}
-    <main id="main">
-      <div>
-       <h1 id="title"><a href="{{ "/" | relURL }}">Go Home</a></h1>
-      </div>
-    </main>
+    <main>
+        <h1>404 Error</h1>
+       <h3>Looks like you're lost...</h3>
+
+   
+<p class="content">
+   {{with .Site.Params.Text404}} {{.}} {{else}}
+   Since the page you were looking for seems like doesn't exist, we <strong>strongly</strong> suggest you to better investigate the URL and/or go back to the <a href="/">home</a>.
+
+  {{end}}
+</p>   
+
+
+</main>
 {{ end }}
