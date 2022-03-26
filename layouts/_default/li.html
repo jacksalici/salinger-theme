@@ -9,12 +9,16 @@
       <h6 class="li-meta">
           Published on {{ .Date.Format .Site.Params.DateFormat -}}
 
-        {{with .Params.Categories}}
-        {{range .}}
-          in <strong>{{- . -}}</strong>
-        {{- end -}}
-        {{- end -}}
-        .
+          
+          {{with .Params.Categories}}
+          {{$n := len .}}
+          <span class="categories"> as 
+            {{range $ind, $val := .}}
+              <a href="/categories/{{ $val }}"><strong>{{ $val }}</strong></a></span>
+              {{- if lt $ind (sub $n 1) -}},{{- else -}}.{{end}}
+            {{ end }} 
+          {{else}}
+          {{ end }}
       </h6>
 
       

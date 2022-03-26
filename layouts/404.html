@@ -5,8 +5,8 @@
 
    
 <p class="content">
-   {{with .Site.Params.Text404}} {{.}} {{else}}
-   Since the page you were looking for seems like doesn't exist, we <strong>strongly</strong> suggest you to better investigate the URL and/or go back to the <a href="/">home</a>.
+   {{with .Site.Params.Text404}} {{. | safeHTML}} {{else}}
+   Go back to the <a href="/">home</a>.
 
   {{end}}
 </p>   
