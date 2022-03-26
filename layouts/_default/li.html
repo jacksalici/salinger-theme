@@ -12,7 +12,7 @@
           
           {{with .Params.Categories}}
           {{$n := len .}}
-          <span class="categories"> as 
+          <span class="li-categories"> as 
             {{range $ind, $val := .}}
               <strong>{{ $val }}</strong></span>
               {{- if lt $ind (sub $n 1) -}},{{- else -}}.{{end}}
