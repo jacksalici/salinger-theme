@@ -4,7 +4,7 @@
     {{- .Site.Params.Header | safeHTML -}}
 </h1>
 
-<div class="content">{{- .Content -}} 
+<div class="content" id="content">{{- .Content -}} 
    
     {{- if isset .Site.Params "social" }}<p class="social">
 {{ range $index, $elem := .Site.Params.social}}
