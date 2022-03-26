@@ -180,7 +180,7 @@ pre {
 }
 
 footer {
-  margin-top: 200px;
+  margin-top: 150px;
   margin-bottom: 50px;
   padding-bottom: 30px;
   position: absolute;
@@ -215,6 +215,15 @@ img {
 .term-back{
   color: $blocks-backgound-color;
   text-decoration: none;
+}
+
+.tags-footer{
+  color: $blocks-backgound-color;
+  text-decoration: none;
+  padding-top: 50px;
+  a{
+    text-decoration: none;
+  }
 }
 
 /*
