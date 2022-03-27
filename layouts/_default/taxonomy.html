@@ -1,12 +1,21 @@
 {{ define "main" }}
 <main>
   <h2>All {{ .Type }}</h2>
+
   <ul>
-    {{ range .Data.Pages }}
-    {{.Render "li"}}
+    {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
+    <li class="li-post">
+      {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage
+      (printf "/%s/%s" $type $name) }}
+      <p class="li-title">
+        <a href="{{ .Permalink }}">{{ .Name }}</a>
+        <span class="li-count">{{ $count }} </span>
+      </p>
+        {{- end }}
+      
+    </li>
 
-
-    {{ end }}
+    {{- end }}
   </ul>
 </main>
 {{ end }}

@@ -1,7 +1,7 @@
 <li class="li-post">
     <a href="{{.Permalink}}">
       <p class="li-title">
-        {{with .Params.Summary}} {{.}}<br />
+        {{with .Params.Summary}} {{.}} <br />
         {{else}} {{.Title}}<br />
         {{end}}
       </p>
@@ -9,7 +9,6 @@
       <h6 class="li-meta">
           Published on {{ .Date.Format .Site.Params.DateFormat -}}
 
-          
           {{with .Params.Categories}}
           {{$n := len .}}
           <span class="li-categories"> as 
