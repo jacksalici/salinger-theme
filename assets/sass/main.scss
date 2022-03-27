@@ -4,6 +4,7 @@
 html {
   font-size: 16px;
   background-color: $backgound-color;
+  color: $primary-color;
 }
 
 p {
@@ -11,7 +12,7 @@ p {
 }
 
 strong {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 h1,
@@ -20,7 +21,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -53,6 +53,14 @@ h6 {
   margin: 0px;
 }
 
+
+h3,
+h4,
+h5,
+h6{
+  font-family: $secondary-font;
+}
+
 ::-moz-selection {
   background: $selected;
 }
@@ -63,7 +71,7 @@ h6 {
 
 body {
   max-width: $max-site-width;
-  font-family: $sans-serif;
+  font-family: $primary-font;
   padding: $padding;
   min-height: 100vh;
 
@@ -96,7 +104,7 @@ aside {
   @include responsive($big-display) {
     display: block;
     float: right;
-    color: $blocks-backgound-color;
+    color: $secondary-color;
   }
 
   #TableOfContents {
@@ -112,9 +120,12 @@ aside {
   }
 }
 
-article {
   .post-header {
     margin-bottom: 50px;
+
+    .name{
+      margin-bottom: 2px;
+    }
   }
   .post-text {
     text-align: justify;
@@ -125,7 +136,7 @@ article {
       width: 70%;
     }
   }
-}
+
 
 main{
   margin-top: 100px;
@@ -134,7 +145,7 @@ main{
 blockquote {
   font-family: $quote-font;
   font-size: 115%;
-  background-color: $blocks-backgound-color;
+  background-color: $secondary-color;
   padding: 10px;
   width: fit-content;
 }
@@ -157,7 +168,7 @@ code {
 
 pre {
   code {
-    background-color: $blocks-backgound-color;
+    background-color: $secondary-color;
     line-height: 130%;
   }
 }
@@ -173,7 +184,7 @@ pre {
 
 .main-line {
   border: 0px;
-  border-top: 2px $blocks-backgound-color solid;
+  border-top: 2px $secondary-color solid;
   max-width: $content-smaller-width;
   align-self: left;
   margin-left: 0px;
@@ -188,11 +199,11 @@ footer {
 
 .section-title {
   text-decoration: none;
-  color: $blocks-backgound-color;
+  color: $secondary-color;
 }
 .section-title:hover {
   text-decoration: none;
-  color: $blocks-backgound-color;
+  color: $secondary-color;
 }
 
 img {
@@ -206,19 +217,19 @@ img {
 }
 
 .term-type {
-  color: $blocks-backgound-color;
+  color: $secondary-color;
   text-transform: capitalize;
 }
 .term-title{
   text-transform: capitalize;  
 }
 .term-back{
-  color: $blocks-backgound-color;
+  color: $secondary-color;
   text-decoration: none;
 }
 
 .tags-footer{
-  color: $blocks-backgound-color;
+  color: $secondary-color;
   text-decoration: none;
   padding-top: 50px;
   a{
@@ -234,7 +245,7 @@ img {
   margin-bottom: 100px;
   max-width: $content-width;
   text-align: justify;
-
+  font-family: $secondary-font;
   p {
     margin-bottom: 0px;
     margin-top: 10px;
@@ -264,16 +275,17 @@ img {
 
   .li-title {
     font-weight: 400;
-    font-family: $sans-serif;
+    font-family: $primary-font;
     margin: 2px 0px;
   }
 
   .li-meta {
-    color: $blocks-backgound-color;
+    color: $secondary-color;
   }
 
   .li-count{
-    color: $blocks-backgound-color;
+    color: $secondary-color;
+    font-family: $secondary-font;
     font-size: 150%;
     padding-left: 30px;
     text-decoration: none; 
@@ -288,6 +300,11 @@ img {
   .li-count{
     text-decoration: none;
   }
+}
+
+.meta{
+  color: $secondary-color;
+  margin-top: 0px;
 }
 
 /*
@@ -326,7 +343,7 @@ header {
       display: block;
       align-self: center;
       border-radius: $radius;
-      font-family: $sans-serif;
+      font-family: $secondary-font;
       @include transition(background-color 5000ms ease-out);
 
       a {
