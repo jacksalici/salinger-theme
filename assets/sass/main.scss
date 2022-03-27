@@ -271,11 +271,22 @@ img {
   .li-meta {
     color: $blocks-backgound-color;
   }
+
+  .li-count{
+    color: $blocks-backgound-color;
+    font-size: 400%;
+    padding-left: 30px;
+    text-decoration: none; 
+    float: right;
+  }
 }
 
 .li-post:hover {
   .li-title {
     text-decoration: underline;
+  }
+  .li-count{
+    text-decoration: none;
   }
 }
 
