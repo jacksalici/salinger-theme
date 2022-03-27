@@ -1,24 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Merriweather:ital,wght@0,300;0,400;0,900;1,300;1,400;1,900&family=Montserrat:ital,wght@0,100;0,400;0,800;1,100;1,400;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,400;0,700;1,100;1,400;1,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 //fonts
-$sans-serif: "Libre Baskerville", sans-serif;
-$serif: "Merriweather", serif;
+$primary-font: "Libre Baskerville", serif;
+$secondary-font: "Montserrat", sans-serif;
 $quote-font: "Indie Flower", cursive;
 $monospace-font: "Fira Mono", monospace;
 
 //colors
 $theme: light;
+$primary-color: black;
 $link-color: #01b5e2;
 $backgound-color: #ffffff;
-$blocks-backgound-color: #dadada;
-$grey: #828282;
-$highlights:  linear-gradient(
-    90deg,
-    rgba(2, 97, 168, 1) 0%,
-    rgba(126, 126, 126, 1) 100%
-  );
-
+$secondary-color: #dadada;
 $selected:  rgba(255, 250, 175, 0.5);
 
 
