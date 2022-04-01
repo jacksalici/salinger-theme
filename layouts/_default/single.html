@@ -7,7 +7,11 @@
     {{else}}
     <h6 class="meta">
       <span class="date">
-        Published on {{.Date.Format .Site.Params.DateFormat}}
+      {{$myFormat := "January 2, 2006"}}
+      {{with .Site.Params.DateFormat}} {{$myFormat = .}} {{end}}
+
+        
+      Published on {{ .Date.Format $myFormat}}
       </span>
       {{with .Params.Categories}}
       {{$n := len .}}
@@ -32,6 +36,8 @@
 
   <div class="post-text">{{- .Content -}}</div>
 
+
+  
   {{with .Params.Tags}}   <h6 class="tags-footer"> Tags: {{range .}}
     <a href="/tags/{{ . | urlize}}">#{{- . -}}</a>
       {{- end -}}</h6> {{- end -}}

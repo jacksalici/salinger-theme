@@ -1,27 +1,21 @@
 <li class="li-post">
-    <a href="{{.Permalink}}">
-      <p class="li-title">
-        {{with .Params.Summary}} {{.}}<br />
-        {{else}} {{.Title}}<br />
-        {{end}}
-      </p>
+  <a href="{{.Permalink}}">
+    <p class="li-title">
+      {{with .Params.Description}} {{.}}<br />
+      {{else}} {{.Title}}<br />
+      {{end}}
+    </p>
 
-      <h6 class="li-meta">
-          Published on {{ .Date.Format .Site.Params.DateFormat -}}
-
-          {{with .Params.Categories}}
-          {{$n := len .}}
-          <span class="li-categories"> as 
-            {{range $ind, $val := .}}
-              <strong>{{ $val }}</strong></span>
-              {{- if lt $ind (sub $n 1) -}},{{- else -}}.{{end}}
-            {{ end }} 
-          {{else}}
-          {{ end }}
-      </h6>
-
-      
-    </a>
+    <h6 class="li-meta">
+      {{$myFormat := "January 2, 2006"}}
+      {{with .Site.Params.DateFormat}} {{$myFormat = .}} {{end}}
+      Published on {{ $myFormat -}}{{with .Params.Categories}}
+      {{$n := len .}}
+      <span class="li-categories">
+        as {{range $ind, $val := .}} <strong>{{ $val }}</strong></span
+      >
+      {{- if lt $ind (sub $n 1) -}},{{- else -}}.{{end}} {{ end }} {{else}}.
+      {{ end }}
+    </h6>
+  </a>
 </li>
-  
-
