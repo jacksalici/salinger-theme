@@ -9,9 +9,7 @@
       <span class="date">
       {{$myFormat := "January 2, 2006"}}
       {{with .Site.Params.DateFormat}} {{$myFormat = .}} {{end}}
-
-        
-      Published on {{ .Date.Format $myFormat}}
+      Published on {{ time.Format $myFormat .Date}}
       </span>
       {{with .Params.Categories}}
       {{$n := len .}}

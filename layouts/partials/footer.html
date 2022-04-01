@@ -1,7 +1,7 @@
 <footer>
     {{$footerText := string ""}}
     {{ with .Site.Copyright }}
-    {{$footerText = .}}
+    {{$footerText = . | safeHTML}}
     {{else}}
     {{$footerText = .Site.Title }}
     {{end}}
