@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,400;0,700;1,100;1,400;1,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 //fonts
 $primary-font: "Libre Baskerville", serif;
 $secondary-font: "Montserrat", sans-serif;
-$quote-font: "Indie Flower", cursive;
+$quote-font: "Amatic SC", cursive;
 $monospace-font: "Fira Mono", monospace;
 
 //colors
@@ -11,7 +13,7 @@ $theme: light;
 $primary-color: black;
 $link-color: #01b5e2;
 $backgound-color: #ffffff;
-$secondary-color: #dadada;
+$secondary-color: #a7a7a7;
 $selected:  rgba(255, 250, 175, 0.5);
 
 
