@@ -144,12 +144,14 @@ main{
 
 blockquote {
   font-family: $quote-font;
-  font-size: 115%;
-  background-color: $secondary-color;
+  font-size: 150%;
   padding: 10px;
   width: fit-content;
 }
+.footnotes{
+  color: $secondary-color;
 
+}
 table {
   border: 1px solid black;
   border-radius: $radius;
@@ -167,10 +169,10 @@ code {
 }
 
 pre {
-  code {
     background-color: $secondary-color;
     line-height: 130%;
-  }
+    padding: 10px;
+    border-radius: $radius;
 }
 
 
@@ -253,13 +255,13 @@ img {
 }
 
 .big-title {
-  font-size: 3em;
+  font-size: 4em;
   @include responsive($big-display) {
-    font-size: 4em;
+    font-size: 4.5em;
   }
   padding-top: 100px;
   padding-bottom: 50px;
-  max-width: $content-smaller-width;
+  max-width: $content-width;
 }
 
 .li-post {
@@ -357,6 +359,9 @@ header {
       padding-left: 0px;
       width: unset;
       align-self: center;
+      text-decoration: none;
+      font-family: $secondary-font;
+      font-weight: bold;
 
       img {
         max-height: 50px;

@@ -1,11 +1,21 @@
 {{ define "main" }}
+ <!-- BIG TITLE --> 
 
 <h1 class="big-title">
-    {{- .Site.Params.Header | safeHTML -}}
+  {{with .Site.Params.Header}}
+  
+  {{- . | safeHTML -}}
+  {{else}}
+  Hi, we're {{.Site.Title}}. 👋
+  {{end}}
 </h1>
+
+ <!-- CONTENT --> 
 
 <div class="content" id="content">{{- .Content -}} 
    
+
+ <!-- SOCIAL --> 
     {{- if isset .Site.Params "social" }}<p class="social">
 {{ range $index, $elem := .Site.Params.social}}
   {{with $elem.before -}}{{.}}{{end -}}
@@ -19,6 +29,9 @@
 {{ end }}
 
 </div>
+
+
+ <!-- POST LIST --> 
 
 {{- .Render "list" -}}
 {{ end }}

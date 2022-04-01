@@ -4,7 +4,11 @@
   <nav class="navbar">
   
     <a class="logo" href="{{ .Site.BaseURL }}">
+      {{if os.FileExists "static/logo.png"}}
       <img src="{{.Site.BaseURL}}/logo.png" alt="{{.Site.Title}}" />
+      {{else}}
+      {{.Site.Title}}
+      {{end}}
     </a>
 
   

@@ -1,7 +1,13 @@
 <footer>
-    {{ with .Site.Params.copyright }}
-    <h6>&copy; {{ now.Year }} - {{. | safeHTML}}
-         Powered by <a href="https://github.com/jacksalici/salinger-theme">Salinger</a> Hugo theme.
-         <br><br>Made with ❤️ and ☕️ on 🌍.</h6>
+    {{$footerText := string ""}}
+    {{ with .Site.Copyright }}
+    {{$footerText = .}}
+    {{else}}
+    {{$footerText = .Site.Title }}
     {{end}}
+       
+    <h6> &copy; {{ now.Year }} - {{$footerText}} <br>
+    Powered by <a href="https://github.com/jacksalici/salinger-theme">Salinger</a> Hugo theme.
+         <br>Made with ❤️ and ☕️ on 🌍.</h6>
+   
 </footer>
