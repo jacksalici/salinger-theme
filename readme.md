@@ -9,7 +9,6 @@ Why this name? During the development of the minimalism of this theme I was insp
 
 - [x] Taxonomy and navigation items 🧩
 - [x] Google Analytics 📈
-
 - [x] Toggle header option ⚓️
 - [x] Custom visibility of meta 🚀
 - [x] **Tweemoji** Emoji support 💥
@@ -20,7 +19,9 @@ Why this name? During the development of the minimalism of this theme I was insp
 - [ ] More Layouts (Masonry grid)
 - [ ] Dark mode
 
-## Preview the exampleSite 🖥
+## Quick Start 🚀
+
+### Preview the exampleSite 🖥
 
 ```shell
 git clone https://github.com/jacksalici/salinger-theme.git salinger
@@ -28,13 +29,13 @@ cd salinger/exampleSite
 hugo server --themesDir ../..
 ```
 
-## Quick Start
+### Install the theme
 
 1. Add the repository into your Hugo Project repository as a submodule: `git submodule add https://github.com/jacksalici/salinger-theme.git themes/salinger`.
 2. Configure your `config.toml`. I suggest you to copy the demo `config.toml`.
 3. Having installed Hugo on your local machine, you can build your site with `hugo server` and admire the result at `http://localhost:1313/`.
 
-## Update your installation
+### Update your installation
 
 If you want to get the latest update of the `Salinger` theme please execute this command:
 
@@ -42,8 +43,8 @@ If you want to get the latest update of the `Salinger` theme please execute this
 git submodule update --remote --merge
 ```
 
-## What about config.toml
-I will soon create the wiki.
+## Usage 👀
+Check out the wiki page and or the example site.
 
 ## License 📜
 
