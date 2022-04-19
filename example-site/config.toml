@@ -2,15 +2,16 @@ baseURL = "https://example.com/"
 theme = "salinger"
 title = "salinger"
 copyright = '2001 John Doe'
+ignoreErrors = ["error-remote-getjson"]
 
 [params]
 DateFormat = "January 2006"
 
 author = "John Doe"
 description = "I'm a computer engineering student based in Modena, Italy. I like developing and designing random stuffs."
-header = "<strong>Hi, I am <span style=\"white-space: nowrap;\">John Doe. 👨‍💻</span></strong>"
+header = "<strong>Hi, I'm John. 👋 </strong>"
 keywords = [ "Portfolio", "developer", "coding", "maker"]
-showHeaderOnHomepage = true
+showHeaderOnHomepage = false
 #googleAnalytics = ""
 twemoji = true
 text404 = "Since the page you were looking for seems like doesn't exist, we <strong>strongly</strong> suggest you to better investigate the URL and/or go back to the <a href=\"/\">home</a>. </br></br> <iframe src=\"https://giphy.com/embed/aCKMaeduKfFXG\" width=\"480\" height=\"480\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>"

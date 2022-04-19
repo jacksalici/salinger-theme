@@ -8,11 +8,11 @@ html {
 }
 
 p {
-  //line-height: 1.5em;
+  line-height: 1.5em;
 }
 
 strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h1,
@@ -74,6 +74,7 @@ body {
   font-family: $primary-font;
   padding: $padding;
   min-height: 100vh;
+ 
 
   @include responsive($big-display) {
     padding-left: $big-margin;
@@ -128,8 +129,8 @@ aside {
     }
   }
   .post-text {
-    text-align: justify;
-    hyphens: auto;
+p{    text-align: justify;
+}    hyphens: auto;
     max-width: $content-width;
 
     @include responsive($big-display) {
@@ -143,11 +144,22 @@ main{
 }
 
 blockquote {
+  
   font-family: $quote-font;
   font-size: 150%;
   padding: 10px;
   width: fit-content;
-}
+
+} 
+
+.twitter-tweet{
+    font-family: $quote-font !important;
+    font-size: 150% !important;
+
+    p{
+      margin-top:0px;
+    }
+  }
 .footnotes{
   color: $secondary-color;
 
@@ -169,7 +181,8 @@ code {
 }
 
 pre {
-    background-color: $secondary-color;
+    overflow-x: scroll;
+    background-color: $backgound-secondary-color;
     line-height: 130%;
     padding: 10px;
     border-radius: $radius;
@@ -246,9 +259,9 @@ img {
 .content {
   margin-bottom: 100px;
   max-width: $content-width;
-  text-align: justify;
   font-family: $secondary-font;
   p {
+    text-align: justify;
     margin-bottom: 0px;
     margin-top: 10px;
   }
@@ -259,7 +272,6 @@ img {
   @include responsive($big-display) {
     font-size: 4.5em;
   }
-  padding-top: 100px;
   padding-bottom: 50px;
   max-width: $content-width;
 }
@@ -273,6 +285,11 @@ img {
   text-decoration: none;
   a {
     text-decoration: none;
+  }
+
+  div.header-spacer{
+    min-height: 150px;
+    height: auto;
   }
 
   .li-title {
@@ -307,6 +324,9 @@ img {
 .meta{
   color: $secondary-color;
   margin-top: 0px;
+  a{
+    text-decoration: none;
+  }
 }
 
 /*
