@@ -1,8 +1,12 @@
-# Salinger ✨🌈📻 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
+# Salinger ✨🌈📻 
+
+![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ___Salinger___ is a __new-born clean-mimalistic mobile-first blazing-fast fancy__ and __lightweight__ but __powerful theme__ for [Hugo framework](https://gohugo.io).
 Born as the theme for [my personal website (where you can see a demo)](http://jacksalici.com), I'd like to develop a lot of other stuffs, starting with the following feature. 
 Why this name? During the development of the minimalism of this theme I was inspired by [_The Catcher in The Rye_ Einaudi Italian edition cover](https://duckduckgo.com/?q=il+giovane+holden+by+j.d.+salinger+einaudi+1961&t=h_&ia=images&iax=images&iaf=color%3AWhite), by J.D. Salinger, 
+
+![](https://github.com/jacksalici/salinger-theme/tree/main/images/screenshot.png)
 
 ## Features 🧰
 
