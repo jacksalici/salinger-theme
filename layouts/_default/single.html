@@ -8,19 +8,18 @@
     <h6 class="meta">
       <span class="date">
       {{$myFormat := "January 2, 2006"}}
-      {{with .Site.Params.DateFormat}} {{$myFormat = .}} {{end}}
-      Published on {{ time.Format $myFormat .Date}}
-      </span>
-      {{with .Params.Categories}}
+      {{with .Site.Params.DateFormat}}{{$myFormat = .}}{{- end -}}
+      Published on {{ time.Format $myFormat .Date}}</span>
+      {{- with .Params.Categories}}
       {{$n := len .}}
       <span class="section"> as 
         {{range $ind, $val := .}}
           <a href="/categories/{{ $val | urlize}}"><strong>{{ $val }}</strong></a></span>
           {{- if lt $ind (sub $n 1) -}},{{- else -}}.{{end}}
         {{ end }} 
-      {{else}}
+      {{- else -}}
       .
-      {{ end }}
+      {{- end -}}
     </h6>
     {{end}}
   </div>
