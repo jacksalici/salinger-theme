@@ -22,6 +22,9 @@ Why this name? During the development of the minimalism of this theme I was insp
 #### Soon available 🛠
 - [ ] More Layouts (Masonry grid)
 - [ ] Dark mode
+- [ ] Galley mode
+- [ ] Hamburger menu
+- [ ] Post custom sorting
 
 ## Quick Start 🚀
 
@@ -48,7 +51,7 @@ git submodule update --remote --merge
 ```
 
 ## Usage 👀
-Check out the wiki page and or the example site.
+Check out the **wiki page** and the example site.
 
 ## License 📜
 
