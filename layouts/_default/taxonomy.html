@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<div id="main-header">
+
+  <h2>All {{ .Type }}</h2>
+
+</div>
+
+
+<li-main>
+    {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
+    <div class="li-post">
+      {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage
+      (printf "/%s/%s" $type $name) }}
+      <p class="li-title">
+        <a href="{{ .Permalink }}">{{ .Name }}</a>
+        <span class="li-count">{{ $count }} </span>
+      </p>
+        {{- end }}
+      
+    </div>
+
+    {{- end }}
+</li-main>
+{{ end }}

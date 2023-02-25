@@ -1,0 +1,32 @@
+{{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
+<div class="menu-bg" id="menu-bg"></div>
+<div class="menu-closer" id="menu-closer" onclick="menuCloseOnClick()"></div>
+
+<header class="header">
+  <div>
+    <a class="logo" href="{{ .Site.BaseURL }}">
+      {{if os.FileExists "static/logo.png"}}
+      <img src="{{.Site.BaseURL}}/logo.png" alt="{{.Site.Title}}" />
+      {{else}} {{.Site.Title}} {{end}}
+    </a>
+  </div>
+  <div class="menu-block">
+    <div id="menu">
+      <div id="menu-bar" onclick="menuOnClick()">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
+      <nav class="nav" id="nav">
+        <ul>
+          {{range .Site.Menus.main.ByWeight -}}
+          <li>
+            <a href="{{.URL}}" class="nav-link">{{- .Name -}}</a>
+          </li>
+          {{- end}}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+{{- end}}

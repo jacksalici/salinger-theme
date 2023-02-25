@@ -1,0 +1,28 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {{ with .Site.Params.description -}}
+    <meta name="description" content="{{ . }}">
+    {{ end }}
+    {{ template "_internal/google_analytics.html" . }}
+
+    {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
+    
+    {{ $sass := resources.Get "sass/main.scss" }}
+    {{ $css := $sass | resources.ToCSS | minify }}
+    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
+
+    {{with .Site.Params.fontawesomekitcode}}
+    <script src="https://kit.fontawesome.com/{{.}}.js" crossorigin="anonymous"></script>
+    {{else}}
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {{end}}
+
+    {{ if .Params.math }}{{ partial "math.html" . }}{{ end }}
+
+
+    <title>{{ .Title }}</title>
+</head>

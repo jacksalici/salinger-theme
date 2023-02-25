@@ -1,0 +1,18 @@
+{{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
+
+<footer>
+    
+    {{$footerText := string ""}}
+    {{ with .Site.Copyright }}
+    {{$footerText = . | safeHTML}}
+    {{else}}
+    {{$footerText = .Site.Title }}
+    {{end}}
+       
+    <h6> &copy; {{ now.Year }} - {{$footerText}}
+         <br>Made with ❤️ and ☕️ on 🌍.</h6>
+   
+</footer>
+
+
+{{end}}

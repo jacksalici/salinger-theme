@@ -1,0 +1,11 @@
+{{range .Sections}}
+    
+    <h3>
+        <a class="section-title" href="{{.Permalink}}">{{.Title}}</a>   
+   </h3>
+
+    <div id="posts">
+           {{partial "recursive.html" .}}
+    </div>
+                  
+  {{end}}

@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<div class="background">
+  <div class="background-title">
+    <p>creative developer <br />& digital craftsman</p>
+  </div>
+
+  <div class="foreground">
+    <img class="logo" src="logow.svg" />
+    <h1 class="foreground-text">
+      Developer and designer from Italy.
+      <a href="/projects">Checkout my projects.</a>
+    </h1>
+
+    {{- if isset .Site.Params "social" }}
+    <div class="icons">
+      {{ range $index, $elem := .Site.Params.social}}
+      <a
+        class="icon"
+        target="_blank"
+        rel="noopener"
+        href="{{ $elem.url }}"
+        aria-label="{{ $elem.name }}"
+      >
+        <i class="{{ $elem.icon }}" aria-hidden="true"></i>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+{{ end }}

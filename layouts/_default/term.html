@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<div id="main-header">
+
+  <h3 class="term-type">{{ .Type | singularize}}</h3>
+  <h2 class="term-title">{{ .Title }}</h2>
+
+</div>
+
+
+<li-main>
+
+    {{ range .Data.Pages }} {{.Render "li"}} {{ end }}
+  <h6 ><a class="term-back" href="/{{.Type | urlize}}">← All {{.Type}}.</a></h6>
+
+</li-main>
+{{ end}}

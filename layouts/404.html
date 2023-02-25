@@ -1,0 +1,16 @@
+{{ define "main"}}
+    <main>
+        <h1>404 Error</h1>
+       <h3>Looks like you're lost...</h3>
+
+   
+<p class="content">
+   {{with .Site.Params.Text404}} {{. | safeHTML}} {{else}}
+   Go back to the <a href="/">home</a>.
+
+  {{end}}
+</p>   
+
+
+</main>
+{{ end }}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{- partial "head.html" . -}}
+  <body>
+    <div class="mybody">
+    
+    {{- partial "header.html" . -}} {{- if (eq .Kind "Section" ) -}} {{- .Render
+    "list" -}} {{- end -}}
+    {{- block "main" . }}{{- end }}
+    {{- partial "footer.html" . -}}
+    <svg id="svg"></svg>
+    </div>
+  </body>
+
+  {{ $js := resources.Get "js/main.js"}} {{ printf `
+  <script src="%s"></script>
+  ` $js.RelPermalink | safeHTML }}
+
+  {{if .Site.Params.twemoji}}
+  <script
+    src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    twemoji.parse(document.body, {
+      folder: "svg",
+      ext: ".svg",
+    });
+  </script>
+
+  <script>
+    function menuOnClick() {
+  document.getElementById("menu-bar").classList.toggle("change");
+  document.getElementById("nav").classList.toggle("change");
+  document.getElementById("menu-bg").classList.toggle("change-bg");
+  document.getElementById("menu-closer").classList.toggle("change");
+
+}
+
+function menuCloseOnClick() {
+  document.getElementById("menu-bar").classList.toggle("change");
+  document.getElementById("nav").classList.toggle("change");
+  document.getElementById("menu-bg").classList.toggle("change-bg");
+  document.getElementById("menu-closer").classList.toggle("change");
+}
+  </script>
+  {{end}}
+</html>
