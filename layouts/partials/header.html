@@ -2,7 +2,7 @@
 <div class="menu-bg" id="menu-bg"></div>
 <div class="menu-closer" id="menu-closer" onclick="menuCloseOnClick()"></div>
 
-<header class="header">
+<header>
   <div>
     <a class="logo" href="{{ .Site.BaseURL }}">
       {{if os.FileExists "static/logo.png"}}
@@ -11,7 +11,6 @@
     </a>
   </div>
   <div class="menu-block">
-    <div id="menu">
       <div id="menu-bar" onclick="menuOnClick()">
         <div id="bar1" class="bar"></div>
         <div id="bar2" class="bar"></div>
@@ -26,7 +25,6 @@
           {{- end}}
         </ul>
       </nav>
-    </div>
   </div>
 </header>
 {{- end}}

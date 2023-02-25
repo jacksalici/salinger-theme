@@ -1,28 +1,32 @@
 <head>
+    <meta name="title" content="I am Giacomo Salici.">
+    <meta name="description" content="I'm a computer engineering student based in Modena, Italy. I like developing and designing random stuffs.">
+    <meta name="keywords" content="jack salici, Portfolio, giacomo salici, salici, developer, coding, maker">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="Jack Salici">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    {{ with .Site.Params.description -}}
-    <meta name="description" content="{{ . }}">
-    {{ end }}
+ 
     {{ template "_internal/google_analytics.html" . }}
 
     {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
-    
+
+    <!--STYLE-->
     {{ $sass := resources.Get "sass/main.scss" }}
     {{ $css := $sass | resources.ToCSS | minify }}
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
-    {{with .Site.Params.fontawesomekitcode}}
-    <script src="https://kit.fontawesome.com/{{.}}.js" crossorigin="anonymous"></script>
-    {{else}}
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    {{end}}
+    <!--MATH-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 
-    {{ if .Params.math }}{{ partial "math.html" . }}{{ end }}
 
-
+    <!--TITLE-->
     <title>{{ .Title }}</title>
 </head>

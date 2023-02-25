@@ -2,14 +2,21 @@
 <html lang="en">
   {{- partial "head.html" . -}}
   <body>
-    <div class="mybody">
     
-    {{- partial "header.html" . -}} {{- if (eq .Kind "Section" ) -}} {{- .Render
-    "list" -}} {{- end -}}
-    {{- block "main" . }}{{- end }}
+    {{- partial "header.html" . -}} 
+    
+    {{- if (eq .Kind "Section" ) -}} 
+      {{- .Render  "list" -}} 
+    {{- end -}}
+   
+    {{- block "main" . }}
+    
+    {{- end }}
+    
     {{- partial "footer.html" . -}}
+    
     <svg id="svg"></svg>
-    </div>
+    
   </body>
 
   {{ $js := resources.Get "js/main.js"}} {{ printf `
