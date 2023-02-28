@@ -16,7 +16,7 @@
     {{- partial "footer.html" . -}}
     
     <svg id="svg"></svg>
-    
+
   </body>
 
   {{ $js := resources.Get "js/main.js"}} {{ printf `
@@ -35,21 +35,6 @@
     });
   </script>
 
-  <script>
-    function menuOnClick() {
-  document.getElementById("menu-bar").classList.toggle("change");
-  document.getElementById("nav").classList.toggle("change");
-  document.getElementById("menu-bg").classList.toggle("change-bg");
-  document.getElementById("menu-closer").classList.toggle("change");
-
-}
-
-function menuCloseOnClick() {
-  document.getElementById("menu-bar").classList.toggle("change");
-  document.getElementById("nav").classList.toggle("change");
-  document.getElementById("menu-bg").classList.toggle("change-bg");
-  document.getElementById("menu-closer").classList.toggle("change");
-}
-  </script>
+  
   {{end}}
 </html>

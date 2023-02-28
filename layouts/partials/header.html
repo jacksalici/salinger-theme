@@ -1,5 +1,4 @@
 {{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
-<div class="menu-bg" id="menu-bg"></div>
 <div class="menu-closer" id="menu-closer" onclick="menuCloseOnClick()"></div>
 
 <header>
@@ -10,21 +9,39 @@
       {{else}} {{.Site.Title}} {{end}}
     </a>
   </div>
-  <div class="menu-block">
-      <div id="menu-bar" onclick="menuOnClick()">
-        <div id="bar1" class="bar"></div>
-        <div id="bar2" class="bar"></div>
-        <div id="bar3" class="bar"></div>
+  <div>
+      <div id="hamburger" onclick="menuOnClick()">
+        <span id="bar"></span>
+        <span id="bar"></span>
       </div>
-      <nav class="nav" id="nav">
-        <ul>
-          {{range .Site.Menus.main.ByWeight -}}
-          <li>
-            <a href="{{.URL}}" class="nav-link">{{- .Name -}}</a>
-          </li>
-          {{- end}}
-        </ul>
-      </nav>
   </div>
 </header>
+
+<nav class="nav hide-nav" id="nav">
+  {{range .Site.Menus.main.ByWeight -}}
+  <div class="nav-elem">
+    <a href="{{.URL}}" class="nav-link">{{- .Name -}}</a>
+  </div>
+  {{- end}}
+</nav>
+
+
+<script>
+  function menuOnClick() {
+document.getElementById("hamburger").classList.toggle("change");
+document.getElementById("menu-closer").classList.toggle("change");
+document.getElementById("nav").classList.toggle("hide-nav");
+
+
+}
+
+function menuCloseOnClick() {
+document.getElementById("hamburger").classList.toggle("change");
+document.getElementById("nav").classList.toggle("hide-nav");
+document.getElementById("menu-closer").classList.toggle("change");
+}
+</script>
+
+
+
 {{- end}}
