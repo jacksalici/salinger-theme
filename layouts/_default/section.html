@@ -1,17 +1,11 @@
 {{ define "main" }}
-    
-        <div id="main-header">
 
-        <h2 class="term-title">{{.Title}}</h2>
-        <div class="content">{{- .Content -}}</div>
+<div class="section__header">
+  <h2 class="section__title">{{.Title}}</h2>
+  <div class="section__content">{{- .Content -}}</div>
+</div>
 
-        </div>
-        
-        <li-main>
-        {{ range  .RegularPages}}
-            {{.Render "li"}}
-        {{ end }}
-
-        {{.Render "list"}}
-        </li-main>
+<div class="feed">
+  {{ range .RegularPages}} {{.Render "li"}} {{ end }} {{.Render "list"}}
+</div>
 {{ end }}

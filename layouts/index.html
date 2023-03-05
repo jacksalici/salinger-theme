@@ -1,19 +1,19 @@
 {{ define "main" }}
 
-<div class="background">
-  <div class="background-title">
-    <p>creative developer <br />& digital craftsman</p>
+<div class="hero">
+  <div class="hero__text">
+    <p>creative<br />developer<br />& digital<br />craftsman</p>
   </div>
 
-  <div class="foreground">
-    <img class="logo" src="logow.svg" />
-    <h1 class="foreground-text">
+  <div class="hero__foreground">
+    <img class="hero__logo" src="logow.svg" />
+    <h1 class="hero__foreground-text">
       Developer and designer from Italy.
       <a href="/projects">Checkout my projects.</a>
     </h1>
 
     {{- if isset .Site.Params "social" }}
-    <div class="icons">
+    <div class="hero__icons">
       {{ range $index, $elem := .Site.Params.social}}
       <a
         class="icon"
@@ -30,4 +30,21 @@
   </div>
 </div>
 
+<div class="feed">
+  {{range .Sections}}
+    
+    <h3>
+        <a class="section__title primary" href="{{.Permalink}}">{{.Title}}</a>   
+   </h3>
+
+    <div id="posts">
+           {{partial "recursive.html" .}}
+    </div>
+                  
+{{end}}
+
+</div>
+
+
 {{ end }}
+

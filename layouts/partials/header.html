@@ -2,11 +2,9 @@
 <div class="menu-closer" id="menu-closer" onclick="menuCloseOnClick()"></div>
 
 <header>
-  <div>
-    <a class="logo" href="{{ .Site.BaseURL }}">
-      {{if os.FileExists "static/logo.png"}}
-      <img src="{{.Site.BaseURL}}/logo.png" alt="{{.Site.Title}}" />
-      {{else}} {{.Site.Title}} {{end}}
+  <div class="logo">
+    <a class="logo__link" href="{{ .Site.BaseURL }}">
+     {{with .Site.Params.logo | safeHTML}}{{.}}{{else}}<span class="site-name">{{.Site.Title}}</span>{{end}}
     </a>
   </div>
   <div>
@@ -15,32 +13,17 @@
         <span id="bar"></span>
       </div>
   </div>
+
+  <nav class="nav hide-nav" id="nav">
+    {{range .Site.Menus.main.ByWeight -}}
+    <div class="nav-elem">
+      <a href="{{.URL}}" class="nav-link">{{- .Name -}}</a>
+    </div>
+    {{- end}}
+  </nav>
+  
 </header>
 
-<nav class="nav hide-nav" id="nav">
-  {{range .Site.Menus.main.ByWeight -}}
-  <div class="nav-elem">
-    <a href="{{.URL}}" class="nav-link">{{- .Name -}}</a>
-  </div>
-  {{- end}}
-</nav>
-
-
-<script>
-  function menuOnClick() {
-document.getElementById("hamburger").classList.toggle("change");
-document.getElementById("menu-closer").classList.toggle("change");
-document.getElementById("nav").classList.toggle("hide-nav");
-
-
-}
-
-function menuCloseOnClick() {
-document.getElementById("hamburger").classList.toggle("change");
-document.getElementById("nav").classList.toggle("hide-nav");
-document.getElementById("menu-closer").classList.toggle("change");
-}
-</script>
 
 
 

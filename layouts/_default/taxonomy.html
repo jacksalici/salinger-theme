@@ -1,25 +1,22 @@
 {{ define "main" }}
 
-<div id="main-header">
-
+<div class="taxonomy__header">
   <h2>All {{ .Type }}</h2>
-
 </div>
 
-
-<li-main>
-    {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
-    <div class="li-post">
-      {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage
-      (printf "/%s/%s" $type $name) }}
-      <p class="li-title">
-        <a href="{{ .Permalink }}">{{ .Name }}</a>
-        <span class="li-count">{{ $count }} </span>
+<div class="feed">
+  {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
+  {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage (printf
+  "/%s/%s" $type $name) }}
+  <a class="feed__link" href="{{ .Permalink }}">
+    <div class="feed__post">
+      <p class="feed__post-title">
+        {{ .Name }}
+        <span class="feed__post-count">{{ $count }} </span>
       </p>
-        {{- end }}
-      
+      {{- end }}
     </div>
-
-    {{- end }}
-</li-main>
+  </a>
+  {{- end }}
+</div>
 {{ end }}

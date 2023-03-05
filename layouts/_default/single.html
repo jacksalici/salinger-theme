@@ -1,88 +1,26 @@
 {{ define "main" }}
 
 <article>
-  <div id="main-header">
-    <h1 class="name">{{ .Title }}</h1>
+  <div class="single__header">
+    <h1 class="single__title">{{ .Title }}</h1>
+    {{with .Params.hideMeta}}{{else}}{{partial "meta.html" .}}{{end}}
+  </div>
 
-    {{with .Params.hideMeta}}
-    {{else}}
-    <div class="li-meta li-meta-page">
-      <div class="li-term">
-        <div class="li-obj">
-          <i class="fa-regular fa-calendar icon"></i> 
-        </div>
-        
-        <div class="li-obj">
-          {{$myFormat := "January 2, 2006"}} {{with .Site.Params.DateFormat}}
-          {{$myFormat = .}} {{end}} {{ time.Format $myFormat .Date}}
-        </div>
-      </div>
-
-      {{with .Params.Categories}}
-      <div class="li-term">
-        <div class="li-obj">
-          <i class="fa-regular fa-folder icon"></i> 
-        </div>
-        <div class="li-obj">
-          {{$n := len .}}
-          {{range $ind, $val := .}} {{ $val }}
-            {{- if lt $ind (sub $n 1) -}},{{end}} 
-          {{ end }}
-        </div>
-      </div>
-      {{end}}
-
-      {{with .Params.Langs}}
-      <div class="li-term">
-        <div class="li-obj">
-          <i class="fa-solid fa-code icon"></i> 
-        </div>
-        <div class="li-obj">
-          {{$n := len .}}
-          {{range $ind, $val := .}} {{ $val }}
-            {{- if lt $ind (sub $n 1) -}},{{end}}
-          {{ end }}
-        </div>
-      </div>
-      {{end}}
-
-      {{with .Params.Tools}}
-      <div class="li-term">
-        <div class="li-obj">
-          <i class="fa-solid fa-screwdriver-wrench icon"></i>
-        </div>
-        <div class="li-obj">
-          {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind
-          (sub $n 1) -}},{{end}} {{ end }} 
-        </div>
-      </div>
-      {{ end }}
-
+  <div class="single__body">
     
-    </div>
+    <div class="single__toc">
+    {{if .Params.toc}}
+    <button type="button" class="single__toc-button">Table of Content</button>
+    <div class="single__toc-content">{{ .TableOfContents }}</div>
     {{end}}
   </div>
 
-  <main>
-
-
-  {{if .Params.toc}}
-  <aside class="toc">
-    <h4>Table of Content</h4>
-    {{ .TableOfContents }}
-  </aside>
-  {{end}}
-
-  <div class="post-text">{{- .Content -}}</div>
-
-
-  <!--
-  {{with .Params.Tags}}   <h6 class="tags-footer"> Tags: {{range .}}
-    <a href="/tags/{{ . | urlize}}">#{{- . -}}</a>
-      {{- end -}}</h6> {{- end -}}
-  -->
-
-    </main>
-    </article>
+    <div class="single__body-content">
+      {{- .Content -}} {{with .Params.Tags}}
+      <h6 class="tags-footer">Tags: {{range .}} {{ . }} / {{- end -}}</h6>
+      {{- end -}}
+    </div>
+  </div>
+</article>
 
 {{ end }}
