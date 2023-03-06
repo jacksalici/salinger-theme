@@ -4,13 +4,20 @@
   <div class="hero__text">
     <p>creative<br />developer<br />& digital<br />craftsman</p>
   </div>
-
+  <!--{{with .Site.Params.logo | safeHTML}}<div class="hero__logo">{{.}}</div>{{end}}-->
+ 
   <div class="hero__foreground">
-    <img class="hero__logo" src="logow.svg" />
-    <h1 class="hero__foreground-text">
-      Developer and designer from Italy.
-      <a href="/projects">Checkout my projects.</a>
-    </h1>
+    
+    <div class="hero__foreground-text">
+      
+      <h1>
+        People call me Jack.
+      </h1>
+      <h5>
+        My name is Giacomo Salici, I'm a developer and designer from Italy. Currently, I'm getting a M.Sc. degree in computer engineering.
+      </h5>
+    
+    </div>
 
     {{- if isset .Site.Params "social" }}
     <div class="hero__icons">
@@ -33,8 +40,8 @@
 <div class="feed">
   {{range .Sections}}
     
-    <h3>
-        <a class="section__title primary" href="{{.Permalink}}">{{.Title}}</a>   
+    <h3 class="section__title primary">
+      {{.Title}}   
    </h3>
 
     <div id="posts">
@@ -42,6 +49,26 @@
     </div>
                   
 {{end}}
+
+</div>
+
+
+<div class="contact-form">
+  <h3 class="section__title">
+   Contact me
+ </h3>
+
+    <form action="">
+      <div class="contact-form__row">
+          <input type="text" class="contact-form__input" placeholder="nickname">
+          <input type="mail" class="contact-form__input" placeholder="email">
+      </div>
+      <div class="contact-form__row">
+        <input type="text" class="contact-form__input" placeholder="Drop the message"></input>
+        <button class="contact-form__input contact-form__send-button">↵</button>
+      </div>
+    </form>
+  
 
 </div>
 

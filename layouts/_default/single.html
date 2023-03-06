@@ -7,19 +7,23 @@
   </div>
 
   <div class="single__body">
-    
-    <div class="single__toc">
+   
     {{if .Params.toc}}
+    <div class="single__toc">
     <button type="button" class="single__toc-button">Table of Content</button>
     <div class="single__toc-content">{{ .TableOfContents }}</div>
+    </div>
     {{end}}
-  </div>
+
 
     <div class="single__body-content">
-      {{- .Content -}} {{with .Params.Tags}}
-      <h6 class="tags-footer">Tags: {{range .}} {{ . }} / {{- end -}}</h6>
-      {{- end -}}
+      {{- .Content -}} 
     </div>
+  </div>
+  <div class="single__tags-footer">
+    {{with .Params.Tags}}
+      <h6>Tags: {{range .}} {{ . }} / {{- end -}}</h6>
+      {{- end -}}
   </div>
 </article>
 

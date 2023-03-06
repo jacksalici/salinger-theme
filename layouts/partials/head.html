@@ -11,7 +11,7 @@
  
     {{ template "_internal/google_analytics.html" . }}
 
-    {{ printf `<link rel="shortcut icon" href="%s">` ("favicon.ico" | absURL) | safeHTML }}
+    {{ printf `<link rel="shortcut icon" href="%s">` ("logo.svg" | absURL) | safeHTML }}
 
     <!--STYLE-->
     {{ $sass := resources.Get "sass/main.scss" }}
