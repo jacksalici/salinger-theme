@@ -2,7 +2,7 @@
 
 <div class="hero">
   <div class="hero__text">
-    <p>creative<br />developer<br />& digital<br />craftsman</p>
+    <p id="hero-text">creative developer digital craftsman</p>
   </div>
   <!--{{with .Site.Params.logo | safeHTML}}<div class="hero__logo">{{.}}</div>{{end}}-->
  
@@ -38,17 +38,29 @@
 </div>
 
 <div class="feed">
-  {{range .Sections}}
+  
     
-    <h3 class="section__title primary">
-      {{.Title}}   
+    <h3 class="section__title">
+      Featured projects  
    </h3>
-
-    <div id="posts">
-           {{partial "recursive.html" .}}
-    </div>
+   <div id="posts">
+  {{range (where .Site.RegularPages ".Params.featured" "=" true)}}
+    
+    
+           {{.Render "li" }}
+    
                   
-{{end}}
+  {{end}}
+
+  <a href="/projects" class="feed__link">
+    <div class="feed__post tertiary">
+      
+        See other projects
+    
+    </div>
+  </a>
+
+</div>
 
 </div>
 
@@ -58,14 +70,14 @@
    Contact me
  </h3>
 
-    <form action="">
+    <form action="https://formspree.io/f/xoqzwbzw" method="POST">      
       <div class="contact-form__row">
-          <input type="text" class="contact-form__input" placeholder="nickname">
-          <input type="mail" class="contact-form__input" placeholder="email">
+        <input type="text" class="contact-form__input" placeholder="nickname" name="name">
+        <input type="mail" class="contact-form__input" placeholder="email" name="username">
       </div>
       <div class="contact-form__row">
-        <input type="text" class="contact-form__input" placeholder="Drop the message"></input>
-        <button class="contact-form__input contact-form__send-button">↵</button>
+        <input type="text" class="contact-form__input" placeholder="Drop the message" name="message"></input>
+        <button type="submit" class="contact-form__input contact-form__send-button">↵</button>
       </div>
     </form>
   
