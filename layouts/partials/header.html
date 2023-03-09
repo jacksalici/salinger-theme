@@ -1,30 +1,28 @@
 {{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
-<div class="menu-closer" id="menu-closer" onclick="menuCloseOnClick()"></div>
 
-<header>
-  <div class="logo">
-    <a class="logo__link" href="{{ .Site.BaseURL }}">
-     {{with .Site.Params.logo | safeHTML}}{{.}}{{else}}<span class="site-name">{{.Site.Title}}</span>{{end}}
+<header class="header">
+  <div class="header__logo">
+    <a class="header__logo-link" href="{{ .Site.BaseURL }}">
+      {{with .Site.Params.logo | safeHTML}}{{.}}{{else}}<span
+        class="header__site-name"
+        >{{.Site.Title}}</span
+      >{{end}}
     </a>
   </div>
   <div>
-      <div id="hamburger" onclick="menuOnClick()">
-        <span id="bar"></span>
-        <span id="bar"></span>
-      </div>
+    <div id="hamburger" class="header__hamburger" onclick="menuOnClick()">
+      <span></span>
+      <span></span>
+    </div>
   </div>
 
-  <nav class="nav hide-nav" id="nav">
+  <nav class="header__nav header__nav_hidden" id="nav">
     {{range .Site.Menus.main.ByWeight -}}
-    <div class="nav-elem">
-      <a href="{{.URL}}" class="nav-link">{{- .Name -}}</a>
+    <div class="header__nav-elem">
+      <a href="{{.URL}}" class="header__nav-link">{{- .Name -}}</a>
     </div>
     {{- end}}
   </nav>
-  
 </header>
-
-
-
 
 {{- end}}
