@@ -5,18 +5,14 @@
     <p id="hero-text">creative developer digital craftsman</p>
   </div>
   <!--{{with .Site.Params.logo | safeHTML}}<div class="hero__logo">{{.}}</div>{{end}}-->
- 
+
   <div class="hero__foreground">
-    
     <div class="hero__foreground-text">
-      
-      <h1>
-        People call me Jack.
-      </h1>
+      <h1>People call me Jack.</h1>
       <h5>
-        My name is Giacomo Salici, I'm a developer and designer from Italy. Currently, I'm getting a M.Sc. degree in computer engineering.
+        My name is Giacomo Salici, I'm a developer and designer from Italy.
+        Currently, I'm getting a M.Sc. degree in computer engineering.
       </h5>
-    
     </div>
 
     {{- if isset .Site.Params "social" }}
@@ -38,52 +34,17 @@
 </div>
 
 <div class="feed">
-  
-    
-    <h3 class="section__title">
-      Featured projects  
-   </h3>
-   <div id="posts">
-  {{range (where .Site.RegularPages ".Params.featured" "=" true)}}
-    
-    
-           {{.Render "li" }}
-    
-                  
-  {{end}}
+  <h3 class="section__title">Featured projects</h3>
+  <div id="posts">
+    {{range (where .Site.RegularPages ".Params.featured" "=" true)}} {{.Render
+    "li" }} {{end}}
 
-  <a href="/projects" class="feed__link">
-    <div class="feed__post tertiary">
-      
-        See other projects  →
-    
-    </div>
-  </a>
-
+    <a href="/projects" class="feed__link">
+      <div class="feed__post tertiary animated">See other projects →</div>
+    </a>
+  </div>
 </div>
 
-</div>
-
-
-<div class="contact-form" id="contact">
-  <h3 class="section__title">
-   Contact me
- </h3>
-
-    <form action="https://formspree.io/f/xoqzwbzw" method="POST">      
-      <div class="contact-form__row">
-        <input type="text" class="contact-form__input" placeholder="nickname" name="name">
-        <input type="mail" class="contact-form__input" placeholder="email" name="username">
-      </div>
-      <div class="contact-form__row">
-        <input type="text" class="contact-form__input" placeholder="Drop the message" name="message"></input>
-        <button type="submit" class="contact-form__input contact-form__send-button">↵</button>
-      </div>
-    </form>
-  
-
-</div>
-
+{{partial "contact.html"}}
 
 {{ end }}
-
