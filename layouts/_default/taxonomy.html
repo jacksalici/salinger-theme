@@ -8,15 +8,16 @@
   {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
   {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage (printf
   "/%s/%s" $type $name) }}
-  <a class="feed__link" href="{{ .Permalink }}">
+  
     <div class="feed__post">
+      <a class="feed__link" href="{{ .Permalink }}"></a>
       <p class="feed__post-title">
         {{ .Name }}
         <span class="feed__post-count">{{ $count }} </span>
       </p>
       {{- end }}
     </div>
-  </a>
+
   {{- end }}
 </div>
 {{ end }}
