@@ -34,14 +34,15 @@
 </div>
 
 <div class="feed">
-  <h3 class="section__title">Featured projects</h3>
+  <h3 class="section__title animated">Featured projects</h3>
   <div id="posts">
     {{range (where .Site.RegularPages ".Params.featured" "=" true)}} {{.Render
     "li" }} {{end}}
 
-    <a href="/projects" class="feed__link">
-      <div class="feed__post tertiary animated">See other projects →</div>
-    </a>
+      <div class="feed__post tertiary animated">See other projects →
+        <a href="/projects" class="feed__link">  </a></div>
+
+  
   </div>
 </div>
 

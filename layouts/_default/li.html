@@ -1,11 +1,12 @@
-<a href="{{.Permalink}}" class="feed__link">
   <div class="feed__post animated">
+    <a href="{{.Permalink}}" class="feed__link"></a>
     <div class="feed__post-title">
       {{with .Params.Description}} {{.}}<br />
       {{else}} {{.Title}}<br />
       {{end}}
     </div>
-
   {{partial "meta.html" .}}  
   </div>
-</a>
+
+
+  
