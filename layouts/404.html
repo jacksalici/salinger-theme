@@ -1,15 +1,15 @@
 {{ define "main"}}
-    <main>
-        <h1>404 Error</h1>
-       <h3>Looks like you're lost...</h3>
-
+<article>
+    <div class="single__header">
+        <h1 class="single__title">404 Error</h1>
+       
+      <div>
    
-<p class="content">
-   {{with .Site.Params.Text404}} {{. | safeHTML}} {{else}}
+<div class="single__body_page">
+  <h3>Looks like you're lost...</h3>
    Go back to the <a href="/">home</a>.
+  <img src="https://media.tenor.com/U_z21PJ3E28AAAAM/everybody-stay-calm-steve-carrell.gif"/>
+</div>   
 
-  {{end}}
-</p>   
-
-</main>
+</article>
 {{ end }}

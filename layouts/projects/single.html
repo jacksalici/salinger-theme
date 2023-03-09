@@ -1,19 +1,12 @@
 {{ define "main" }}
 
 <article>
-  
-
-    {{with .Params.hideTitle}}
-    <div class="single__header_absent"></div>
-    
-    {{else}}
-    <div class="single__header">
+  <div class="single__header">
     <h1 class="single__title">{{ .Title }}</h1>
+    {{with .Params.hideMeta}}{{else}}{{partial "meta.html" .}}{{end}}
   </div>
-    {{end}}
-    
 
-  <div class="single__body_page">
+  <div class="single__body">
    
     {{if .Params.toc}}
     <div class="single__toc">
@@ -23,11 +16,15 @@
     {{end}}
 
 
-    <div class="single__body-content single__body-content_page">
+    <div class="single__body-content">
       {{- .Content -}} 
     </div>
   </div>
-  
+  <div class="single__tags-footer">
+    {{with .Params.Tags}}
+      <h6>Tags: {{range .}} {{ . }} / {{- end -}}</h6>
+      {{- end -}}
+  </div>
 </article>
 
 {{ end }}
