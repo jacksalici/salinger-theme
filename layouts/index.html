@@ -39,13 +39,18 @@
     {{range (where .Site.RegularPages ".Params.featured" "=" true)}} {{.Render
     "li" }} {{end}}
 
-      <div class="feed__post tertiary animated">See other projects <i class="fa-solid fa-arrow-right-long"></i>
-        <a href="/projects" class="feed__link">  </a></div>
+      <div class="feed__post tertiary animated">See all the projects ({{ len (where .Site.RegularPages "Section" "==" "projects") }}) <i class="fa-solid fa-arrow-right-long"></i>
+        <a href="/projects" class="feed__link">  </a>
+      
+    
+      </div>
 
   
   </div>
 </div>
 
 {{partial "contact.html"}}
+
+<h5 class="feed"><a class="section__title primary" href="/projects/website">Do you like this website?</a></h5>
 
 {{ end }}
