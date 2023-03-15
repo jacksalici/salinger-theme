@@ -1,4 +1,5 @@
 {{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
+<div class="header__nav-close-menu" id="nav-closer" onclick="menuCloseOnClick()"></div>
 
 <header class="header">
   <div class="header__logo">
@@ -9,12 +10,12 @@
       >{{end}}
     </a>
   </div>
-  <div>
-    <div id="hamburger" class="header__hamburger" onclick="menuOnClick()">
+  
+  <div id="hamburger" class="header__hamburger" onclick="menuOnClick()">
       <span></span>
       <span></span>
-    </div>
   </div>
+
 
   <nav class="header__nav header__nav_hidden" id="nav">
     {{range .Site.Menus.main.ByWeight -}}
