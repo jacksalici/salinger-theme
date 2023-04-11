@@ -5,11 +5,11 @@
 
       <form name="contact" method="POST" data-netlify="true" action="/thanks">      
         <div class="contact-form__row">
-          <input type="text" class="contact-form__input animated" placeholder="nickname" name="name">
-          <input type="mail" class="contact-form__input animated" placeholder="email" name="username">
+          <input type="text" class="contact-form__input animated" placeholder="nickname" name="name" required>
+          <input type="email" class="contact-form__input animated" placeholder="email" name="username" required>
         </div>
         <div class="contact-form__row">
-          <input type="text" class="contact-form__input animated" placeholder="Drop the message" name="message"></input>
+          <input type="text" class="contact-form__input animated" placeholder="Drop the message" name="message" required>
           <button type="submit" class="contact-form__input contact-form__send-button animated"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
         </div>
       </form>
