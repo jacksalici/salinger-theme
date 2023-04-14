@@ -40,6 +40,7 @@
   />
 
   <!--MATH-->
+  {{ with .Params.tags }}
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
@@ -53,6 +54,7 @@
     src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
     onload="renderMathInElement(document.body);"
   ></script>
+  {{end}}
 
   <!--LIBS-->
   <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
@@ -60,7 +62,7 @@
   <!--LIBS-->
 
   {{if .Site.Params.twemoji}}
-  <script
+  <script defer
     src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
     crossorigin="anonymous"
   ></script>
