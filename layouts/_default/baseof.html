@@ -15,11 +15,35 @@
     
     {{- partial "footer.html" . -}}
     
-    <svg id="svg"></svg>
+    <!--<svg id="svg"></svg>-->
+
+    
 
   </body>
 
   {{ $js := resources.Get "js/main.js"}} {{ printf `
     <script src="%s"></script>
     ` $js.RelPermalink | safeHTML }}
+
+    <script>
+
+      /*
+       *
+       *   TWEEMOJI
+       *
+       */
+      
+      
+      try {
+          twemoji.parse(document.body, {
+            folder: "svg",
+            ext: ".svg",
+          });
+      } catch(e) {
+        if (e instanceof ReferenceError) {
+            console.log("tweemoji not initialized")
+            console.log(e)
+        }
+      }
+          </script>
 </html>
