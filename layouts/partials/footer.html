@@ -1,18 +1,21 @@
 {{if or (not .IsHome) (eq .Site.Params.showfooteronhomepage true)}}
 
-<footer>
-    
-    {{$footerText := string ""}}
-    {{ with .Site.Copyright }}
-    {{$footerText = . | safeHTML}}
-    {{else}}
-    {{$footerText = .Site.Title }}
-    {{end}}
-       
-    <h6> &copy; {{ now.Year }} - {{$footerText}}
-         <br>Made with ❤️ and ☕️ on 🌍.</h6>
-   
-</footer>
 
+<footer class="footer mt-20 footer-center p-4 bg-base-200 text-base-content">
+     <p class="block">
+        
+            {{$footerText := string ""}}
+            {{ with .Site.Copyright }}
+            {{$footerText = . | safeHTML}}
+            {{else}}
+            {{$footerText = .Site.Title }}
+            {{end}}
+               
+            &copy; {{ now.Year }} - {{$footerText}} - 
+                 Made with ❤️ and ☕️ on 🌍.
+           
+        </p>
+   
+  </footer>
 
 {{end}}

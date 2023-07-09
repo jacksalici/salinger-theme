@@ -1,26 +1,24 @@
-<div class="feed__post-meta">
-  <div class="feed__post-meta-item">
+<div class="grid grid-flow-row grid-cols-3 ">
+  <div>
     <i class="fa-regular fa-calendar icon"></i>
-
     {{$myFormat := "January 2, 2006"}} {{with .Site.Params.DateFormat}}
     {{$myFormat = .}} {{end}} {{ time.Format $myFormat .Date}}
   </div>
-
   {{with .Params.Categories}}
-  <div class="feed__post-meta-item">
+  <div>
     <i class="fa-regular fa-folder icon"></i>
 
     {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind (sub $n
     1) -}},{{end}} {{end}}
   </div>
   {{ end }} {{with .Params.Langs}}
-  <div class="feed__post-meta-item">
+  <div>
     <i class="fa-solid fa-code icon"></i>
     {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind (sub $n
     1) -}},{{end}} {{ end }}
   </div>
   {{ end }} {{with .Params.Tools}}
-  <div class="feed__post-meta-item">
+  <div>
     <i class="fa-solid fa-list icon"></i>
     {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind (sub $n
     1) -}},{{end}} {{ end }}

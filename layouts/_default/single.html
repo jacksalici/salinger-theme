@@ -1,19 +1,24 @@
 {{ define "main" }}
 
-<article>
   
-
+    
     {{with .Params.hideTitle}}
-    <div class="single__header_absent"></div>
     
     {{else}}
-    <div class="single__header">
-    <h1 class="single__title">{{ .Title }}</h1>
-  </div>
+
+    <div class="m-auto bg-base-200 place-items-start">
+      <div class="max-w-2xl w-full p-2 py-24 mx-auto">
+        <div>
+          <h1 class="text-3xl font-bold font-serif">{{ .Title }}</h1>
+          {{with .Params.Description}}<p class="font-mono uppercase">{{.}}</p>{{end}}
+        </div>
+      </div>
+    </div>
+
     {{end}}
     
 
-  <div class="single__body_page">
+  <div class="mt-5">
    
     {{if .Params.toc}}
     <div class="single__toc">
@@ -23,11 +28,10 @@
     {{end}}
 
 
-    <div class="single__body-content single__body-content_page">
+    <article class="prose prose-lg font-serif max-w-2xl p-2 mx-auto">
       {{- .Content -}} 
-    </div>
+    </article>
   </div>
   
-</article>
 
 {{ end }}

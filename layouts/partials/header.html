@@ -1,29 +1,26 @@
 {{if or (not .IsHome) (eq .Site.Params.showheaderonhomepage true)}}
-<div class="header__nav-close-menu" id="nav-closer" onclick="menuCloseOnClick()"></div>
 
-<header class="header">
-  <div class="header__logo">
-    <a class="header__logo-link" href="{{ .Site.BaseURL }}">
-      {{with .Site.Params.logo | safeHTML}}{{.}}{{else}}<span
-        class="header__site-name"
-        >{{.Site.Title}}</span
-      >{{end}}
-    </a>
+<div class="navbar bg-base-200">
+  <div class="flex-1">
+    <a href="/"class="text-base font-normal block w-10">{{with .Site.Params.logo | safeHTML}}{{.}}{{else}}<span
+      >{{.Site.Title}}</span
+    >{{end}}</a>
   </div>
-  
-  <div id="hamburger" class="header__hamburger" onclick="menuOnClick()">
-      <span></span>
-      <span></span>
-  </div>
-
-
-  <nav class="header__nav header__nav_hidden" id="nav">
-    {{range .Site.Menus.main.ByWeight -}}
-    <div class="header__nav-elem">
-      <a href="{{.URL}}" class="header__nav-link">{{- .Name -}}</a>
+  <div class="flex-none">
+    <div class="dropdown dropdown-end">
+      <label tabindex="0" class="btn btn-ghost btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+      </label>
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-lg w-40">
+        <li><a href="/">About</a></li>
+        <li><a href="/projects">Portfolio</a></li>
+        <li><a href="/contacts">Contact me</a></li>
+      </ul>
     </div>
-    {{- end}}
-  </nav>
-</header>
+  </div>
+</div>
+
+
+
 
 {{- end}}

@@ -1,51 +1,45 @@
 {{ define "main" }}
-
-<div class="hero">
-  <!--<div class="hero__text">
-    <p id="hero-text">creative developer digital craftsman</p>
-  </div>-->
-  <!--{{with .Site.Params.logo | safeHTML}}<div class="hero__logo">{{.}}</div>{{end}}-->
-
-  <div class="hero__foreground">
-    <div class="hero__foreground-text">
-      <h1>People call me Jack.</h1>
-      <h5>
-        My name is Giacomo Salici, I'm a developer and designer from Italy.
-        Currently, I'm getting a M.Sc. degree in computer engineering.
-      </h5>
-    </div>
-
-    {{- if isset .Site.Params "social" }}
-    <div class="hero__icons">
-      {{ range $index, $elem := .Site.Params.social}}
-      <a
-        class="icon"
-        target="_blank"
-        rel="noopener"
-        href="{{ $elem.url }}"
-        aria-label="{{ $elem.name }}"
-      >
-        <i class="{{ $elem.icon }}" aria-hidden="true"></i>
-      </a>
+<div class="hero min-h-[400px] bg-base-200">
+  <div class="hero-content text-left space-y-4">
+    <!--     <img src="/photo2.jpeg" class="w-20 lg:w-40 rounded-lg mr-auto pt-20 md:pt-0" />
+ -->
+    <div class="py-20">
+      <h1 class="text-6xl font-serif font-bold">People call me Jack.</h1>
+      <p class="text-xl pb-3 max-w-2xl font-mono uppercase">
+        My name is Giacomo Salici, I'm a developer and engineer based in Italy.
+        Currently, I'm getting a M.Sc. degree in Computer Engineering, artificial intelligence curriculum.
+      </p>
+      {{- if isset .Site.Params "social" }}
+      <div class="space-x-2 py-3">
+        {{ range $index, $elem := .Site.Params.social}}
+        <a
+          class="text-base-content"
+          target="_blank"
+          rel="noopener"
+          href="{{ $elem.url }}"
+          aria-label="{{ $elem.name }}"
+        >
+          <i class="{{ $elem.icon }} text-2xl" aria-hidden="true"></i>
+        </a>
+        {{ end }}
+      </div>
       {{ end }}
     </div>
-    {{ end }}
   </div>
 </div>
 
-<div class="feed">
-  <h3 class="section__title animated">Featured projects</h3>
-  <div id="posts">
+<div class=" max-w-2xl px-2 m-auto">
+  <h3 class="text-4xl pt-5 font-bold font-serif">Featured projects</h3>
+  <div id="posts" class="space-y-5 divide-y-4 divide-base-200">
     {{range (where .Site.RegularPages ".Params.featured" "=" true)}} {{.Render
     "li" }} {{end}}
 
-      <div class="feed__post tertiary primary animated">See all the projects ({{ len (where .Site.RegularPages "Section" "==" "projects") }}) <i class="fa-solid fa-arrow-right-long"></i>
-        <a href="/projects" class="feed__link">  </a>
-      
-    
-      </div>
-
-  
+    <!-- <div class="pt-5">
+      <a href="/projects" class="link">
+        See all the projects ({{ len (where .Site.RegularPages "Section" "=="
+        "projects") }}) <i class="fa-solid fa-arrow-right-long"></i>
+      </a>
+    </div> -->
   </div>
 </div>
 
