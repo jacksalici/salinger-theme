@@ -28,8 +28,8 @@
   </div>
 </div>
 
-<div class=" max-w-2xl px-2 m-auto">
-  <h3 class="text-4xl pt-5 font-bold font-serif">Featured projects</h3>
+<div class="max-w-2xl px-2 m-auto">
+  <h3 class="text-4xl py-10 font-bold font-serif">Featured projects</h3>
   <div id="posts" class="space-y-5 divide-y-4 divide-base-200">
     {{range (where .Site.RegularPages ".Params.featured" "=" true)}} {{.Render
     "li" }} {{end}}
