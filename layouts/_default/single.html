@@ -18,10 +18,7 @@
 
    
     {{if .Params.toc}}
-    <div class="single__toc">
-    <button type="button" class="single__toc-button">Table of Content</button>
-    <div class="single__toc-content">{{ .TableOfContents }}</div>
-    </div>
+    {{partial "toc" .}}
     {{end}}
 
 

@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="%s" />
   ` $css.RelPermalink | safeHTML }}-->
 
-  {{ $styles := resources.Get "css/styles.css" }}
+  {{ $styles := resources.Get "css/styles.scss" }}
   {{ $styles = $styles | resources.PostCSS }}
   {{ if  hugo.IsProduction  }}
       {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
