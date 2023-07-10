@@ -1,11 +1,15 @@
 {{ define "main" }}
 
-<div class="section__header">
-  <h2 class="section__title">{{.Title}}</h2>
-  <div class="section__content">{{- .Content -}}</div>
+<div class="m-auto bg-base-200 place-items-start">
+  <div class="max-w-2xl w-full p-2 py-24 mx-auto">
+    <div>
+      <h1 class="text-4xl font-bold font-serif">{{ .Title }}</h1>
+      {{with .Content}}<p class="font-mono text-xl uppercase">{{.}}</p>{{end}}
+    </div>
+  </div>
 </div>
 
-<div class="feed">
+<div class="feed max-w-2xl m-auto px-2 space-y-5 divide-y-4 divide-base-200">
   {{ range .RegularPages}} {{.Render "li"}} {{ end }} {{.Render "list"}}
 </div>
 {{ end }}

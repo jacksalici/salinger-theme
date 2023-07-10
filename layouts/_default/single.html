@@ -1,9 +1,7 @@
 {{ define "main" }}
 
-  
-    
     {{with .Params.hideTitle}}
-    
+    <div class="py-12"></div>
     {{else}}
 
     <div class="m-auto bg-base-200 place-items-start">
@@ -18,7 +16,6 @@
     {{end}}
     
 
-  <div class="mt-5 min-h-screen">
    
     {{if .Params.toc}}
     <div class="single__toc">
@@ -28,10 +25,9 @@
     {{end}}
 
 
-    <article class="prose text-justify font max-w-2xl p-2 mx-auto">
+    <article class="prose text-justify font mt-5 max-w-2xl p-2 mx-auto">
       {{- .Content -}} 
     </article>
-  </div>
   
 
 {{ end }}

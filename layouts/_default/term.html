@@ -1,18 +1,19 @@
+
 {{ define "main" }}
 
-<div class="term__header">
+<div class="m-auto bg-base-200 place-items-start">
+  <div class="max-w-2xl w-full p-2 py-24 mx-auto">
+    <div>
+      <h3 class="font-mono text-2xl uppercase">{{ .Type | singularize}}</h3>
+      <h1 class="text-4xl font-bold font-serif">{{ .Title }}</h1>
+      {{with .Content}}<p class="font-mono text-xl uppercase">{{.}}</p>{{end}}
+    </div>
+  </div>
+</div>
 
-  <h3 class="term__term-type">{{ .Type | singularize}}</h3>
-  <h2 class="term__title">{{ .Title }}</h2>
-  <div class="term__content">{{- .Content -}}</div>
-
+<div class="feed  max-w-2xl m-auto px-2 space-y-5 divide-y-4 divide-base-200">
+  {{ range .Data.Pages }} {{.Render "li"}} {{ end }}
 </div>
 
 
-<div class="feed">
-
-    {{ range .Data.Pages }} {{.Render "li"}} {{ end }}
-  <h6 ><a class="term__back-link" href="/{{.Type | urlize}}">← All {{.Type}}.</a></h6>
-
-</div>
-{{ end}}
+{{ end }}

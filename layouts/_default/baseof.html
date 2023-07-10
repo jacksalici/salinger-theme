@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   {{- partial "head.html" . -}}
-  <body>
+  <body class="flex flex-col h-screen justify-between">
     
     {{- partial "header.html" . -}} 
     
+    <div class="mb-auto">
     {{- if (eq .Kind "Section" ) -}} 
       {{- .Render  "list" -}} 
     {{- end -}}
@@ -12,6 +13,7 @@
     {{- block "main" . }}
     
     {{- end }}
+    </div>
     
     {{- partial "footer.html" . -}}
     

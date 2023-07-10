@@ -1,23 +1,34 @@
 {{ define "main" }}
 
-<div class="taxonomy__header">
-  <h2>All {{ .Type }}</h2>
+<div class="m-auto bg-base-200 place-items-start">
+  <div class="max-w-2xl w-full p-2 py-24 mx-auto">
+    <div>
+      <h1 class="text-4xl font-bold font-serif">All {{ .Type }}</h1>
+      {{with .Content}}<p class="font-mono text-xl uppercase">{{.}}</p>{{end}}
+    </div>
+  </div>
 </div>
 
-<div class="feed">
+<div class="feed  max-w-2xl m-auto px-2 space-y-5 divide-y-4 divide-base-200">
   {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
   {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage (printf
   "/%s/%s" $type $name) }}
-  
-    <div class="feed__post">
-      <a class="feed__link" href="{{ .Permalink }}"></a>
-      <p class="feed__post-title">
-        {{ .Name }}
-        <span class="feed__post-count">{{ $count }} </span>
-      </p>
-      {{- end }}
-    </div>
 
+
+    <div class="pt-3 flex justify-between">
+      <div class="font-mono text-lg uppercase max-w-sm hover:font-bold">
+        <a href="{{.Permalink}}" class="feed__link"> {{.Name}}          
+        </a>
+      </div>
+      <div class="font-mono text-xl uppercase max-w-sm">
+       {{$count}}          
+        
+      </div>
+    
+    </div>
+    {{- end }}
   {{- end }}
 </div>
+
+
 {{ end }}
