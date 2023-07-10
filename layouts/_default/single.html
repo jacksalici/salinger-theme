@@ -9,8 +9,8 @@
     <div class="m-auto bg-base-200 place-items-start">
       <div class="max-w-2xl w-full p-2 py-24 mx-auto">
         <div>
-          <h1 class="text-3xl font-bold font-serif">{{ .Title }}</h1>
-          {{with .Params.Description}}<p class="font-mono uppercase">{{.}}</p>{{end}}
+          <h1 class="text-4xl font-bold font-serif">{{ .Title }}</h1>
+          {{with .Params.Description}}<p class="font-mono text-xl uppercase">{{.}}</p>{{end}}
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
     {{end}}
     
 
-  <div class="mt-5">
+  <div class="mt-5 min-h-screen">
    
     {{if .Params.toc}}
     <div class="single__toc">
@@ -28,7 +28,7 @@
     {{end}}
 
 
-    <article class="prose prose-lg font-serif max-w-2xl p-2 mx-auto">
+    <article class="prose text-justify font max-w-2xl p-2 mx-auto">
       {{- .Content -}} 
     </article>
   </div>
