@@ -1,13 +1,7 @@
 {{ define "main"}}
-  <div class="m-auto bg-base-200 place-items-start">
-    <div class="max-w-2xl w-full p-2 py-24 mx-auto">
-      <div>
-        <h1 class="text-4xl font-bold font-serif">404 error</h1>
-      </div>
-    </div>
-  </div>
+  {{ partial "hero" (dict "Title" "404 Error" "Subtitle" "Ops, that's awkward...")}}
    
-<div class="prose mx-auto max-w-2xl px-2 mt-6">
+<div class="prose feed">
   Looks like you're lost, but here's a link that takes you back to the <a href="/">home</a>.
   If you are confident about your URL, it is likely that the content you were searching for has been moved to a new location. That's awkward...
   <br><br>

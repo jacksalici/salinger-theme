@@ -1,11 +1,9 @@
-
 {{ define "main" }}
-
-{{ partial "hero.html" (dict "Title" .Title "Content" .Content "Supertitle" (.Type | singularize)) }}
-
-<div class="feed ">
-  {{ range .Data.Pages }} {{.Render "li"}} {{ end }}
-</div>
-
-
+  
+  {{ partial "hero.html" (dict "Title" .Title "Content" .Content "Supertitle" (.Type | singularize)) }}
+  
+  <div class="feed ">
+    {{ range .Data.Pages }} {{.Render "li"}} {{ end }}
+  </div>
+  
 {{ end }}

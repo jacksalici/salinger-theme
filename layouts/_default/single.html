@@ -1,23 +1,12 @@
-{{ define "main" }}
-
-    {{with .Params.hideTitle}}
+{{ define "main" }} 
+  {{with .Params.hideTitle}}
     <div class="py-12"></div>
-    {{else}}
-
+  {{else}} 
     {{ partial "hero.html" (dict "Title" .Title "Subtitle" .Params.Description) }}
+  {{end}} 
 
-    {{end}}
-    
+  {{if .Params.toc}} {{partial "toc" .}} {{end}}
 
-   
-    {{if .Params.toc}}
-    {{partial "toc" .}}
-    {{end}}
-
-
-    <article class="prose text-justify feed">
-      {{- .Content -}} 
-    </article>
-  
+  <article class="prose text-justify feed">{{- .Content -}}</article>
 
 {{ end }}

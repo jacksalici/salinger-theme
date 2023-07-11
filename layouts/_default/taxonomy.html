@@ -1,19 +1,19 @@
 {{ define "main" }}
 
-{{ partial "hero.html" (dict "Title" (printf "All %s" .Type ) "Content" .Content)}}
+  {{ partial "hero.html" (dict "Title" (printf "All %s" .Type ) "Content" .Content)}}
 
-<div class="feed">
-  {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
-  {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage (printf
-  "/%s/%s" $type $name) }}
+  <div class="feed">
+    {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
+    {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage (printf
+    "/%s/%s" $type $name) }}
 
-  <div class="flex justify-start">
-    <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
-      <a href="{{.Permalink}}" class="feed__link"> {{.Name}} </a>
+    <div class="flex justify-start">
+      <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
+        <a href="{{.Permalink}}" class="feed__link"> {{.Name}} </a>
+      </div>
+      <div class="font-mono text-4xl uppercase max-w-sm pl-7">{{$count}}</div>
     </div>
-    <div class="font-mono text-4xl uppercase max-w-sm pl-7">{{$count}}</div>
+    {{- end }} {{- end }}
   </div>
-  {{- end }} {{- end }}
-</div>
 
 {{ end }}
