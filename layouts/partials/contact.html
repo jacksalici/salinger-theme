@@ -1,8 +1,41 @@
-<div class="contact-form" id="contact">
-    <h3 class="section__title animated">
-     Contact me
-   </h3>
-   <h4 class="animated">hey AT jacksalici DOT com</h4>
+
+   <h4>You can reach me saying <span class="italic">hey AT jacksalici DOT com</span>.</h4>
+   <p>You can also find me on almost all the socials with the username @jacksalici</p>
+
+   <div class="not-prose space-x-2 py-3">
+    {{ range $index, $elem := .Site.Params.social}}
+    <a
+      class="text-base-content"
+      target="_blank"
+      rel="noopener"
+      href="{{ $elem.url }}"
+      aria-label="{{ $elem.name }}"
+    >
+      <i class="{{ $elem.icon }} text-2xl" aria-hidden="true"></i>
+    </a>
+    {{ end }}
+    <a
+      class="text-base-content"
+      target="_blank"
+      rel="noopener"
+      href="https://instagram.com/jacksalici"
+      aria-label="instagram"
+    >
+      <i class="fa-brands fa-instagram text-2xl" aria-hidden="true"></i>
+    </a>
+    
+    <a
+      class="text-base-content"
+      target="_blank"
+      rel="noopener"
+      href="https://twitter.com/jacksalici"
+      aria-label="twitter"
+    >
+      <i class="fa-brands fa-twitter text-2xl" aria-hidden="true"></i>
+    </a>
+  </div>
+
+
    <!--
       <form name="contact" method="POST" data-netlify="true" action="/thanks">      
         <div class="contact-form__row">
@@ -16,5 +49,4 @@
       </form>
     -->
   
-  </div>
   

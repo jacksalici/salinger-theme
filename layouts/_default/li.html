@@ -1,24 +1,19 @@
-  <div class="pt-3 flex justify-between">
-    <div class="font-mono text-lg uppercase max-w-sm hover:font-bold">
-      <a href="{{.Permalink}}" class="feed__link">{{with .Params.Description}} {{.}}
-        {{else}} {{.Title}} 
-        {{end}}
-      
-        {{with .Params.Categories}}
-      <i class="fa-solid fa-folder text-xs"></i>
-        <span class="text-xs">
-      {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind (sub $n
-      1) -}},{{end}} {{end}}
-    {{ end }}
-      </span>
+<div class="pt-3 flex justify-between">
+  <div class="text-lg max-w-sm hover:font-bold">
+    <div class="text-[0.7rem] space-x-5 font-mono capitalize">
+      {{with .Params.Categories}}
+      <i class="fa-solid fa-folder pr-px text-[0.6rem]"></i>
+      {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind (sub
+      $n 1) -}},{{end}} {{end}} {{ end }}
 
-      <i class="fa-solid fa-calendar text-xs"></i>
- <span class="text-xs">       {{$myFormat := "January 2, 2006"}} {{with .Site.Params.DateFormat}}
-  {{$myFormat = .}} {{end}}  {{ time.Format $myFormat .Date}}</span>
-      </a>
+      <i class="fa-solid fa-calendar pr-px text-[0.6rem]"></i>
+      {{$myFormat := "January 2, 2006"}} {{with .Site.Params.DateFormat}}
+      {{$myFormat = .}} {{end}} {{ time.Format $myFormat .Date}}
     </div>
-  
+    <div class="font-mono uppercase">
+      <a href="{{.Permalink}}" class="feed__link"
+        >{{with .Params.Description}} {{.}} {{else}} {{.Title}} {{end}}</a
+      >
+    </div>
   </div>
-
-
-  
+</div>
