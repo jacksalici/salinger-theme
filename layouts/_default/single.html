@@ -4,14 +4,7 @@
     <div class="py-12"></div>
     {{else}}
 
-    <div class="m-auto bg-base-200 place-items-start">
-      <div class="max-w-2xl w-full p-2 py-24 mx-auto">
-        <div>
-          <h1 class="text-4xl font-bold font-serif">{{ .Title }}</h1>
-          {{with .Params.Description}}<p class="font-mono text-xl uppercase">{{.}}</p>{{end}}
-        </div>
-      </div>
-    </div>
+    {{ partial "hero.html" (dict "Title" .Title "Subtitle" .Params.Description) }}
 
     {{end}}
     
@@ -22,7 +15,7 @@
     {{end}}
 
 
-    <article class="prose text-justify font mt-5 max-w-2xl p-2 mx-auto">
+    <article class="prose text-justify feed">
       {{- .Content -}} 
     </article>
   

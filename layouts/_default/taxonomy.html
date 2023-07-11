@@ -1,34 +1,19 @@
 {{ define "main" }}
 
-<div class="m-auto bg-base-200 place-items-start">
-  <div class="max-w-2xl w-full p-2 py-24 mx-auto">
-    <div>
-      <h1 class="text-4xl font-bold font-serif">All {{ .Type }}</h1>
-      {{with .Content}}<p class="font-mono text-xl uppercase">{{.}}</p>{{end}}
-    </div>
-  </div>
-</div>
+{{ partial "hero.html" (dict "Title" (printf "All %s" .Type ) "Content" .Content)}}
 
-<div class="feed  max-w-2xl m-auto px-2 py-5 space-y-7">
+<div class="feed">
   {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
   {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage (printf
   "/%s/%s" $type $name) }}
 
-
-    <div class="flex justify-start">
-      <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
-        <a href="{{.Permalink}}" class="feed__link"> {{.Name}}          
-        </a>
-      </div>
-      <div class="font-mono text-4xl uppercase max-w-sm pl-7">
-       {{$count}}          
-        
-      </div>
-    
+  <div class="flex justify-start">
+    <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
+      <a href="{{.Permalink}}" class="feed__link"> {{.Name}} </a>
     </div>
-    {{- end }}
-  {{- end }}
+    <div class="font-mono text-4xl uppercase max-w-sm pl-7">{{$count}}</div>
+  </div>
+  {{- end }} {{- end }}
 </div>
-
 
 {{ end }}

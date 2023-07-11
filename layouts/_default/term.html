@@ -1,17 +1,9 @@
 
 {{ define "main" }}
 
-<div class="m-auto bg-base-200 place-items-start">
-  <div class="max-w-2xl w-full p-2 py-24 mx-auto">
-    <div>
-      <h3 class="font-mono text-2xl uppercase">{{ .Type | singularize}}</h3>
-      <h1 class="text-4xl font-bold font-serif">{{ .Title }}</h1>
-      {{with .Content}}<p class="font-mono text-xl uppercase">{{.}}</p>{{end}}
-    </div>
-  </div>
-</div>
+{{ partial "hero.html" (dict "Title" .Title "Content" .Content "Supertitle" (.Type | singularize)) }}
 
-<div class="feed max-w-2xl m-auto px-2 space-y-5">
+<div class="feed ">
   {{ range .Data.Pages }} {{.Render "li"}} {{ end }}
 </div>
 

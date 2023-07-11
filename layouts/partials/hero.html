@@ -1,0 +1,16 @@
+<!-- partial "hugo.html" (dict "Title" "TITOLO" "Description" "val" "Content" "val" "Supertitle" "val") CASE SENSITIVE-->
+<div class="mb-7 bg-base-200 place-items-start">
+    <div class="feed w-full py-24">
+      <div>
+        {{with .Supertitle}}<p class="font-mono mt-3 uppercase">{{.}}</p>{{end}}
+        <h1 class="mt-3 text-4xl font-bold font-serif">
+            {{with .Title}} {{ . }} {{end}}
+        </h1>
+        {{with .Subtitle}}<p class="font-mono text-lg mt-3 uppercase">{{.}}</p>{{end}}
+        {{with .Content}}<p class="mt-3">{{.}}</p>{{end}}
+      </div>
+    </div>
+</div>
+
+
+

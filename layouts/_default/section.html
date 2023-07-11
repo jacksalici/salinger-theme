@@ -1,15 +1,9 @@
 {{ define "main" }}
 
-<div class="m-auto bg-base-200 place-items-start">
-  <div class="max-w-2xl w-full p-2 py-24 mx-auto">
-    <div>
-      <h1 class="text-4xl font-bold font-serif">{{ .Title }}</h1>
-      {{with .Content}}<p class="font-mono text-xl uppercase">{{.}}</p>{{end}}
-    </div>
-  </div>
-</div>
+{{ partial "hero.html" (dict "Title" .Title "Content" .Content) }}
 
-<div class="feed max-w-2xl mx-auto px-2 mt-8 space-y-8">
+<div class="feed">
   {{ range .RegularPages}} {{.Render "li"}} {{ end }} {{.Render "list"}}
 </div>
 {{ end }}
+

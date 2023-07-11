@@ -27,10 +27,9 @@
     </div>
   </div>
 </div>
-
-<div class="max-w-2xl px-2 m-auto">
-  <h3 class="text-4xl py-10 font-bold font-serif">Featured projects</h3>
-  <div id="posts" class="space-y-6">
+<div class="feed"><h3 class="text-4xl font-bold font-serif">Featured projects</h3>
+</div>
+<div class="feed">
     {{range (where .Site.RegularPages ".Params.featured" "=" true)}} {{.Render
     "li" }} {{end}}
 
@@ -40,7 +39,6 @@
         "projects") }}) <i class="fa-solid fa-arrow-right-long"></i>
       </a>
     </div> -->
-  </div>
 </div>
 
 <!--{{partial "contact.html"}}
