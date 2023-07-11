@@ -1,6 +1,6 @@
 <div class="pt-3 flex justify-between">
-  <div class="text-lg max-w-sm hover:font-bold">
-    <div class="text-[0.7rem] space-x-5 font-mono capitalize">
+  <div class="text-lg max-w-sm hover:text-secondary">
+    <div class="text-[0.7rem] space-x-5 font-sans capitalize">
       {{with .Params.Categories}}
       <i class="fa-solid fa-folder pr-px text-[0.6rem]"></i>
       {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind (sub

@@ -9,18 +9,18 @@
   </div>
 </div>
 
-<div class="feed  max-w-2xl m-auto px-2 space-y-5">
+<div class="feed  max-w-2xl m-auto px-2 py-5 space-y-7">
   {{- $type := .Type }} {{- range $key, $value := .Data.Terms.Alphabetical }}
   {{- $name := .Name }} {{- $count := .Count }} {{- with $.Site.GetPage (printf
   "/%s/%s" $type $name) }}
 
 
-    <div class="pt-3 flex justify-between">
-      <div class="font-mono text-lg uppercase max-w-sm hover:font-bold">
+    <div class="flex justify-start">
+      <div class="font-mono text-lg uppercase max-w-sm hover:text-secondary">
         <a href="{{.Permalink}}" class="feed__link"> {{.Name}}          
         </a>
       </div>
-      <div class="font-mono text-xl uppercase max-w-sm">
+      <div class="font-mono text-4xl uppercase max-w-sm pl-7">
        {{$count}}          
         
       </div>
