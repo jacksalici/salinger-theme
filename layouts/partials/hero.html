@@ -3,15 +3,15 @@
     <div class="feed w-full py-24">
       <div class=" {{with .Large}} py-5 space-y-5 {{else}} space-y-3 {{end}}">
         
-        {{with .Supertitle}}<p class="font-mono uppercase">{{.}}</p>{{end}}
+        {{with .Supertitle}}<p class="font-mono uppercase">{{. | safeHTML}}</p>{{end}}
         
         <h1 class=" {{with .Large}} text-6xl {{else}} text-4xl {{end}} font-bold font-serif">
-            {{with .Title}} {{ . }} {{end}}
+            {{with .Title}} {{ . | safeHTML }} {{end}}
         </h1>
         
-        {{if .Subtitle}}<p class="font-mono {{if .Large }} text-xl {{else}} text-lg {{end}}   uppercase">{{.Subtitle}}</p>{{end}}
+        {{if .Subtitle}}<p class="font-mono {{if .Large }} text-xl {{else}} text-lg {{end}}   uppercase">{{.Subtitle | safeHTML }}</p>{{end}}
         
-        {{with .Content}}<p>{{.}}</p>{{end}}
+        {{with .Content}}<p>{{. | safeHTML}}</p>{{end}}
         
         {{with .Socials}}
         <div class="space-x-2 my-5">
