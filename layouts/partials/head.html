@@ -38,18 +38,13 @@
   <link rel="shortcut icon" href="%s" />
   ` ("logo.svg" | absURL) | safeHTML }}
 
-  <!--STYLE
-  {{ $sass := resources.Get "sass/main.scss" }} {{ $css := $sass |
-  resources.ToCSS | minify }} {{ printf `
-  <link rel="stylesheet" href="%s" />
-  ` $css.RelPermalink | safeHTML }}-->
+  <!--STYLE-->
 
+  {{ $options := dict "inlineImports" true }}
   {{ $styles := resources.Get "css/styles.css" }}
-  {{ $styles = $styles | resources.PostCSS }}
-  {{ if  hugo.IsProduction  }}
-      {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
-      {{ else if .Site.IsServer }}
-      {{ $styles = $styles | resources.ExecuteAsTemplate (printf "tailwind.dev.%v.css" now.UnixMilli) .}}
+  {{ $styles = $styles | resources.PostCSS $options }}
+  {{ if hugo.IsProduction }}
+    {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
   {{ end }}
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 
@@ -69,7 +64,7 @@
 
 
   <!--MATH-->
-  {{ with .Params.tags }}
+  {{ with .Params.math }}
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
@@ -86,8 +81,6 @@
   {{end}}
 
   <!--LIBS-->
-  <script async src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
-
 
   {{if .Site.Params.twemoji}}
   <script
@@ -97,5 +90,5 @@
   {{end}}
 
   <!--TITLE-->
-  <title>{{if .IsHome}}{{ .Title }}{{else}}{{ .Title }} ~ By Giacomo Salici{{end}}</title>
+  <title>{{if .IsHome}}{{ .Title }}{{else}}{{ .Title }} ~ Giacomo Salici{{end}}</title>
 </head>

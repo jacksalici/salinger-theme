@@ -23,10 +23,6 @@
 
   </body>
 
-  {{ $js := resources.Get "js/main.js"}} {{ printf `
-    <script src="%s"></script>
-    ` $js.RelPermalink | safeHTML }}
-
     <script>
 
       /*
