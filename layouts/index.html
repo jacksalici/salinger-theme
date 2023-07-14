@@ -6,18 +6,22 @@
                       "Context" .
                 )}}
 
-<div class="feed">
-  
-  <h2 class="text-4xl font-bold font-serif">Featured projects</h2>
-    {{range (where .Site.RegularPages ".Params.featured" "=" true)}} {{.Render
+<div class="space-y-20">
+  {{range $index, $taxonomy := .Site.Sections}}
+  <div class="feed">
+  <h2 class="text-4xl font-bold font-serif">Featured {{$taxonomy.Section}}</h2>
+    {{range (where $taxonomy.RegularPages ".Params.featured" "=" true)}} {{.Render
     "li" }} {{end}}
 
     <div class="pt-5">
-      <a href="/projects" class="hover:text-secondary">
-        See all the projects ({{ len (where .Site.RegularPages "Section" "=="
-        "projects") }}) <i class="fa-solid fa-arrow-right-long"></i>
+      <a href="/{{$taxonomy.Section}}" class="hover:text-secondary">
+        See all the {{$taxonomy.Section}} ({{ len (where .Site.RegularPages "Section" "=="
+        $taxonomy.Section) }}) <i class="fa-solid fa-arrow-right-long"></i>
       </a>
     </div>
+  </div>
+  {{end}}
+  
 </div>
 
 <!--
