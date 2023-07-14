@@ -1,8 +1,13 @@
 {{ define "main" }}
 
-{{partial "hero.html" (dict "Title" "People call me Jack." "Subtitle" "My name is Giacomo Salici, I'm a <b>developer and engineer</b> based in Italy. Currently, I'm getting a M.Sc. degree in Computer Engineering, artificial intelligence curriculum." "Large" true "Socials" .Site.Params.social)}}
+{{partial "hero.html" (dict "Title" "People call me Jack." 
+                      "Subtitle" "My name is Giacomo Salici, I'm a <b>developer and engineer</b> based in Italy. Currently, I'm getting a M.Sc. degree in Computer Engineering, artificial intelligence curriculum." 
+                      "Large" true 
+                      "Context" .
+                )}}
 
 <div class="feed">
+  
   <h2 class="text-4xl font-bold font-serif">Featured projects</h2>
     {{range (where .Site.RegularPages ".Params.featured" "=" true)}} {{.Render
     "li" }} {{end}}

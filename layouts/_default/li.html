@@ -10,8 +10,9 @@
       {{$myFormat := "January 2, 2006"}} {{with .Site.Params.DateFormat}}
       {{$myFormat = .}} {{end}} {{ time.Format $myFormat .Date}}
     </div>
-    <div class="font-mono uppercase">
-      <a href="{{.Permalink}}" class="feed__link"
+
+    <div class="font-mono block uppercase balanced">
+      <a href="{{.Permalink}}"
         >{{with .Params.Description}} {{.}} {{else}} {{.Title}} {{end}}</a
       >
     </div>

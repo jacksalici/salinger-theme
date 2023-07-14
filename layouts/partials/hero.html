@@ -1,4 +1,4 @@
-<!-- partial "hero.html" (dict "Title" "TITOLO" "Subtitle" "val" "Content" "val" "Supertitle" "val" "Large" teue) CASE SENSITIVE-->
+<!-- partial "hero.html" (dict "Title" "TITOLO" "Subtitle" "val" "Content" "val" "Supertitle" "val" "Large" false "context" .) CASE SENSITIVE-->
 <div class=" bg-base-200 {{with .Large}} min-h-[400px] mb-9{{else}} mb-7 {{end}} place-items-start">
     <div class="feed w-full py-24">
       <div class=" {{with .Large}} py-5 space-y-5 {{else}} space-y-3 {{end}}">
@@ -13,9 +13,11 @@
         
         {{with .Content}}<p>{{. | safeHTML}}</p>{{end}}
         
-        {{with .Socials}}
+        {{if eq .Context.Site.Params.showSocialOnHomepage true}}
+      
         <div class="space-x-2 my-5">
-          {{ range $index, $elem := .}}
+          {{ range $index, $elem := .Context.Site.Params.social}}
+          {{if eq $elem.featured true }}
           <a
             class="text-base-content"
             target="_blank"
@@ -25,7 +27,7 @@
           >
             <i class="{{ $elem.icon }} text-2xl" aria-hidden="true"></i>
           </a>
-          {{ end }}
+          {{ end }}{{ end }}
         </div>
         {{ end }}
 
