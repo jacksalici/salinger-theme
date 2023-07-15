@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 {{partial "hero.html" (dict "Title" "People call me Jack." 
-                      "Subtitle" "My name is Giacomo Salici, I'm a <b>developer and engineer</b> based in Italy. Currently, I'm getting a M.Sc. degree in Computer Engineering, artificial intelligence curriculum." 
+                      "Subtitle" "My name is Giacomo Salici, I'm a developer and engineer based in Italy. Currently, I'm getting a M.Sc. degree in Computer Engineering, artificial intelligence curriculum." 
                       "Large" true 
                       "Context" .
                 )}}
@@ -28,4 +28,11 @@
 
 <h5 class="feed"><a class="section__title primary" href="/projects/website">Do you like this website?</a></h5>
 -->
+
+
+  <div class="feed prose">
+    {{.Content}}
+  </div>
+
+
 {{ end }}

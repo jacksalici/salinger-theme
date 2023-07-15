@@ -13,7 +13,7 @@
         
         {{with .Content}}<p>{{. | safeHTML}}</p>{{end}}
         
-        {{if eq .Context.Site.Params.showSocialOnHomepage true}}
+        {{if and (.Context.IsHome) (eq .Context.Site.Params.showSocialOnHomepage true)}}
       
         <div class="space-x-2 my-5">
           {{ range $index, $elem := .Context.Site.Params.social}}

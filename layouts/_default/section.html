@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-  {{ partial "hero.html" (dict "Title" .Title "Content" .Content) }}
+  {{ partial "hero.html" (dict "Title" .Title "Content" .Content ) }}
 
   <div class="feed">
     {{ range .RegularPages}} {{.Render "li"}} {{ end }} {{.Render "list"}}
