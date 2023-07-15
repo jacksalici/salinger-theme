@@ -1,7 +1,9 @@
 {{ define "main" }}
 
-{{partial "hero.html" (dict "Title" "People call me Jack." 
-                      "Subtitle" "My name is Giacomo Salici, I'm a developer and engineer based in Italy. Currently, I'm getting a M.Sc. degree in Computer Engineering, artificial intelligence curriculum." 
+{{ $hero := (cond (ne .Site.Params.hero.title nil) .Site.Params.hero.title .Site.Title) }}
+
+{{partial "hero.html" (dict "Title" $hero
+                      "Subtitle" .Site.Params.hero.description
                       "Large" true 
                       "Context" .
                 )}}

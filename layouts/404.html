@@ -2,15 +2,7 @@
   {{ partial "hero" (dict "Title" "404 Error" "Subtitle" "Ops, that's awkward...")}}
    
 <div class="prose feed">
-  Looks like you're lost, but here's a link that takes you back to the <a href="/">home</a>.
-  If you are confident about your URL, it is likely that the content you were searching for has been moved to a new location. That's awkward...
-  <br><br>
-  
-  <img src="https://media.tenor.com/U_z21PJ3E28AAAAM/everybody-stay-calm-steve-carrell.gif"/>
-  <img src="https://media.tenor.com/CbhnRg0n7ksAAAAM/kermit-the-frog-looking-for-directions.gif" />
-  <img src="https://media.tenor.com/khjOpd7-ungAAAAM/viggo-mortensen-journey.gif" />
-  <img src="https://media.tenor.com/oTeBa4EVepMAAAAC/business-cat-working.gif" />
-  <img src="https://media.tenor.com/oE7O8I0TvEwAAAAC/thats-all-folks.gif" />
+  {{with .Site.Params.text404}}{{. | safeHTML}}{{else}}Looks like you're lost, go back to the <a href='/'>home</a>.{{end}}
 
 </div>   
 
