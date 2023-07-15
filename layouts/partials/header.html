@@ -39,8 +39,9 @@
       
       </label>
       <ul tabindex="0" class="menu menu-sm dropdown-content z-[1] p-2 shadow-lg shadow-base-200 bg-base-100 rounded-lg w-40">
-        <li><a href="/">About</a></li>
-        <li><a href="/contacts">Contacts</a></li>
+        {{range .Site.Menus.main}}  
+          <li><a href="{{.URL}}">{{.Name}}</a></li>
+        {{end}}
       </ul>
     </div>
   </div>
