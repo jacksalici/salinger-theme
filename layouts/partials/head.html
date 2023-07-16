@@ -1,57 +1,55 @@
 <head>
-  <meta name="title" content="Giacomo Salici ~ Creative developer, digital craftsman." />
+  <!--META and FAVICON-->
+  {{with .Site.Params.meta.title}}
+  <meta
+    name="title"
+    content= "{{.}}"
+  /> 
+  {{end}}
+  {{with .Site.Params.meta.description}}
   <meta
     name="description"
-    content="I am a M.Sc. Computer Engineering student based in Modena, Italy. I like developing and designing random stuffs. Here are my latest projects."
-  />
-  <meta
-    name="keywords"
+    content="{{.}}"
+  /> {{end}}
 
-    {{ with .Params.tags }} content="{{ delimit . ", "}}, giacomo salici, jack salici"
-    {{else}}
-    content="jack salici, Portfolio, giacomo salici, salici, developer, coding, maker"
-    {{ end }}
-  />
+  <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", "}}{{else}}{{with .Site.Params.meta.keywords}}{{ delimit . ", "}}{{end}}{{end}}"/> 
   <meta name="robots" content="index, follow" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="language" content="English" />
-  <meta name="author" content="Jack Salici" />
+  <meta name="author" content="{{.Site.Params.author}}" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  {{ with .Site.Params.googleAnalytics }} 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{.}}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', '{{.}}');
-    </script>
-
-  {{end}}
-  
-  <script defer src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
-
-  
-  
   {{ printf `
-  <link rel="shortcut icon" href="%s" />
-  ` ("logo.svg" | absURL) | safeHTML }}
+    <link rel="shortcut icon" href="%s" />
+    ` ("logo.svg" | absURL) | safeHTML }}
+
+  <!--GA TAG-->
+  {{ with .Site.Params.googleAnalytics }}
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id={{.}}"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "{{.}}");
+  </script>
+  {{end}}
 
   <!--STYLE-->
 
-  {{ $options := dict "inlineImports" true }}
-  {{ $styles := resources.Get "css/styles.css" }}
-  {{ $styles = $styles | resources.PostCSS $options }}
-  {{ if hugo.IsProduction }}
-    {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
-  {{ end }}
+  {{ $options := dict "inlineImports" true }} {{ $styles := resources.Get
+  "css/styles.css" }} {{ $styles = $styles | resources.PostCSS $options }} {{ if
+  hugo.IsProduction }} {{ $styles = $styles | minify | fingerprint |
+  resources.PostProcess }} {{ end }}
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 
-
-  <!--Font Awesome-->
+  <!--FA-->
   <link
     rel="preload"
     as="style"
@@ -61,9 +59,6 @@
     referrerpolicy="no-referrer"
     onload="this.onload=null;this.rel='stylesheet'"
   />
-
-    
-
 
   <!--MATH-->
   {{ with .Params.math }}
@@ -91,6 +86,13 @@
   ></script>
   {{end}}
 
+  <script
+  defer
+  src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+></script>
+
   <!--TITLE-->
-  <title>{{if .IsHome}}{{ .Site.Title }}{{else}}{{ .Title }} ~ Giacomo Salici{{end}}</title>
+  <title>
+    {{if .IsHome}}{{ .Site.Title }}{{else}}{{ .Title }} ~ {{.Site.Params.author}}{{end}}
+  </title>
 </head>

@@ -1,0 +1,13 @@
+<div class="not-prose space-x-2 py-3">
+  {{ range $index, $elem := .Site.Params.social}}
+  <a
+    class="text-base-content"
+    target="_blank"
+    rel="noopener"
+    href="{{ $elem.url }}"
+    aria-label="{{ $elem.name }}"
+  >
+    <i class="{{ $elem.icon }} text-2xl" aria-hidden="true"></i>
+  </a>
+  {{ end }}
+</div>
