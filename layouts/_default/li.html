@@ -2,11 +2,16 @@
   <div class="text-lg max-w-sm hover:text-secondary">
     <div class="text-[0.7rem] space-x-5 font-sans capitalize">
       {{with .Params.Categories}}
-      <i class="fa-solid fa-folder pr-px text-[0.6rem]"></i>
-      {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind (sub
+      <span class="material-symbols-rounded symbols-sm">
+        folder_open
+        </span>
+        
+        {{$n := len .}} {{range $ind, $val := .}} {{ $val }} {{- if lt $ind (sub
       $n 1) -}},{{end}} {{end}} {{ end }}
 
-      <i class="fa-solid fa-calendar pr-px text-[0.6rem]"></i>
+      <span class="material-symbols-rounded symbols-sm">
+        event
+        </span>
       {{$myFormat := "January 2, 2006"}} {{with .Site.Params.DateFormat}}
       {{$myFormat = .}} {{end}} {{ time.Format $myFormat .Date}}
     </div>
