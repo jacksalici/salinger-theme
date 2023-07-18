@@ -1,29 +1,26 @@
-{{ define "main" }}
-
-{{ $hero := (cond (ne .Site.Params.hero.title nil) .Site.Params.hero.title .Site.Title) }}
-
-{{partial "hero.html" (dict "Title" $hero
-                      "Subtitle" .Site.Params.hero.description
-                      "Large" true 
-                      "Context" .
-                )}}
+{{ define "main" }} {{ $hero := (cond (ne .Site.Params.hero.title nil)
+.Site.Params.hero.title .Site.Title) }} {{partial "hero.html" (dict "Title"
+$hero "Subtitle" .Site.Params.hero.description "Large" true "Context" . )}}
 
 <div class="space-y-20">
   {{range $index, $taxonomy := .Site.Sections}}
   <div class="feed">
-  <h2 class="text-4xl font-bold font-serif">Featured {{$taxonomy.Section}}</h2>
-    {{range (where $taxonomy.RegularPages ".Params.featured" "=" true)}} {{.Render
-    "li" }} {{end}}
-
-    <div class="pt-5">
-      <a href="/{{$taxonomy.Section}}" class="hover:text-secondary">
-        See all the {{$taxonomy.Section}} ({{ len (where .Site.RegularPages "Section" "=="
-        $taxonomy.Section) }}) <i class="fa-solid fa-arrow-right-long"></i>
-      </a>
-    </div>
+    <h2 class="text-4xl font-bold font-serif">
+      Featured {{$taxonomy.Section}}
+      <a
+        href="/{{$taxonomy.Section}}"
+        class="align-middle badge badge-sm hover:badge-outline"
+        ><span class="font-sans font-normal text-[0.7rem] capitalize"
+          > <i class="fa-solid fa-arrow-right-long"></i>
+          See all ({{ len (where .Site.RegularPages "Section" "=="
+          $taxonomy.Section) }})
+         </span
+      ></a>
+    </h2>
+    {{range (where $taxonomy.RegularPages ".Params.featured" "=" true)}}
+    {{.Render "li" }} {{end}}
   </div>
   {{end}}
-  
 </div>
 
 <!--
@@ -31,10 +28,6 @@
 <h5 class="feed"><a class="section__title primary" href="/projects/website">Do you like this website?</a></h5>
 -->
 
-
-  <div class="feed prose">
-    {{.Content}}
-  </div>
-
+<div class="feed prose">{{.Content}}</div>
 
 {{ end }}

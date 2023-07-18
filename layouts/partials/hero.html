@@ -9,9 +9,9 @@
             {{with .Title}} {{ . | safeHTML }} {{end}}
         </h1>
         
-        {{if .Subtitle}}<p class="font-mono {{if .Large }} balanced text-xl {{else}} text-lg {{end}}   uppercase">{{.Subtitle | safeHTML }}</p>{{end}}
+        {{if .Subtitle}}<p class="font-mono balanced {{if .Large }} text-xl {{else}} text-lg {{end}}   uppercase">{{.Subtitle | safeHTML }}</p>{{end}}
         
-        {{with .Content}}<p>{{. | safeHTML}}</p>{{end}}
+        {{with .Content}}<p class="balanced">{{. | safeHTML}}</p>{{end}}
         
         {{if and (.Context.IsHome) (eq .Context.Site.Params.showSocialOnHomepage true)}}
       

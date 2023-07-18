@@ -9,7 +9,9 @@
   </div>
   <div class="flex-none">
   
+    {{if .Site.Params.mainMenuShowThemes}}
     <div class="dropdown dropdown-end dropdown-hover">
+      
       <label tabindex="0" class="btn btn-ghost btn-circle">
           <span class="material-symbols-rounded">
             palette
@@ -39,13 +41,16 @@
           </li>
       </ul>
     </div>
+    {{end}}
 
   
     <div class="dropdown dropdown-end dropdown-hover">
       <label tabindex="0" class="btn btn-ghost btn-circle">
+        
         <span class="material-symbols-rounded">
-          lunch_dining
+          {{with .Site.Params.mainMenuSymbol}}{{.}} {{else}}menu{{end}}
           </span>
+        
       </label>
       <ul tabindex="0" class="menu menu-sm dropdown-content z-[1] p-2 shadow-lg bg-base-100 rounded-lg w-40">
         {{range .Site.Menus.main}}  

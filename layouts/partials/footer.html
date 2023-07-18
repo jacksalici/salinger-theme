@@ -5,7 +5,7 @@
      <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
         
           <div class="flex-1 my-auto">
-            <p class="block">
+            <p class="block my-2">
                {{$footerText := string ""}}
                {{ with .Site.Params.footer.copy }}
                {{$footerText = . | safeHTML}}
@@ -16,16 +16,18 @@
                &copy; {{ now.Year }} - {{$footerText}}   
            </p>
            
-           <p class="block">
-                {{with .Site.Params.footer.credit}}
+           <p class="block mb-2">
+                {{with .Site.Params.footer.credit |safeHTML}}
                 {{.}} {{else}} 
-                Made with 💖 and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme for Hugo</a>.
+                Made with <span class="material-symbols-rounded symbols-sm">
+                    volunteer_activism
+                    </span> and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme</a>.
                 {{end}}
            </p>
 
           </div>
 
-
+          {{if .Site.Menus.footer}}
           <div class="dropdown dropdown-end dropdown-top dropdown-hover">
                <label tabindex="0" class="btn btn-ghost btn-circle">
                     <span class="material-symbols-rounded">
@@ -39,6 +41,7 @@
                          {{end}}
                </ul>
           </div>
+          {{end}}
 
 
            
