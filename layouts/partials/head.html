@@ -27,7 +27,7 @@
   <!--GA TAG-->
   {{ with .Site.Params.googleAnalytics }}
   <script
-    async
+    defer
     src="https://www.googletagmanager.com/gtag/js?id={{.}}"
   ></script>
   <script>
@@ -42,6 +42,8 @@
   {{end}}
 
   <!--STYLE-->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
   {{ $options := dict "inlineImports" true }} {{ $styles := resources.Get
   "css/styles.css" }} {{ $styles = $styles | resources.PostCSS $options }} {{ if
