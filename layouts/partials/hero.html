@@ -11,7 +11,7 @@
         
         {{if .Subtitle}}<p class="font-mono balanced {{if .Large }} text-xl {{else}} text-lg {{end}}   uppercase">{{.Subtitle | safeHTML }}</p>{{end}}
         
-        {{with .Content}}<p class="balanced">{{. | safeHTML}}</p>{{end}}
+        {{with .Content}}<div class="prose balanced ">{{. | safeHTML}}</div>{{end}}
 
         {{if not (or (.Context.IsHome) (.Context.Params.hideMeta)) }}
         {{partial "meta.html" .Context }}
