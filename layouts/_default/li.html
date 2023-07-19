@@ -13,7 +13,7 @@
         event
         </span>
       {{$myFormat := "January 2, 2006"}} {{with .Site.Params.DateFormat}}
-      {{$myFormat = .}} {{end}} {{ time.Format $myFormat .Date}}
+      {{$myFormat = .}} {{end}} {{ $d := (cond (ne (.Params.lastmod) nil) .Params.lastmod .Date)  }} {{ dateFormat $myFormat $d}}
     </div>
 
     <div class="font-mono block uppercase balanced">
