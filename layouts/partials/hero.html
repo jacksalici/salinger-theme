@@ -1,10 +1,10 @@
-<!-- partial "hero.html" (dict "Title" "TITOLO" "Subtitle" "val" "Content" "val" "Supertitle" "val" "Large" false "context" .) CASE SENSITIVE-->
+<!-- partial "hero.html" (dict "Title" "TITOLO" "Subtitle" "val" "Content" "val" "Supertitle" "val" "Large" false "Context" .) CASE SENSITIVE-->
 <div class=" bg-base-200 {{with .Large}} min-h-[400px] mb-9{{else}} mb-7 {{end}} place-items-start">
     <div class="feed w-full py-24">
       <div class=" {{with .Large}} py-5 space-y-5 {{else}} space-y-3 {{end}}">
         
         {{with .Supertitle}}<p class="font-mono uppercase">{{. | safeHTML}}</p>{{end}}
-        
+
         <h1 class=" {{with .Large}} text-6xl {{else}} text-4xl {{end}} font-bold font-serif">
             {{with .Title}} {{ . | safeHTML }} {{end}}
         </h1>
@@ -12,23 +12,16 @@
         {{if .Subtitle}}<p class="font-mono balanced {{if .Large }} text-xl {{else}} text-lg {{end}}   uppercase">{{.Subtitle | safeHTML }}</p>{{end}}
         
         {{with .Content}}<p class="balanced">{{. | safeHTML}}</p>{{end}}
+
+        {{if not (or (.Context.IsHome) (.Context.Params.hideMeta)) }}
+        {{partial "meta.html" .Context }}
+        {{end}}
         
         {{if and (.Context.IsHome) (eq .Context.Site.Params.showSocialOnHomepage true)}}
       
-        <div class="space-x-2 my-5">
-          {{ range $index, $elem := .Context.Site.Params.social}}
-          {{if eq $elem.featured true }}
-          <a
-            class="text-base-content"
-            target="_blank"
-            rel="noopener"
-            href="{{ $elem.url }}"
-            aria-label="{{ $elem.name }}"
-          >
-            <i class="{{ $elem.icon }} text-2xl" aria-hidden="true"></i>
-          </a>
-          {{ end }}{{ end }}
-        </div>
+       
+        {{partial "socials.html" (dict "Context" .Context "OnlyFeatured" true)}}
+
         {{ end }}
 
       </div>
