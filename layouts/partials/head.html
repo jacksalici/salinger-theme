@@ -1,28 +1,21 @@
 <head>
   <!--META and FAVICON-->
   {{with .Site.Params.meta.title}}
-  <meta
-    name="title"
-    content= "{{.}}"
-  /> 
-  {{end}}
-  {{with .Site.Params.meta.description}}
-  <meta
-    name="description"
-    content="{{.}}"
-  /> {{end}}
-
-  <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", "}}{{else}}{{with .Site.Params.meta.keywords}}{{ delimit . ", "}}{{end}}{{end}}"/> 
+  <meta name="title" content="{{.}}" />
+  {{end}} {{with .Site.Params.meta.description}}
+  <meta name="description" content="{{.}}" />
+  {{end}} <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ",
+  "}}{{else}}{{with .Site.Params.meta.keywords}}{{ delimit . ",
+  "}}{{end}}{{end}}"/>
   <meta name="robots" content="index, follow" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="author" content="{{.Site.Params.author}}" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
   {{ printf `
-    <link rel="shortcut icon" href="%s" />
-    ` ("logo.svg" | absURL) | safeHTML }}
+  <link rel="shortcut icon" href="%s" />
+  ` ("logo.svg" | absURL) | safeHTML }}
 
   <!--GA TAG-->
   {{ with .Site.Params.googleAnalytics }}
@@ -42,15 +35,18 @@
   {{end}}
 
   <!--STYLE-->
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
 
   {{ $options := dict "inlineImports" true }} {{ $styles := resources.Get
   "css/styles.css" }} {{ $styles = $styles | resources.PostCSS $options }} {{ if
   hugo.IsProduction }} {{ $styles = $styles | minify | fingerprint |
   resources.PostProcess }} {{ end }}
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
-
 
   <!--FA-->
   <link
@@ -83,19 +79,21 @@
   <!--LIBS-->
 
   {{if .Site.Params.twemoji}}
-  <script async
+  <script
+    async
     src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
     crossorigin="anonymous"
   ></script>
   {{end}}
 
   <script
-  defer
-  src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
-></script>
+    defer
+    src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+  ></script>
 
   <!--TITLE-->
   <title>
-    {{if .IsHome}}{{ .Site.Title }}{{else}}{{ .Title }} ~ {{.Site.Params.author}}{{end}}
+    {{if .IsHome}}{{ .Site.Title }}{{else}}{{ .Title }} ~
+    {{.Site.Params.author}}{{end}}
   </title>
 </head>
