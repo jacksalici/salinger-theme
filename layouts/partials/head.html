@@ -4,9 +4,7 @@
   <meta name="title" content="{{.}}" />
   {{end}} {{with .Site.Params.meta.description}}
   <meta name="description" content="{{.}}" />
-  {{end}} <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ",
-  "}}{{else}}{{with .Site.Params.meta.keywords}}{{ delimit . ",
-  "}}{{end}}{{end}}"/>
+  {{end}} <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ','}}{{else}}{{with .Site.Params.meta.keywords}}{{ delimit . ','}}{{end}}{{end}}"/>
   <meta name="robots" content="index, follow" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="author" content="{{.Site.Params.author}}" />
