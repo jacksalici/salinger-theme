@@ -1,0 +1,54 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .feed {
+    @apply max-w-2xl mx-auto px-3 space-y-7
+  }
+
+  .icon{
+    @apply fill-current inline h-min;
+    vertical-align: -12%;
+  }
+}
+
+img {
+    width: 500px;
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 5px auto;
+}
+
+img.not-sized {
+  width: unset;
+  border-radius: 0px;
+}
+
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+    display: inline;
+ }
+
+code {
+    font-weight: 300;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+pre {
+    overflow-x: scroll;
+    line-height: 130%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+.balanced {
+  white-space: unset;
+  text-wrap: balance;
+}
+
