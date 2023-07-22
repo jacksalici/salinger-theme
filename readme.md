@@ -1,6 +1,10 @@
 # Salinger Theme 📻
 
 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version Badge](https://img.shields.io/badge/version-2.0.0-yellow)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/jacksalici/salinger-theme/main)
+
+
 
 ## Clean and minimalistic Hugo theme built with DaisyUI and Tailwind.
 
@@ -24,18 +28,16 @@ Why this name? During the design of the light mode homepage, I was inspired by [
 - [x] __Tweemoji__ Emoji support
 - [x] Seo support (100% score on PageSpeed) 🚀
 
+#### Soon available 
 
-
-
-#### Soon available 🛠
 - [ ] More Layouts (Masonry grid)
 - [ ] Galley mode
 - [ ] Post custom sorting
 
 ## Quick Start ⚠️
 
-### Preview the _exampleSite_ 
-x
+### Preview the _exampleSite_  
+
 ```shell
 git clone https://github.com/jacksalici/salinger-theme.git salinger
 cd salinger/exampleSite
@@ -45,7 +47,7 @@ hugo server --t ../..
 ### Install the theme
 
 1. Add the repository into your Hugo Project repository as a submodule: `git submodule add https://github.com/jacksalici/salinger-theme.git themes/salinger`.
-2. Configure your `config.toml`. I suggest you to copy the demo `config.toml`.
+2. Configure your `hugo.toml`. I suggest copying the demo file present in the __exampleSite__ folder.
 3. Having installed Hugo on your local machine, you can build your site with `hugo server` and admire the result at `http://localhost:1313/`.
 
 ### Update your installation
@@ -57,9 +59,10 @@ git submodule update --remote --merge
 ```
 
 ## Usage
-Check out the __wiki page__ and the example site. 
+
+Check out the __wiki page__ and the example site. Version 2 details are w.i.p.
 
 ## License 📜
 
-Salinger code is licensed under the [MIT license](https://github.com/jacksalici/salinger-theme/blob/master/LICENSE).
+The Salinger theme code is licensed under the [MIT license](https://github.com/jacksalici/salinger-theme/blob/master/LICENSE).
 Texts and other resources are licensed with [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)
