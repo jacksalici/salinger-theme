@@ -1,39 +1,45 @@
-# Salinger ✨🌈📻 
+# Salinger Theme 📻
 
 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
 
-___Salinger___ is a __new-born clean-mimalistic mobile-first blazing-fast fancy__ and __lightweight__ but __powerful theme__ for [Hugo framework](https://gohugo.io).
-Born as the theme for [my personal website (where you can see a demo)](http://jacksalici.com), I'd like to develop a lot of other stuffs, starting with the following feature. 
-Why this name? During the development of the minimalism of this theme I was inspired by [_The Catcher in The Rye_ Einaudi Italian edition cover](https://duckduckgo.com/?q=il+giovane+holden+by+j.d.+salinger+einaudi+1961&t=h_&ia=images&iax=images&iaf=color%3AWhite), by J.D. Salinger, 
+## Clean and minimalistic Hugo theme built with DaisyUI and Tailwind.
 
-![](https://github.com/jacksalici/salinger-theme/blob/main/images/screenshot.png)
+___Salinger___ is a _clean, minimalistic, mobile-first, blazing-fast, fancy_ and _lightweight_ theme for the [Hugo framework](https://gohugo.io).
+Born as the theme for [my website (demo)](http://jacksalici.com), it has completely rebuilt using __Tailwind__ and __DaisyUI__.  
+Why this name? During the design of the light mode homepage, I was inspired by [the Italian edition cover by Einaudi](https://duckduckgo.com/?q=il+giovane+holden+by+j.d.+salinger+einaudi+1961&t=h_&ia=images&iax=images&iaf=color%3AWhite) of _The Catcher in The Rye_ by J.D. Salinger.
 
-## Features 🧰
+![Screenshot of the homepage](https://github.com/jacksalici/salinger-theme/blob/main/images/screenshot.jpg)
+
+## Features 🗂️
 
 
-- [x] Taxonomy and navigation items 🧩
+- [x] Taxonomy and navigation items
 - [x] Google Analytics 📈
-- [x] Toggle header option ⚓️
-- [x] Custom visibility of meta 🚀
-- [x] **Tweemoji** Emoji support 💥
-- [x] Seo support 🔦
+- [x] Tailwind and DaisyUI framework
+- [x] Toggle header option
+- [x] Responsive and mobile-first 📲
+- [x] Custom visibility of meta
+- [x] __Dark, Auto__ and Light Mode 🌚
+- [x] 2 hamburger Menu with custom icon
+- [x] __Tweemoji__ Emoji support
+- [x] Seo support (100% score on PageSpeed) 🚀
+
+
 
 
 #### Soon available 🛠
 - [ ] More Layouts (Masonry grid)
-- [ ] Dark mode
 - [ ] Galley mode
-- [ ] Hamburger menu
 - [ ] Post custom sorting
 
-## Quick Start 🚀
+## Quick Start ⚠️
 
-### Preview the exampleSite 🖥
+### Preview the _exampleSite_ 
 
 ```shell
 git clone https://github.com/jacksalici/salinger-theme.git salinger
 cd salinger/exampleSite
-hugo server --themesDir ../..
+hugo server --t ../..
 ```
 
 ### Install the theme
@@ -50,8 +56,8 @@ If you want to get the latest update of the `Salinger` theme please execute this
 git submodule update --remote --merge
 ```
 
-## Usage 👀
-Check out the **wiki page** and the example site.
+## Usage
+Check out the __wiki page__ and the example site. 
 
 ## License 📜
 
