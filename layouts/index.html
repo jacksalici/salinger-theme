@@ -1,12 +1,13 @@
-{{ define "main" }} {{ $hero := (cond (ne .Site.Params.hero.title nil)
-.Site.Params.hero.title .Site.Title) }} {{partial "hero.html" (dict "Title"
-$hero "Subtitle" .Site.Params.hero.description "Large" true "Context" . )}}
+{{ define "main" }} {{ $hero := (cond (ne .Params.title nil)
+.Params.title .Site.Title) }} {{partial "hero.html" (dict "Title"
+$hero "Subtitle" .Params.description "Large" true "Context" . )}}
 
 <div class="space-y-20">
   {{range $index, $taxonomy := .Site.Sections}}
   <div class="feed">
     <h2 class="text-4xl font-bold font-serif">
-      Featured {{$taxonomy.Section}}
+      {{with $taxonomy.Params.title }} {{.}} {{else}}
+      Featured {{$taxonomy.Section}} {{end}}
       <a
         href="/{{$taxonomy.Section}}"
         class="align-middle badge badge-sm hover:badge-outline"

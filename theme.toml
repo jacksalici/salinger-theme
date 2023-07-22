@@ -1,11 +1,12 @@
 name = "Salinger"
 license = "MIT"
+version = "2.0.0"
 licenselink = "https://github.com/jacksalici/salinger/blob/master/LICENSE"
 description = "A minimal but powerful hugo theme."
-homepage = "jacksalici.com/salinger-hugo-theme"
+homepage = "https://github.com/jacksalici/salinger-theme/"
 tags = ["simple", "minimal", "clean", "fast", "blog", "portfolio", "responsive", "twemoji", "recursion", "section"]
 features = ["fast", "blog", "sorting", "dark mode", "categories"]
-min_version = "0.87.0"
+min_version = "0.112.0"
 
 [author]
   name = "Jack Salici"

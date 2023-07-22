@@ -2,11 +2,12 @@
 author = "Hugo Authors"
 title = "Tweemoji Support"
 date = "2019-03-05"
-description = "Guide to Tweemoji usage."
+description = "Guide to Tweemoji usage.🐧"
 tags = [
     "emoji",
 ]
 categories = ["syntax"]
+featured = true
 +++
 
 Emoji can be enabled in a Hugo project in a number of ways.

@@ -4,7 +4,7 @@
   <div class="flex-1">
     <a href="/"class="text-lg font-bold flex" aria-label="Logo Link to the home">
     {{with .Site.Params.logoSvg}}<div class="fill-base-content w-7 my-auto">{{. | safeHTML}}</div>{{else}}{{.Site.Title}}{{end}}
-      {{with .Site.Params.logoLabel}}<div class="ml-3">{{.}}</div>{{end}}
+      {{with .Site.Params.logoLabel}}<div class="ml-3 my-auto pl-3">{{.}}</div>{{end}}
     </a>
   </div>
   <div class="flex-none">

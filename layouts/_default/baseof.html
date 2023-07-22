@@ -26,12 +26,8 @@
     <script>
 
       /*
-       *
        *   TWEEMOJI
-       *
        */
-      
-      
       try {
           twemoji.parse(document.body, {
             folder: "svg",
@@ -39,9 +35,9 @@
           });
       } catch(e) {
         if (e instanceof ReferenceError) {
-            console.log("tweemoji not initialized")
+            console.log("Tweemoji not initialized")
             console.log(e)
         }
       }
-          </script>
+    </script>
 </html>
