@@ -2087,6 +2087,9 @@ details.collapse summary::-webkit-details-marker {
 .w-40 {
   width: 10rem;
 }
+.w-44 {
+  width: 11rem;
+}
 .w-6 {
   width: 1.5rem;
 }

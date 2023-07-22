@@ -1,7 +1,8 @@
 +++
 title = "Front Matter"
 date = "2019-03-10"
-description = "How to config salinger theme using front matter"
+lastmod = "2023-07-23"
+description = "How to config salinger theme using front matter 🎒"
 toc = true
 featured = true
 categories = ["Salinger Theme"]

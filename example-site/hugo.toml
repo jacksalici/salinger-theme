@@ -1,7 +1,5 @@
 baseURL = "https://example.com/"
 title = "Salinger Theme"
-copyright = '2001 John Doe'
-ignoreErrors = ["error-remote-getjson"]
 # theme = "salinger"
 
 [params]
@@ -28,6 +26,9 @@ mainMenuShowThemes = true
 showFooterOnHomepage = true
 showHeaderOnHomepage = true
 showSocialOnHomepage = true
+showOnlyFeaturedPost = true
+
+
 
 [params.footer]
 copy = 'John Doe. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>'

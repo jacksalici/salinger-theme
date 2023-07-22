@@ -1,5 +1,5 @@
 ---
-title: "Last projects. 🤖"
+title: "Featured guides 🤖"
 weight: 10
 ---
-Here are a few projects that I made.
+Here a category of guide. This is a random sentence, actually. **Rich text** is allowed.

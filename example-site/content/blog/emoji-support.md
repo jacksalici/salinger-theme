@@ -1,12 +1,11 @@
 +++
-author = "Hugo Authors"
 title = "Tweemoji Support"
 date = "2019-03-05"
-description = "Guide to Tweemoji usage.🐧"
+description = "About Tweemoji, Twitter emoji on every device. 🐧"
 tags = [
     "emoji",
 ]
-categories = ["syntax"]
+categories = ["Salinger Theme"]
 featured = true
 +++
 

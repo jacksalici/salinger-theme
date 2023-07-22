@@ -18,7 +18,12 @@ $hero "Subtitle" .Params.description "Large" true "Context" . )}}
          </span
       ></a>
     </h2>
-    {{range (where $taxonomy.RegularPages ".Params.featured" "=" true)}}
+
+    {{$pages := (where $taxonomy.RegularPages ".Params.featured" "=" true)}}
+    {{if eq .Site.Params.showOnlyFeaturedPost false}}
+    {{$pages = $taxonomy.RegularPages}}
+    {{end}}
+    {{range $pages}}
     {{.Render "li" }} {{end}}
   </div>
   {{end}}
