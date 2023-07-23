@@ -2075,6 +2075,15 @@ details.collapse summary::-webkit-details-marker {
 .table {
   display: table;
 }
+.h-4 {
+  height: 1rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-7 {
+  height: 1.75rem;
+}
 .h-screen {
   height: 100vh;
 }

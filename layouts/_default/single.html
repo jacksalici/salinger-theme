@@ -1,43 +1,12 @@
-{{ define "main" }}
-<article>
-  <div class="post-header">
-    <h1 class="name">{{ .Title }}</h1>
+{{ define "main" }} 
+  {{with .Params.hideTitle}}
+    <div class="py-12"></div>
+  {{else}} 
+    {{ partial "hero.html" (dict "Title" .Title "Subtitle" .Params.Description "Context" .) }}
+  {{end}} 
 
-    {{with .Params.hideMeta}}
-    {{else}}
-    <h6 class="meta">
-      <span class="date">
-      {{$myFormat := "January 2, 2006"}}
-      {{with .Site.Params.DateFormat}}{{$myFormat = .}}{{- end -}}
-      Published on {{ time.Format $myFormat .Date}}</span>
-      {{- with .Params.Categories}}
-      {{$n := len .}}
-      <span class="section"> as 
-        {{range $ind, $val := .}}
-          <a href="/categories/{{ $val | urlize}}"><strong>{{ $val }}</strong></a></span>
-          {{- if lt $ind (sub $n 1) -}},{{- else -}}.{{end}}
-        {{ end }} 
-      {{- else -}}
-      .
-      {{- end -}}
-    </h6>
-    {{end}}
-  </div>
+  {{if .Params.toc}} {{partial "toc" .}} {{end}}
 
-  {{if .Params.toc}}
-  <aside class="toc">
-    <h4>Table of Content</h4>
-    {{ .TableOfContents }}
-  </aside>
-  {{end}}
+  <article class="prose text-justify feed">{{- .Content -}}</article>
 
-  <div class="post-text">{{- .Content -}}</div>
-
-
-  
-  {{with .Params.Tags}}   <h6 class="tags-footer"> Tags: {{range .}}
-    <a href="/tags/{{ . | urlize}}">#{{- . -}}</a>
-      {{- end -}}</h6> {{- end -}}
-
-    </article>
 {{ end }}
