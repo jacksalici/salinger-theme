@@ -1,30 +1,7 @@
-# Salinger ✨🌈📻 
+# Salinger
+⚠️ This is the legacy version of the theme. It will no longer be maintained.  
 
 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
-
-___Salinger___ is a __new-born clean-mimalistic mobile-first blazing-fast fancy__ and __lightweight__ but __powerful theme__ for [Hugo framework](https://gohugo.io).
-Born as the theme for [my personal website (where you can see a demo)](http://jacksalici.com), I'd like to develop a lot of other stuffs, starting with the following feature. 
-Why this name? During the development of the minimalism of this theme I was inspired by [_The Catcher in The Rye_ Einaudi Italian edition cover](https://duckduckgo.com/?q=il+giovane+holden+by+j.d.+salinger+einaudi+1961&t=h_&ia=images&iax=images&iaf=color%3AWhite), by J.D. Salinger, 
-
-![](https://github.com/jacksalici/salinger-theme/blob/main/images/screenshot.png)
-
-## Features 🧰
-
-
-- [x] Taxonomy and navigation items 🧩
-- [x] Google Analytics 📈
-- [x] Toggle header option ⚓️
-- [x] Custom visibility of meta 🚀
-- [x] **Tweemoji** Emoji support 💥
-- [x] Seo support 🔦
-
-
-#### Soon available 🛠
-- [ ] More Layouts (Masonry grid)
-- [ ] Dark mode
-- [ ] Galley mode
-- [ ] Hamburger menu
-- [ ] Post custom sorting
 
 ## Quick Start 🚀
 
@@ -51,7 +28,7 @@ git submodule update --remote --merge
 ```
 
 ## Usage 👀
-Check out the **wiki page** and the example site.
+Check out the example site.
 
 ## License 📜
 
