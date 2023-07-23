@@ -1,5 +1,5 @@
 # Salinger Theme 📻
-___Clean and minimalistic Hugo theme built with DaisyUI and Tailwind.___
+___Clean and minimalistic Hugo theme built with DaisyUI and TailwindCSS.___
 
 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version Badge](https://img.shields.io/badge/version-2.0.0-yellow)
@@ -15,7 +15,7 @@ Why this name? During the design of the light mode homepage, I was inspired by [
 
 ## Features 🗂️
 
-- [x] Tailwind and DaisyUI 🌼 framework 
+- [x] TailwindCSS and DaisyUI 🌼 framework 
 - [x] Responsive and mobile-first 📲
 - [x] Google Analytics 📈
 - [x] Custom visibility of meta
