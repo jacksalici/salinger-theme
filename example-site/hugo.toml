@@ -5,8 +5,6 @@ title = "Salinger Theme"
 [params]
 
 author = "John Doe"
-description = "I'm a computer engineering student based in Modena, Italy. I like developing and designing random stuffs."
-keywords = [ "Portfolio", "developer", "coding", "maker"]
 #googleAnalytics = ""
 twemoji = true
 text404 = "Since the page you were looking for seems like doesn't exist, we <strong>strongly</strong> suggest you to better investigate the URL and/or go back to the <a href=\"/\">home</a>. </br></br> <iframe src=\"https://giphy.com/embed/aCKMaeduKfFXG\" width=\"480\" height=\"480\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>"
@@ -28,42 +26,19 @@ showHeaderOnHomepage = true
 showSocialOnHomepage = true
 showOnlyFeaturedPost = true
 
-
+[params.meta]
+title = "Salinger Theme for Hugo built with TailwindCSS and DaisyUI"
+description = "Salinger is a clean, minimalistic, mobile-first, blazing-fast, fancy and lightweight theme for the Hugo framework built with TailwindCSS and DaisyUI"
+keywords = ["simple", "minimal", "clean", "fast", "blog", "portfolio", "responsive", "twemoji", "recursion", "section", "tailwind", "daisyui"]
 
 [params.footer]
 copy = 'John Doe. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>'
-
-[permalinks]
-  '/' = '/:slug/'
-  'projects' = '/:slug/'
 
 [[params.social]]
 name = "github"
 url = "https://github.com/jacksalici/salinger-theme"
 icon = "fa-brands fa-github"
-featured = true
-before = "Reach me on "
-
-[[params.social]]
-name = "twitter"
-url = "https://twitter.com/example"
-icon = "fa fa-twitter"
-before = "and "
-
-[[params.social]]
-name = "email"
-icon = "fa fa-envelope"
-url = "mailto:hi@john.com"
-before = ", or drop me a line on"
-
-[[params.social]]
-name = "email"
-icon = "fa fa-telegram"
-url = "https://t.me/john"
-before = "and on "
-after = "."
-
-
+featured = true # true to be displayed in the home hero.
 
 [Menu]
 [[menu.main]]
@@ -76,6 +51,11 @@ name = "Contact me."
 url = "mailto:mail@mail.com"
 weight = 2
 
+[[menu.footer]]
+name = "Privacy Policy"
+url = "/privacy"
+weight= 1 
+
 [taxonomies]
 category = "categories"
 lang = "langs"
@@ -83,11 +63,7 @@ tags = "tags"
 tool = "tools"
 
 
-[[menu.footer]]
-name = "Privacy Policy"
-url = "/privacy"
-weight= 1 
-
+# the following code is mandatory for the theme to work properly.
 
 [module]
 [module.hugoVersion]
