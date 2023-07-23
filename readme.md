@@ -2,7 +2,7 @@
 ___Clean and minimalistic Hugo theme built with DaisyUI and TailwindCSS.___
 
 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version Badge](https://img.shields.io/badge/version-2.0.0-yellow)
+![GitHub tag (with filter)](https://img.shields.io/github/v/tag/jacksalici/salinger-theme?color=yellow)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/jacksalici/salinger-theme/main)
 
 
