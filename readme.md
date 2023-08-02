@@ -8,10 +8,10 @@ ___Clean and minimalistic Hugo theme built with DaisyUI and TailwindCSS.___
 
 
 __Salinger__ is a _clean, minimalistic, mobile-first, blazing-fast, fancy_ and _lightweight_ theme for the [Hugo framework](https://gohugo.io).
-Born as the theme for [my website (demo)](http://jacksalici.com), it has been completely rebuilt using __Tailwind__ and __DaisyUI__.  
+Born as the theme for [my website (demo)](http://jacksalici.com), recently it has been completely rebuilt using __Tailwind__ and __DaisyUI__.  
 Why this name? During the design of the light mode homepage, I was inspired by [the Italian edition cover by Einaudi](https://duckduckgo.com/?q=il+giovane+holden+by+j.d.+salinger+einaudi+1961&t=h_&ia=images&iax=images&iaf=color%3AWhite) of _The Catcher in The Rye_ by J.D. Salinger.
 
-![Screenshot of the homepage](https://github.com/jacksalici/salinger-theme/blob/main/images/tn.jpg)
+![Screenshot of the homepage](https://raw.githubusercontent.com/jacksalici/salinger-theme/main/images/tn.jpg)
 
 ## Features 🗂️
 
@@ -72,4 +72,3 @@ Check out the [__wiki__](https://github.com/jacksalici/salinger-theme/wiki) and 
 ## License 📜
 
 The Salinger theme code is licensed under the [MIT license](https://github.com/jacksalici/salinger-theme/blob/master/LICENSE).
-Texts and other resources are licensed with [CC BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/)
