@@ -44,7 +44,7 @@
         {{end}}
         
       </label>
-      <ul tabindex="0" class="menu menu-sm dropdown-content z-[1] p-2 shadow-lg bg-base-100 rounded-lg w-40">
+      <ul tabindex="0" class="dropdown-content menu menu-sm z-[1] p-2 shadow-lg bg-base-100 rounded-lg w-40">
         {{range .Site.Menus.main}}  
           <li><a href="{{.URL}}">{{.Name | safeHTML}}</a></li>
         {{end}}

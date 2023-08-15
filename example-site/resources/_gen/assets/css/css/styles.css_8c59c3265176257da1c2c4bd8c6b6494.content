@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 *//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
@@ -165,6 +165,8 @@ optgroup,
 select,
 textarea {
   font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
   font-size: 100%; /* 1 */
   font-weight: inherit; /* 1 */
   line-height: inherit; /* 1 */
@@ -299,6 +301,13 @@ ul,
 menu {
   list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
   padding: 0;
 }
 
@@ -1016,8 +1025,9 @@ html {
   align-items: center;
   justify-content: center;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 200ms;
   height: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1040,8 +1050,8 @@ html {
     color: hsl(var(--bc) / var(--tw-text-opacity));
   }
 
-  .menu li > *:not(ul):not(details):active,
-.menu li > *:not(ul):not(details).active,
+  .menu li > *:not(ul):not(.menu-title):not(details):active,
+.menu li > *:not(ul):not(.menu-title):not(details).active,
 .menu li > details > summary:active {
     --tw-bg-opacity: 1;
     background-color: hsl(var(--n) / var(--tw-bg-opacity));
@@ -1067,8 +1077,9 @@ html {
   border-color: hsl(var(--b2) / var(--tw-border-opacity));
   text-align: center;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 200ms;
   border-radius: var(--rounded-btn, 0.5rem);
   height: 3rem;
   padding-left: 1rem;
@@ -1109,6 +1120,7 @@ html {
 }
 .btn:is(input[type="checkbox"]),
 .btn:is(input[type="radio"]) {
+  width: auto;
   appearance: none;
 }
 .btn:is(input[type="checkbox"]):after,
@@ -1146,7 +1158,7 @@ html {
   grid-row-start: 2;
   min-height: 0px;
   transition: visibility 0.2s;
-  transition: padding 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: padding 0.2s ease-out, background-color 0.2s ease-out;
   padding-left: 1rem;
   padding-right: 1rem;
   cursor: unset;
@@ -1187,8 +1199,9 @@ html {
   --tw-scale-y: .95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 200ms;
 }
 .dropdown-end .dropdown-content {
   right: 0px;
@@ -1389,7 +1402,7 @@ html {
   align-content: flex-start;
   align-items: center;
   gap: 0.5rem;
-  grid-auto-columns: max-content auto max-content;
+  grid-auto-columns: minmax(auto, max-content) auto max-content;
   user-select: none;
 }
 .menu li.disabled {
@@ -1588,9 +1601,10 @@ details.collapse summary::-webkit-details-marker {
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   transition-duration: 150ms;
   transition-duration: 0.2s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   top: 50%;
   right: 1.4rem;
   content: "";
@@ -1607,8 +1621,9 @@ details.collapse summary::-webkit-details-marker {
   height: 0.5rem;
   width: 0.5rem;
   transition-property: all;
-  transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
   top: 0.9rem;
   right: 1.4rem;
   content: "+";
@@ -1636,7 +1651,7 @@ details.collapse summary::-webkit-details-marker {
   padding: 1rem;
   padding-right: 3rem;
   min-height: 3.75rem;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-out;
 }
 .collapse[open] :where(.collapse-content),
 .collapse-open :where(.collapse-content),
@@ -1644,7 +1659,7 @@ details.collapse summary::-webkit-details-marker {
 .collapse:not(.collapse-close) :where(input[type="checkbox"]:checked ~ .collapse-content),
 .collapse:not(.collapse-close) :where(input[type="radio"]:checked ~ .collapse-content) {
   padding-bottom: 1rem;
-  transition: padding 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition: padding 0.2s ease-out, background-color 0.2s ease-out;
 }
 .collapse[open].collapse-arrow .collapse-title:after,
 .collapse-open.collapse-arrow .collapse-title:after,
@@ -1733,9 +1748,11 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 0.5rem;
   text-align: left;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 200ms;
   border-radius: var(--rounded-btn, 0.5rem);
+  text-wrap: balance;
 }
 :where(.menu li:not(.menu-title):not(.disabled) > *:not(ul):not(details):not(.menu-title)):not(summary):not(.active).focus,
   :where(.menu li:not(.menu-title):not(.disabled) > *:not(ul):not(details):not(.menu-title)):not(summary):not(.active):focus,
@@ -1750,8 +1767,8 @@ details.collapse summary::-webkit-details-marker {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-.menu li > *:not(ul):not(details):active,
-.menu li > *:not(ul):not(details).active,
+.menu li > *:not(ul):not(.menu-title):not(details):active,
+.menu li > *:not(ul):not(.menu-title):not(details).active,
 .menu li > details > summary:active {
   --tw-bg-opacity: 1;
   background-color: hsl(var(--n) / var(--tw-bg-opacity));
@@ -1781,6 +1798,48 @@ details.collapse summary::-webkit-details-marker {
 .menu :where(li > .menu-dropdown-toggle.menu-dropdown-show):after {
   transform: rotate(225deg);
   margin-top: 0;
+}
+.mockup-browser .mockup-browser-toolbar .input {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 1.75rem;
+  width: 24rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--b2) / var(--tw-bg-opacity));
+  padding-left: 2rem;
+}
+.mockup-browser .mockup-browser-toolbar .input:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  aspect-ratio: 1 / 1;
+  height: 0.75rem;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  border-width: 2px;
+  border-color: currentColor;
+  opacity: 0.6;
+}
+.mockup-browser .mockup-browser-toolbar .input:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1.25rem;
+  height: 0.5rem;
+  --tw-translate-y: 25%;
+  --tw-rotate: -45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: currentColor;
+  opacity: 0.6;
 }
 @keyframes modal-pop {
 

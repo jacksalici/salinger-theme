@@ -7,7 +7,7 @@ title = "Salinger Theme"
 author = "John Doe"
 #googleAnalytics = ""
 twemoji = true
-text404 = "Since the page you were looking for seems like doesn't exist, we <strong>strongly</strong> suggest you to better investigate the URL and/or go back to the <a href=\"/\">home</a>. </br></br> <iframe src=\"https://giphy.com/embed/aCKMaeduKfFXG\" width=\"480\" height=\"480\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>"
+text404 = "Since the page you were looking for seems like doesn't exist, we <strong>strongly</strong> suggest you to better investigate the URL and/or go back to the <a href=\"/\">home</a>."
 
 DateFormat = "Jan 2006"
 
