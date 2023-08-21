@@ -30,8 +30,8 @@ Why this name? During the design of the light mode homepage, I was inspired by [
 
 ```shell
 git clone https://github.com/jacksalici/salinger-theme.git salinger
-cd salinger/exampleSite
-hugo server --t ../..
+cd salinger/example-site
+hugo server -t ../..
 ```
 
 A demo usage can also be seen on [my website](https://jacksalici.com). 
