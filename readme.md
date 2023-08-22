@@ -29,14 +29,19 @@ Why this name? During the design of the light mode homepage, I was inspired by [
 ### Preview the _example site_  
 
 ```shell
+# prerequisites: git, hugo, and npm.
 git clone https://github.com/jacksalici/salinger-theme.git salinger
-cd salinger/example-site
+cd salinger
+npm install
+cd example-site
 hugo server -t ../..
 ```
 
-A demo usage can also be seen on [my website](https://jacksalici.com). 
+A demo usage can also be seen on [my website](https://jacksalici.com).  
 
 ### Install the theme
+
+0. **Prerequisites**: Please, check to have installed a recent version of _hugo_, _git_, and _npm_.
 
 1. Add the repository to your Hugo Project repository as a submodule: 
 
@@ -44,11 +49,14 @@ A demo usage can also be seen on [my website](https://jacksalici.com).
     git submodule add https://github.com/jacksalici/salinger-theme.git themes/salinger
     ```
 
-2. Configure your `hugo.toml`. I suggest copying the demo file present in the __example site__ folder. Please note that some parameters are mandatory for the theme to work properly.
+2. Configure your `hugo.toml`. I suggest copying the demo file present in the __example site__ folder. Please note that **some parameters are mandatory** for the theme to work properly.
 
-3. Install the dependencies.
+3. Install the dependencies in the theme folder and the main folder.
 
     ```bash
+    cd themes/salinger
+    npm install
+    cd ../..
     hugo mod npm pack 
     npm install
     ```
@@ -63,7 +71,7 @@ If you want to get the latest update of the `Salinger` theme please execute this
 git submodule update --remote --merge
 ```
 
-_Please note that during the development of the new version (Jul 23) a rebase has been made and the commit history is not so clean. If you came from the legacy version, updating it can be a bit annoying. I suggest [removing completely](https://gist.github.com/myusuf3/7f645819ded92bda6677) the submodule and adding it again._
+_Please note that during the development of the new major version (v2.x.x - Jul 23) a rebase has been made and the commit history is not so clean. If you came from the legacy version, updating it can be a bit annoying. I suggest [removing completely](https://gist.github.com/myusuf3/7f645819ded92bda6677) the submodule and adding it again._
 
 ## Usage 📐
 
