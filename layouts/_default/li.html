@@ -1,5 +1,5 @@
-<div class="pt-3 flex justify-between">
-  <div class="text-lg max-w-sm hover:text-secondary">
+<div class="pt-3 flex justify-between gap-3 items-center">
+  <div class="text-lg w-3/5 max-w-sm hover:text-secondary">
     <div class="text-[0.7rem] space-x-5 font-sans capitalize">
       {{with .Params.Categories}}
       <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12.444 0 23.722 5t19.366 13.088L481-740h339q23 0 41.5 18.5T880-680H455l-60-60H140v520l90-355q5-20 21.826-32.5T289-620h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Zm63-60h572l84-340H287l-84 340Zm-63-353v-167 167Zm63 353 84-340-84 340Z"/></svg>
@@ -14,10 +14,14 @@
       {{$myFormat = .}} {{end}} {{ $d := (cond (ne (.Params.lastmod) nil) .Params.lastmod .Date)  }} {{ dateFormat $myFormat $d}}
     </div>
 
-    <div class="font-mono block uppercase balanced">
+    <div class="font-mono block uppercase">
       <a href="{{.Permalink}}"
         >{{with .Params.Description}} {{.}} {{else}} {{.Title}} {{end}}</a
       >
     </div>
   </div>
+  {{with .Params.cover}}
+  <div class="w-2/5 md:w-1/4 h-24 rounded-lg bg-contain bg-center"  style="background-image: url({{.}})"></div>
+  
+  {{end}}
 </div>
