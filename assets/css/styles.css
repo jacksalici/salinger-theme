@@ -5,7 +5,7 @@
 
 @layer components {
   .feed {
-    @apply max-w-2xl mx-auto px-3 space-y-7
+    @apply max-w-2xl mx-auto px-3 space-y-8
   }
 
   .icon{
