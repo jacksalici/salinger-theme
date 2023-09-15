@@ -93,4 +93,17 @@
     {{if .IsHome}}{{ .Site.Title }}{{else}}{{ .Title }} ~
     {{.Site.Title}}{{end}}
   </title>
+
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
 </head>
