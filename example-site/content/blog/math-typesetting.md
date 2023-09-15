@@ -5,6 +5,7 @@ description: Writing math using KaTeX. 🧮
 math: true
 categories: ["theme"]
 featured: true
+cover: https://images.pexels.com/photos/3768126/pexels-photo-3768126.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
 ---
 
 Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.
