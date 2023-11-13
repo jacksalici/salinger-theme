@@ -1,11 +1,10 @@
 # Salinger Theme 📻
-___Clean and minimalistic Hugo theme built with DaisyUI and TailwindCSS.___
+
+> A clean and minimalistic Hugo theme built with DaisyUI and TailwindCSS
 
 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/jacksalici/salinger-theme?color=yellow)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/jacksalici/salinger-theme/main)
-
-
 
 __Salinger__ is a _clean, minimalistic, mobile-first, blazing-fast, fancy_ and _lightweight_ theme for the [Hugo framework](https://gohugo.io).
 Born as the theme for [my website (demo)](http://jacksalici.com), recently it has been completely rebuilt using __Tailwind__ and __DaisyUI__.  
