@@ -1,54 +1,46 @@
 {{if or (not .IsHome) (eq .Site.Params.showfooteronhomepage true)}}
 
-
 <footer class="mt-20 p-2 bg-base-200 text-base-content">
      <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
-        
-          <div class="flex-1 my-auto">
-            <p class="block my-2">
-               {{$footerText := string ""}}
-               {{ with .Site.Params.footer.copy }}
-               {{$footerText = . | safeHTML}}
-               {{else}}
-               {{$footerText = .Site.Title }}
-               {{end}}
-                  
-               &copy; {{ now.Year }} - {{$footerText}}   
-           </p>
-           
-           <p class="block mb-2">
-                {{with .Site.Params.footer.credit |safeHTML}}
-                {{.}} {{else}} 
-                Made with <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M645.889-470q-6.689 0-12.9-2T622-479q-87-78-148.5-148.757T412-760q0-51.758 35.22-86.879Q482.439-882 534.341-882 564-882 593.5-865.5T646-821q23-28 52.5-44.5t59.159-16.5q51.902 0 87.122 35.121Q880-811.758 880-760q0 61.486-61.5 132.243T670.055-479q-5.055 5-11.266 7t-12.9 2Zm.111-71q66-60 120-119t54-100q0-27.423-17.356-44.712Q785.288-822 757.758-822 741-822 724.5-814q-16.5 8-33.5 30l-45 55-45-55q-17-22-33.5-30t-33.258-8q-27.53 0-44.886 17.288Q472-787.423 472-760q0 41 54 100t120 119Zm-84 417 248-78q-6-8-15.194-20.5Q785.613-235 774-235H536q-2 0-18-1.5t-31-8.5l-66-20q-12-4-18-16t-2-24q4-12 15.278-18T440-324l93 31q-2 0 14.5-1t47.333-1H604q0-12.419-4.5-23.71Q595-330 584-335l-245-93h-84v214l307 90Zm-13 57-294-84q-2 27-22.5 42T195-94h-95q-24.75 0-42.375-17.625T40-154v-274q0-24.75 17.625-42.375T100-488h238q5.333 0 10.667 1Q354-486 359-484l245 92q27 10 45.5 32.5T668-295h114q42 0 70 30t28 81q0 11-5 19.5T859-152L583-67q-8.171 2-17.086 2Q557-65 549-67Zm97-615ZM100-154h94v-274h-94v274Z"/></svg> and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme</a>.
-                {{end}}
-           </p>
 
+          <div class="flex-1 my-auto">
+               <span>
+                    {{$footerText := string ""}}
+                    {{ with .Site.Params.footer.copy }}
+                    {{$footerText = . | safeHTML}}
+                    {{else}}
+                    {{$footerText = .Site.Title }}
+                    {{end}}
+
+                    &copy; {{ now.Year }} - {{$footerText}}
+               </span>
+
+               <span>
+                    {{with .Site.Params.footer.credit |safeHTML}}
+                    {{.}} {{else}}
+                    Powered by <a class="link" href="https://gohugo.io/">Hugo</a> and <a class="link" href="https://github.com/khaister/salinger-theme"><i class="fa-solid fa-code-fork"></i> Salinger Theme</a>.
+                    {{end}}
+               </span>
           </div>
 
           {{if .Site.Menus.footer}}
           <div class="dropdown dropdown-end dropdown-top dropdown-hover">
                <label tabindex="0" class="btn btn-ghost btn-circle">
-                    <svg class="icon w-7 h-7" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z"/></svg>
+                    <svg class="icon w-7 h-7" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                         width="48">
+                         <path
+                              d="M479.858-160Q460-160 446-174.142q-14-14.141-14-34Q432-228 446.142-242q14.141-14 34-14Q500-256 514-241.858q14 14.141 14 34Q528-188 513.858-174q-14.141 14-34 14Zm0-272Q460-432 446-446.142q-14-14.141-14-34Q432-500 446.142-514q14.141-14 34-14Q500-528 514-513.858q14 14.141 14 34Q528-460 513.858-446q-14.141 14-34 14Zm0-272Q460-704 446-718.142q-14-14.141-14-34Q432-772 446.142-786q14.141-14 34-14Q500-800 514-785.858q14 14.141 14 34Q528-732 513.858-718q-14.141 14-34 14Z" />
+                    </svg>
                </label>
                <ul tabindex="0" class="menu menu-sm dropdown-content z-[1] p-2 shadow-lg bg-base-100 rounded-lg w-40">
-                    {{range .Site.Menus.footer}}  
-                    <li><a  href="{{.URL}}" aria-label="Link to {{.Name}}">{{.Name}}</a>
+                    {{range .Site.Menus.footer}}
+                    <li><a href="{{.URL}}" aria-label="Link to {{.Name}}">{{.Name}}</a>
                     </li>
-                         {{end}}
+                    {{end}}
                </ul>
           </div>
           {{end}}
-
-
-           
-           
      </div>
- 
-   
-  </footer>
+</footer>
 
 {{end}}
-
-
-
-
