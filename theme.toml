@@ -7,6 +7,7 @@ homepage = "https://github.com/jacksalici/salinger-theme/"
 tags = ["simple", "minimal", "clean", "fast", "blog", "portfolio", "responsive", "twemoji", "recursion", "section", "tailwind", "daisyui"]
 features = ["fast", "blog", "sorting", "dark mode", "categories", "tailwind", "seo"]
 min_version = "0.112.0"
+demosite = "https://salinger-hugo-theme.netlify.app"
 
 [author]
   name = "Jack Salici"

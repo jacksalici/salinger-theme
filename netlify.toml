@@ -1,0 +1,7 @@
+[build]
+  publish = "example-site/public"
+  command = "cd example-site && hugo -t ../.."
+
+[build.environment]
+  HUGO_VERSION = "0.87.0"
+  HUGO_BASEURL = "https://salinger-hugo-theme.netlify.app"

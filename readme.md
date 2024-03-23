@@ -1,15 +1,19 @@
-# Salinger Theme 📻
-___Clean and minimalistic Hugo theme built with DaisyUI and TailwindCSS.___
-
 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
-![GitHub tag (with filter)](https://img.shields.io/github/v/tag/jacksalici/salinger-theme?color=yellow)
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/jacksalici/salinger-theme/main)
+![GitHub tag (with filter)](https://img.shields.io/github/v/tag/jacksalici/salinger-theme?color=white)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/jacksalici/salinger-theme/main?logo=github) ![GitHub Repo stars](https://img.shields.io/github/stars/jacksalici/salinger-theme?style=flat)
+[![Netlify](https://img.shields.io/netlify/99a88efb-3c01-4c65-bd6e-842bc8122ab4?logo=netlify&label=Demo%20website)](https://salinger-hugo-theme.netlify.app)
 
+# Salinger Theme 📻
+
+> __Salinger Theme has been featured at [_HugoConf2023_](https://www.youtube.com/watch?v=PpT8JE5BbZI)!__ 🥳
+
+___Clean and minimalistic Hugo theme built with DaisyUI and TailwindCSS.___
 
 
 __Salinger__ is a _clean, minimalistic, mobile-first, blazing-fast, fancy_ and _lightweight_ theme for the [Hugo framework](https://gohugo.io).
-Born as the theme for [my website (demo)](http://jacksalici.com), recently it has been completely rebuilt using __Tailwind__ and __DaisyUI__.  
+Born as the theme for my website, recently it has been completely rebuilt using __Tailwind__ and __DaisyUI__. A demo can be seen on [the example site](https://salinger-hugo-theme.netlify.app).    
 Why this name? During the design of the light mode homepage, I was inspired by [the Italian edition cover by Einaudi](https://duckduckgo.com/?q=il+giovane+holden+by+j.d.+salinger+einaudi+1961&t=h_&ia=images&iax=images&iaf=color%3AWhite) of _The Catcher in The Rye_ by J.D. Salinger.
+
 
 ![Screenshot of the homepage](https://raw.githubusercontent.com/jacksalici/salinger-theme/main/images/tn.jpg)
 
@@ -37,7 +41,7 @@ cd example-site
 hugo server -t ../..
 ```
 
-A demo usage can also be seen on [my website](https://jacksalici.com).  
+A demo can also be seen on [the example site](https://salinger-hugo-theme.netlify.app).  
 
 ### Install the theme
 
