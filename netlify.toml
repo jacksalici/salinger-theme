@@ -1,7 +1,50 @@
 [build]
-  publish = "example-site/public"
-  command = "cd example-site && hugo -t ../.."
+command = "cd example-site && hugo --minify --gc -t ../.. "
+publish = "example-site/public"
 
 [build.environment]
-  HUGO_VERSION = "0.87.0"
-  HUGO_BASEURL = "https://salinger-hugo-theme.netlify.app"
+HUGO_BASEURL = "https://salinger-hugo-theme.netlify.app"
+HUGO_VERSION = "0.112.0"
+
+[context.production.environment]
+HUGO_VERSION = "0.112.0"
+
+[[headers]]
+for = "/*.jpg"
+
+[headers.values]
+Cache-Control = "public, max-age=604800"
+
+[[headers]]
+for = "/*.png"
+
+[headers.values]
+Cache-Control = "public, max-age=604800"
+
+[[headers]]
+for = "/*.css"
+
+[headers.values]
+Cache-Control = "public, max-age=604800"
+
+[[headers]]
+for = "/*.js"
+
+[headers.values]
+Cache-Control = "public, max-age=604800"
+
+[[headers]]
+for = "/webfonts/*"
+
+[headers.values]
+Cache-Control = "public, max-age=604800"
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+Content-Security-Policy = "script-src 'self' 'unsafe-inline'"
+Referrer-Policy = "no-referrer"
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
