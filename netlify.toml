@@ -1,5 +1,5 @@
 [build]
-command = "cd example-site && hugo --minify --gc -t ../.. "
+command = "cd example-site && hugo --gc -t ../.. "
 publish = "example-site/public"
 
 [build.environment]
