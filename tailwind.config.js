@@ -11,6 +11,8 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
+    // Keep false: Hugo reads the CSS from PostCSS stdout, and the daisyUI
+    // banner would end up inside the generated stylesheet.
     logs: false,
     themes: [
       {

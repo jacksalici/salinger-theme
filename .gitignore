@@ -1,5 +1,8 @@
-*/.DS_Store
-node_modules
 .DS_Store
-example-site/resources/_gen
-example-site/public
+node_modules/
+
+# Hugo build artifacts (regenerated at every build)
+public/
+**/resources/_gen/
+hugo_stats.json
+.hugo_build.lock

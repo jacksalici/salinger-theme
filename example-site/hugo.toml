@@ -1,6 +1,9 @@
 baseURL = "https://example.com/"
 title = "Salinger Theme"
-# theme = "salinger"
+# Name of the folder containing the theme (themes/salinger).
+# When previewing this example site from the theme repository, the
+# `-t ../..` command line flag overrides this value.
+theme = "salinger"
 
 [params]
 
@@ -26,7 +29,8 @@ showHeaderOnHomepage = true
 showSocialOnHomepage = true
 showOnlyFeaturedPost = true
 
-filterCoverImages = true
+# true = show post covers in grayscale (and darker in dark mode)
+filterCoverImages = false
 
 [params.meta]
 title = "Salinger Theme for Hugo built with TailwindCSS and DaisyUI"
@@ -65,24 +69,30 @@ tags = "tags"
 tool = "tools"
 
 
-# the following code is mandatory for the theme to work properly.
+# ---------------------------------------------------------------------------
+# The following configuration is MANDATORY for the theme to work properly.
+# It requires Hugo >= 0.128.0.
+# ---------------------------------------------------------------------------
 
 [module]
 [module.hugoVersion]
 extended = false
-min = "0.112.0"
+min = "0.128.0"
 [[module.mounts]]
 source = "assets"
 target = "assets"
 [[module.mounts]]
+disableWatch = true
 source = "hugo_stats.json"
-target = "assets/watching/hugo_stats.json"
+target = "assets/notwatching/hugo_stats.json"
 
 [build]
-writeStats = true
+# Writes hugo_stats.json: the list of HTML classes Tailwind keeps in the CSS.
+[build.buildStats]
+enable = true
 [[build.cachebusters]]
-source = "assets/watching/hugo_stats\\.json"
-target = "styles\\.css"
+source = "assets/notwatching/hugo_stats\\.json"
+target = "css"
 [[build.cachebusters]]
 source = "(postcss|tailwind)\\.config\\.js"
 target = "css"

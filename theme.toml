@@ -1,12 +1,12 @@
 name = "Salinger"
 license = "MIT"
-version = "2.0.3"
-licenselink = "https://github.com/jacksalici/salinger/blob/master/LICENSE"
+version = "2.2.0"
+licenselink = "https://github.com/jacksalici/salinger-theme/blob/main/LICENSE"
 description = "Salinger is a clean, minimalistic, mobile-first, blazing-fast, fancy and lightweight theme for the Hugo framework built with TailwindCSS and DaisyUI"
 homepage = "https://github.com/jacksalici/salinger-theme/"
 tags = ["simple", "minimal", "clean", "fast", "blog", "portfolio", "responsive", "twemoji", "recursion", "section", "tailwind", "daisyui"]
 features = ["fast", "blog", "sorting", "dark mode", "categories", "tailwind", "seo"]
-min_version = "0.112.0"
+min_version = "0.128.0"
 demosite = "https://salinger-hugo-theme.netlify.app"
 
 [author]

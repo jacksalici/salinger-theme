@@ -4,7 +4,7 @@
   <meta name="title" content="{{.}}" />
   {{end}} {{with .Site.Params.meta.description}}
   <meta name="description" content="{{.}}" />
-  {{end}} <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ','}}{{else}}{{with .Site.Params.meta.keywords}}{{ delimit . ','}}{{end}}{{end}}"/>
+  {{end}} <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{else}}{{with .Site.Params.meta.keywords}}{{ delimit . ", " }}{{end}}{{end}}"/>
   <meta name="robots" content="index, follow" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="author" content="{{.Site.Params.author}}" />
@@ -44,11 +44,23 @@
     rel="stylesheet"
   />
 
-  {{ $options := dict "inlineImports" true }} {{ $styles := resources.Get
-  "css/styles.css" }} {{ $styles = $styles | resources.PostCSS $options }} {{ if
-  hugo.IsProduction }} {{ $styles = $styles | minify | fingerprint |
-  resources.PostProcess }} {{ end }}
+  {{- /*
+    Tailwind CSS (v3) is compiled through PostCSS.
+    templates.Defer runs this block after every page has been rendered, so
+    hugo_stats.json (build.buildStats) already lists all the classes used by
+    the site when Tailwind reads it. Requires Hugo >= 0.128.0.
+  */}}
+  {{- with (templates.Defer (dict "key" "salinger-styles")) }}
+    {{- with resources.Get "css/styles.css" }}
+      {{- $styles := . | css.PostCSS (dict "inlineImports" true) }}
+      {{- if hugo.IsProduction }}
+        {{- $styles = $styles | minify | fingerprint }}
+      {{- end }}
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+    {{- else }}
+      {{- errorf "Salinger theme: assets/css/styles.css not found. Check that the theme is installed in themes/salinger and that theme = \"salinger\" is set in your hugo.toml." }}
+    {{- end }}
+  {{- end }}
 
   <!--FA-->
   <link
@@ -82,12 +94,13 @@
 
   {{if .Site.Params.twemoji}}
   <script
-    src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+    src="https://cdn.jsdelivr.net/npm/@twemoji/api@17.0.3/dist/twemoji.min.js"
     crossorigin="anonymous"
   ></script>
   {{end}}
 
-  <scripts defer
+  <script
+    defer
     src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
   ></script>
 

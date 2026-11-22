@@ -14,6 +14,14 @@
   }
 }
 
+/* Header logo: the SVG always fits its container (w-6 h-6 in header.html),
+   whatever width/height attributes the user's logoSvg has. */
+.header-logo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 img {
     width: 500px;
     max-width: 100%;

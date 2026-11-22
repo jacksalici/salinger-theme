@@ -1,50 +1,11 @@
 [build]
-command = "cd example-site && hugo --gc -t ../.. "
+# `npm run` puts node_modules/.bin (postcss) on the PATH used by Hugo.
+command = "npm run build:example"
 publish = "example-site/public"
 
 [build.environment]
 HUGO_BASEURL = "https://salinger-hugo-theme.netlify.app"
-HUGO_VERSION = "0.112.0"
+HUGO_VERSION = "0.170.1"
 
 [context.production.environment]
-HUGO_VERSION = "0.112.0"
-
-[[headers]]
-for = "/*.jpg"
-
-[headers.values]
-Cache-Control = "public, max-age=604800"
-
-[[headers]]
-for = "/*.png"
-
-[headers.values]
-Cache-Control = "public, max-age=604800"
-
-[[headers]]
-for = "/*.css"
-
-[headers.values]
-Cache-Control = "public, max-age=604800"
-
-[[headers]]
-for = "/*.js"
-
-[headers.values]
-Cache-Control = "public, max-age=604800"
-
-[[headers]]
-for = "/webfonts/*"
-
-[headers.values]
-Cache-Control = "public, max-age=604800"
-
-[[headers]]
-for = "/*"
-
-[headers.values]
-Content-Security-Policy = "script-src 'self' 'unsafe-inline'"
-Referrer-Policy = "no-referrer"
-X-Content-Type-Options = "nosniff"
-X-Frame-Options = "DENY"
-X-XSS-Protection = "1; mode=block"
+HUGO_VERSION = "0.170.1"
